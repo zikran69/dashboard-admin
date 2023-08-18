@@ -574,20 +574,16 @@ h1,
   top: 50%;
 }
 
+.m-16{
+  margin: 4rem;
+}
+
 .m-4{
   margin: 1rem;
 }
 
 .m-6{
   margin: 1.5rem;
-}
-
-.m-16{
-  margin: 4rem;
-}
-
-.m-1{
-  margin: 0.25rem;
 }
 
 .mx-4{
@@ -598,11 +594,6 @@ h1,
 .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-}
-
-.my-16{
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .mb-2{
@@ -645,10 +636,6 @@ h1,
   display: none;
 }
 
-.h-\[300px\]{
-  height: 300px;
-}
-
 .h-\[67\.33px\]{
   height: 67.33px;
 }
@@ -683,10 +670,6 @@ h1,
 
 .w-\[600px\]{
   width: 600px;
-}
-
-.w-\[800px\]{
-  width: 800px;
 }
 
 .w-full{
@@ -904,11 +887,6 @@ h1,
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-16{
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .pb-2{
