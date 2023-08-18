@@ -753,11 +753,6 @@ h1,
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
-.bg-gray-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
 .bg-primary-blue{
   --tw-bg-opacity: 1;
   background-color: rgb(37 43 59 / var(--tw-bg-opacity));
@@ -803,16 +798,6 @@ h1,
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-8{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.py-\[2px\]{
-  padding-top: 2px;
-  padding-bottom: 2px;
 }
 
 .pl-4{
