@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Kamar</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/responsiveSidebar.js" defer></script>
+</head>
+
+<body>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+    </header>
+    <main class="bg-primary-gray flex justify-center h-[calc(100vh-67.33px)]">
+        <div class="m-6 bg-white flex justify-center w-[600px] rounded-lg"> 
+            <form action="./kategori-kamar.html" class="w-[520px] font-roboto">
+                <h1 class="py-8 font-raleway text-2xl font-semibold">Form Tambah Kategori Kamar</h1>
+                <div class=" pb-2 flex justify-between">
+                    <label for="tambah-kategori" class="">Nama Kategori</label>
+                    <input type="text" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none">
+                </div>
+                <div class=" pb-2 flex justify-between">
+                    <label for="harga" class="">Harga</label>
+                    <input type="text" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none">
+                </div>
+                <div class="pb-2 flex justify-between">
+                    <label for="fasilitas">Fasilitas</label>
+                    <textarea type="text" rows="4" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none"></textarea>
+                </div>
+                <div class=" pb-2 flex justify-between">
+                    <label for="status" class="">Status</label>
+                    <input type="text" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none">
+                </div>
+                <div class=" pb-2 flex justify-between">
+                    <label for="foto" class="">Foto</label>
+                    <input type="text" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none">
+                </div>
+                <div class="pb-2 flex justify-between">
+                    <label for="keterangan">Keterangan</label>
+                    <textarea type="text" rows="4" class="w-[400px] text-sm pl-2 bg-primary-gray rounded-lg focus:outline-none"></textarea>
+                </div>
+                <div class="flex justify-end py-8">
+                    <button type="submit" class="py-1 px-5 text-white bg-blue-400 rounded-md">Simpan</button>
+                </div>
+            </form>
+        </div> 
+    </main>
+</body>
+
+</html>
