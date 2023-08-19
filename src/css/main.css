@@ -744,6 +744,10 @@ h1,
   cursor: pointer;
 }
 
+.resize-none{
+  resize: none;
+}
+
 .list-none{
   list-style-type: none;
 }
@@ -995,16 +999,12 @@ h1,
   padding-bottom: 0.5rem;
 }
 
-.pl-2{
-  padding-left: 0.5rem;
+.pl-1{
+  padding-left: 0.25rem;
 }
 
 .pl-6{
   padding-left: 1.5rem;
-}
-
-.pl-1{
-  padding-left: 0.25rem;
 }
 
 .text-left{
