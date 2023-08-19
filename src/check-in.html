@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/responsiveSidebar.js" defer></script>
+    <script src="./js/modalCheckin.js" defer></script>
 </head>
 
 <body>
@@ -51,11 +52,13 @@
                             class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
                     </summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="./kategori-kamar.html"><i class="ri-hotel-bed-line mr-2"></i>Kategori
+                        <a class="hover:text-secondary-blue" href="./kategori-kamar.html"><i
+                                class="ri-hotel-bed-line mr-2"></i>Kategori
                             Kamar</a>
                     </div>
                     <div class="pl-6">
-                        <a href="./lantai-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>Lantai
+                        <a href="./lantai-kamar.html" class="hover:text-secondary-blue"><i
+                                class="ri-hotel-bed-line mr-2"></i>Lantai
                             Kamar</a>
                     </div>
                     <div class="pl-6">
@@ -86,69 +89,237 @@
             </div>
         </aside>
         <main class="bg-primary-gray grow overflow-y-auto">
+            <div id="modal-overlay" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90">
+            </div>
             <div class="p-4 h-[calc(100vh-67.33px)]">
                 <div>
                     <h1 class="text-2xl font-semibold">Check In</h1>
                 </div>
                 <div class="p-4">
-                    <button class="my-1"><i title="detail" class="ri-more-fill text-secondary-gray font-semibold text-lg"></i></button>
+                    <div id="modal" class="hidden absolute bg-white inset-0 m-auto w-[90%] h-[550px] rounded">
+                        <div class="flex justify-between px-2">
+                            <h3 class="my-4 ml-2 text-2xl font-semibold text-secondary-gray">detail Check-in</h3>
+                            <button id="close-modal" class="text-3xl"><i
+                                    class="ri-close-fill text-secondary-gray hover:text-secondary-blue"></i></button>
+                        </div>
+                        <div class="p-2">
+                            <form action="#">
+                                <div class="p-4 flex gap-4 flex-wrap">
+                                    <div class="flex flex-col">
+                                        <label for="kategori" class="text-secondary-gray">Kategori</label>
+                                        <select name="kategori" id=""
+                                            class="focus:outline-secondary-gray outline-secondary-gray p-2.5 rounded border border-gray-300 text-secondary-gray">
+                                            <option>--pilih kategori--</option>
+                                            <option>gold</option>
+                                            <option>silver</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label for="Lantai" class="text-secondary-gray">Lantai</label>
+                                        <select name="Lantai" id=""
+                                            class="focus:outline-secondary-gray p-2.5 rounded border border-gray-300 text-secondary-gray">
+                                            <option>--pilih Lantai--</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="No kamar">No kamar</label>
+                                        <select name="No kamar" id=""
+                                            class="focus:outline-secondary-gray p-2.5 rounded border border-gray-300 text-secondary-gray">
+                                            <option>--pilih No kamar--</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="Harga kamar">Harga kamar</label>
+                                        <input type="text" name="Harga kamar" id="Harga kamar"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="Tanggal check-in">Tanggal check-in</label>
+                                        <input type="text" name="Tanggal check-in" id="Tanggal checkin"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="jam check-in">jam check-in</label>
+                                        <input type="text" name="jam check-in" id="jam check-in"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="Tanggal Check-out">Tanggal Check-out</label>
+                                        <input type="text" name="Tanggal Check-out" id="Tanggal Check-out"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="Jam Check-out">Jam Check-out</label>
+                                        <input type="text" name="Jam Check-out" id="Jam Check-out"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="jumlah-hari">Jumlah hari</label>
+                                        <input type="text" name="jumlah-hari" id="jumlah-hari"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="mx-2">
+                                    <h3 class="font-semibold text-secondary-gray">Custummer</h3>
+                                </div>
+                                <div class="p-4 flex gap-4 flex-wrap">
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="nik">Nik</label>
+                                        <input type="text" name="nik" id="nik"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="nama-lengkap">Nama lengkap</label>
+                                        <input type="text" name="nama-lengkap" id="nama-lengkap"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="no-telepon">No telepon</label>
+                                        <input type="text" name="no-telepon" id="no-telepon"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="alamat">Alamat</label>
+                                        <input type="text" name="alamat" id="alamat"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="p-4 flex gap-4 flex-wrap justify-end">
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="untuk-berapa-orang">Untuk berapa orang</label>
+                                        <input type="text" name="untuk-berapa-orang" id="untuk-berapa-orang"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="metode-pembayaran">Metode pembayaran</label>
+                                        <input type="text" name="metode-pembayaran" id="metode-pembayaran"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label for="jumlah-bayar">Jumlah bayar</label>
+                                        <input type="text" name="jumlah-bayar" id="jumlah-bayar"
+                                            class="focus:outline-secondary-gray p-2 rounded border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="flex justify-end p-4">
+                                    <button class="bg-secondary-blue text-white py-2 px-4 rounded">check-in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <table class="text-secondary-gray bg-white border-collapse w-full">
                         <thead>
                             <tr>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">no</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">id registrasi</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">nik</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">nama</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">no Kamar</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">tanggal check in</th>
-                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">opsi</th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">no
+                                </th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">id
+                                    registrasi</th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">nik
+                                </th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">nama
+                                </th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">no
+                                    Kamar</th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">
+                                    tanggal check in</th>
+                                <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">opsi
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no">1</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="id-registrasi">REG001</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nik">1234567890</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nama">John Doe</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no-kamar">101</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="tanggal-checkin">2023-08-01</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center" data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button></td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no">1</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="id-registrasi">REG001</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nik">1234567890</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nama">John Doe</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no-kamar">101</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="tanggal-checkin">2023-08-01</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center"
+                                    data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i
+                                            class="ri-search-line text-white"></i></button></td>
                             </tr>
                             <tr>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no">2</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="id-registrasi">REG002</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nik">9876543210</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nama">Jane Smith</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no-kamar">102</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="tanggal-checkin">2023-08-02</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center" data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button></td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no">2</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="id-registrasi">REG002</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nik">9876543210</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nama">Jane Smith</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no-kamar">102</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="tanggal-checkin">2023-08-02</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center"
+                                    data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i
+                                            class="ri-search-line text-white"></i></button></td>
                             </tr>
                             <tr>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no">3</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="id-registrasi">REG003</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nik">5555555555</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nama">Michael Johnson</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no-kamar">103</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="tanggal-checkin">2023-08-03</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center" data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button></td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no">3</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="id-registrasi">REG003</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nik">5555555555</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nama">Michael Johnson</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no-kamar">103</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="tanggal-checkin">2023-08-03</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center"
+                                    data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i
+                                            class="ri-search-line text-white"></i></button></td>
                             </tr>
                             <tr>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no">4</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="id-registrasi">REG004</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nik">1111111111</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nama">Susan Williams</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no-kamar">104</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="tanggal-checkin">2023-08-04</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center" data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button></td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no">4</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="id-registrasi">REG004</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nik">1111111111</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nama">Susan Williams</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no-kamar">104</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="tanggal-checkin">2023-08-04</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center"
+                                    data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i
+                                            class="ri-search-line text-white"></i></button></td>
                             </tr>
                             <tr>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no">5</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="id-registrasi">REG005</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nik">9999999999</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="nama">Robert Brown</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="no-kamar">105</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="tanggal-checkin">2023-08-05</td>
-                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center" data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button></td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no">5</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="id-registrasi">REG005</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nik">9999999999</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="nama">Robert Brown</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="no-kamar">105</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"
+                                    data-cell="tanggal-checkin">2023-08-05</td>
+                                <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 text-center"
+                                    data-cell="opsi"><button class="py-1 px-5 bg-blue-400 rounded-md"><i
+                                            class="ri-search-line text-white"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
