@@ -857,11 +857,6 @@ h1,
   border-color: rgb(180 182 185 / var(--tw-border-opacity));
 }
 
-.border-gray-800{
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
-}
-
 .border-opacity-10{
   --tw-border-opacity: 0.1;
 }
@@ -1044,10 +1039,6 @@ h1,
   line-height: 1.75rem;
 }
 
-.font-light{
-  font-weight: 300;
-}
-
 .font-medium{
   font-weight: 500;
 }
@@ -1064,11 +1055,6 @@ h1,
 .text-gray-600{
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-gray-800{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .text-primary-blue{
@@ -1172,25 +1158,13 @@ h1,
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
-.focus\:to-secondary-gray:focus{
-  --tw-gradient-to: #b4b6b9 var(--tw-gradient-to-position);
-}
-
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-.focus\:outline:focus{
-  outline-style: solid;
-}
-
 .focus\:outline-secondary-gray:focus{
   outline-color: #b4b6b9;
-}
-
-.focus\:outline-hover-blue:focus{
-  outline-color: #1E88E5;
 }
 
 @media not all and (min-width: 1024px){
