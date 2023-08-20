@@ -558,6 +558,10 @@ h1,
   position: absolute;
 }
 
+.inset-0{
+  inset: 0px;
+}
+
 .left-0{
   left: 0px;
 }
@@ -582,14 +586,23 @@ h1,
   margin: 1rem;
 }
 
+.m-auto{
+  margin: auto;
+}
+
+.mx-2{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mx-4{
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.my-1{
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-2{
@@ -600,12 +613,17 @@ h1,
   margin-bottom: 0.75rem;
 }
 
+<<<<<<< HEAD
 .mb-5{
   margin-bottom: 1.25rem;
 }
 
 .mb-8{
   margin-bottom: 2rem;
+=======
+.ml-2{
+  margin-left: 0.5rem;
+>>>>>>> admin/main
 }
 
 .mr-1{
@@ -616,12 +634,21 @@ h1,
   margin-right: 0.5rem;
 }
 
+<<<<<<< HEAD
 .mt-2{
   margin-top: 0.5rem;
 }
 
 .mt-5{
   margin-top: 1.25rem;
+=======
+.mt-16{
+  margin-top: 4rem;
+>>>>>>> admin/main
+}
+
+.mt-2{
+  margin-top: 0.5rem;
 }
 
 .flex{
@@ -636,6 +663,10 @@ h1,
   display: none;
 }
 
+.h-\[550px\]{
+  height: 550px;
+}
+
 .h-\[67\.33px\]{
   height: 67.33px;
 }
@@ -644,12 +675,21 @@ h1,
   height: calc(100vh - 67.33px);
 }
 
+<<<<<<< HEAD
 .h-screen{
   height: 100vh;
 }
 
 .min-h-\[calc\(100vh-67\.33px\)\]{
   min-height: calc(100vh - 67.33px);
+=======
+.h-full{
+  height: 100%;
+>>>>>>> admin/main
+}
+
+.h-screen{
+  height: 100vh;
 }
 
 .w-\[150px\]{
@@ -664,6 +704,7 @@ h1,
   width: 250px;
 }
 
+<<<<<<< HEAD
 .w-\[400px\]{
   width: 400px;
 }
@@ -674,6 +715,10 @@ h1,
 
 .w-\[570px\]{
   width: 570px;
+=======
+.w-\[90\%\]{
+  width: 90%;
+>>>>>>> admin/main
 }
 
 .w-full{
@@ -759,6 +804,10 @@ h1,
   gap: 2.5rem;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -767,6 +816,10 @@ h1,
 
 .overflow-y-auto{
   overflow-y: auto;
+}
+
+.rounded{
+  border-radius: 0.25rem;
 }
 
 .rounded-\[20px\]{
@@ -805,9 +858,15 @@ h1,
   border-bottom-width: 2px;
 }
 
+<<<<<<< HEAD
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+=======
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+>>>>>>> admin/main
 }
 
 .border-secondary-gray{
@@ -844,11 +903,17 @@ h1,
   background-color: rgb(239 243 246 / var(--tw-bg-opacity));
 }
 
+.bg-secondary-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(120 174 216 / var(--tw-bg-opacity));
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -869,12 +934,19 @@ h1,
   --tw-gradient-to: #64748b var(--tw-gradient-to-position);
 }
 
+=======
+>>>>>>> admin/main
 .p-2{
   padding: 0.5rem;
 }
 
+<<<<<<< HEAD
 .p-3{
   padding: 0.75rem;
+=======
+.p-2\.5{
+  padding: 0.625rem;
+>>>>>>> admin/main
 }
 
 .p-4{
@@ -895,6 +967,11 @@ h1,
   padding-right: 0.5rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -910,6 +987,7 @@ h1,
   padding-bottom: 0.25rem;
 }
 
+<<<<<<< HEAD
 .py-14{
   padding-top: 3.5rem;
   padding-bottom: 3.5rem;
@@ -936,6 +1014,15 @@ h1,
 
 .pl-2{
   padding-left: 0.5rem;
+=======
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pl-4{
+  padding-left: 1rem;
+>>>>>>> admin/main
 }
 
 .pl-6{
@@ -1040,6 +1127,16 @@ h1,
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-zinc-900{
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
+}
+
+.text-zinc-800{
+  --tw-text-opacity: 1;
+  color: rgb(39 39 42 / var(--tw-text-opacity));
+}
+
 .opacity-90{
   opacity: 0.9;
 }
@@ -1056,6 +1153,7 @@ h1,
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+<<<<<<< HEAD
 .drop-shadow-md{
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1063,6 +1161,10 @@ h1,
 
 .duration-300{
   transition-duration: 300ms;
+=======
+.outline-secondary-gray{
+  outline-color: #b4b6b9;
+>>>>>>> admin/main
 }
 
 ::-webkit-scrollbar {
@@ -1126,11 +1228,16 @@ h1,
   outline-offset: 2px;
 }
 
+<<<<<<< HEAD
 @media not all and (min-width: 1024px){
   .max-lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
   }
+=======
+.focus\:outline-secondary-gray:focus{
+  outline-color: #b4b6b9;
+>>>>>>> admin/main
 }
 
 @media (min-width: 640px){
