@@ -609,10 +609,6 @@ h1,
   margin-bottom: 0.75rem;
 }
 
-.mb-5{
-  margin-bottom: 1.25rem;
-}
-
 .mb-8{
   margin-bottom: 2rem;
 }
@@ -629,12 +625,12 @@ h1,
   margin-right: 0.5rem;
 }
 
-.mt-2{
-  margin-top: 0.5rem;
+.mt-16{
+  margin-top: 4rem;
 }
 
-.mt-5{
-  margin-top: 1.25rem;
+.mt-2{
+  margin-top: 0.5rem;
 }
 
 .flex{
@@ -880,26 +876,12 @@ h1,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gradient-to-r{
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.from-gray-800{
-  --tw-gradient-from: #1f2937 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(31 41 55 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .p-2{
   padding: 0.5rem;
 }
 
 .p-2\.5{
   padding: 0.625rem;
-}
-
-.p-3{
-  padding: 0.75rem;
 }
 
 .p-4{
@@ -933,11 +915,6 @@ h1,
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-14{
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
 }
 
 .py-16{
@@ -1031,11 +1008,6 @@ h1,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-gray-600{
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
 .text-primary-blue{
   --tw-text-opacity: 1;
   color: rgb(37 43 59 / var(--tw-text-opacity));
@@ -1080,10 +1052,6 @@ h1,
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.duration-300{
-  transition-duration: 300ms;
-}
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -1101,29 +1069,14 @@ h1,
   background: #555;
 }
 
-.hover\:border-yellow-500:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(234 179 8 / var(--tw-border-opacity));
-}
-
 .hover\:bg-hover-blue:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(30 136 229 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-slate-400:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
 .hover\:text-secondary-blue:hover{
   --tw-text-opacity: 1;
   color: rgb(120 174 216 / var(--tw-text-opacity));
-}
-
-.hover\:outline-none:hover{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
 }
 
 .focus\:border-gray-500:focus{
