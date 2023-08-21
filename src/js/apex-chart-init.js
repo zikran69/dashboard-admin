@@ -6,7 +6,7 @@ var options = {
   },
   series: [
     {
-      name: "Sales",
+      name: "Kamar",
       data: [12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 3, 5],
     },
   ],
