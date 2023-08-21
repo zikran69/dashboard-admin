@@ -1,4 +1,3 @@
-<!-- https://www.figma.com/file/lUNExv7Jrx7SAPFBhkGjGA/bedul?type=design&node-id=104-261&mode=design&t=OvYYS9uqSWN1cXD5-0 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,19 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Kamar</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="../../js/modalCheckin.js" defer></script>
 </head>
 
 <body>
-    <header class="fixed top-0 left-0 w-full flex justify-between bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
-        <h1 class="font-medium text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
-        <p class="text-xl">Fauzi Azhari</p>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+        <div class="lg:hidden">
+            <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
+        </div>
     </header>
-    <div class="flex h-fit mt-[67.33px]">
-        <aside class="p-4 text-secondary-gray font-medium w-[250px] h-fit">
+    <div class="flex h-[calc(100vh-67.33px)]">
+        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
+        </div>
+        <aside id="sidebar"
+            class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
+            <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
+                    class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
             <h4 class="mb-3 font-semibold">Menu</h4>
             <div class="mb-2">
-                <a class="hover:text-secondary-blue" href="./dashboard.html"><i class="ri-home-2-line mr-2"></i>Dashboard</a>
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
             </div>
             <div class="space-y-2">
                 <details open class="space-y-2">
@@ -56,15 +68,16 @@
                     <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
                             class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="#"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
                             Kamar</a>
                     </div>
                     <div class="pl-6">
-                        <a href="./check-in.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                        <a href="../transaksi/check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
                             In</a>
                     </div>
                     <div class="pl-6">
-                        <a href="./check-out.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
                             Out</a>
                     </div>
                 </details>
@@ -73,78 +86,69 @@
                 <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
             </div>
         </aside>
-        <main class="bg-primary-gray grow overflow-y-auto px-12 py-8">
-            <form class="font-roboto h-[calc(100vh-67.33px)]">
-                <h1 class="pl-4 font-raleway font-bold text-lg">List Kamar</h1> 
+        <main class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]">
+            <h1 class="p-4 font-raleway text-2xl font-semibold">List Kamar</h1>
+            <form class="font-roboto px-6 mx-4 border rounded-lg bg-white min-w-[800px] max-lg:px-4">
                 <div class="flex justify-between m-4">
-                    <a href="form-list-kamar.html" class="flex items-center border rounded-[20px] bg-gray-400 px-2 py-[2px]">
-                        <i class="ri-add-circle-line mr-1"></i>
-                        <label for="search" class="text-white text-sm">Tambah</label>
+                    <a href="./form-lantai-kamar.html" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
+                        <i class="ri-hotel-bed-line mr-2"></i>Tambah
                     </a>
-                    <input type="search" placeholder="search..." class="border rounded-[20px] px-2 text-center">
+                    <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500">
                 </div>
-                <table class="w-full text-center text-sm bg-white">
-                    <thead class="bg-[#ECE5E5]">
-                        <th class="border border-slate-300 w-12">No</th>
-                        <th class="border border-slate-300">Nomor Kamar</th>
-                        <th class="border border-slate-300">Lantai</th>
-                        <th class="border border-slate-300">Kategori</th>
-                        <th class="border border-slate-300">Harga</th>
-                        <th class="border border-slate-300">Status</th>
-                        <th class="border border-slate-300 w-28">Opsi</th>
+                <table class="mb-4 text-zinc-600 w-full">
+                    <thead>
+                        <tr>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">No</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Nomor Kamar</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Lantai</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Kategori</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Harga</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Status</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="border border-slate-300">1</td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300">Aktif</td>
-                            <td class="border border-slate-300">
-                                <div class="flex items-center justify-around">
-                                    <a href="#">
-                                        <i class="ri-search-line"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ri-refresh-line"></i>
-                                    </a>
-                                </div>
-                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">1</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">1</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tersedia</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
+                        </td>
                         </tr>
                         <tr>
-                            <td class="border border-slate-300">2</td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300">Nonaktif</td>
-                            <td class="border border-slate-300">
-                                <div class="flex items-center justify-around">
-                                    <a href="#">
-                                        <i class="ri-search-line"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ri-delete-bin-line"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="ri-refresh-line"></i>
-                                    </a>
-                                </div>
-                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">2</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">2</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">penuh</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
+                        </td>
                         </tr>
-                        <tr class="h-[300px]">
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
-                            <td class="border border-slate-300"></td>
+                        <tr>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">3</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">3</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">-</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tersedia</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
+                        </td>
                         </tr>
                     </tbody>
                 </table>
