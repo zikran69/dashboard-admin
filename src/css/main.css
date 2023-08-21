@@ -812,6 +812,10 @@ h1,
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden{
+  overflow: hidden;
+}
+
 .overflow-y-auto{
   overflow-y: auto;
 }
@@ -1223,6 +1227,12 @@ h1,
   }
 }
 
+@media (min-width: 768px){
+  .md\:justify-end{
+    justify-content: flex-end;
+  }
+}
+
 @media (min-width: 1024px){
   .lg\:static{
     position: static;
@@ -1242,5 +1252,9 @@ h1,
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:justify-end{
+    justify-content: flex-end;
   }
 }
