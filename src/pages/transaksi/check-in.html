@@ -21,9 +21,11 @@
             <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
         </div>
     </header>
+
     <div class="flex h-[calc(100vh-67.33px)]">
         <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
         </div>
+        
         <aside id="sidebar"
             class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
             <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
@@ -70,7 +72,7 @@
                     <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
                             class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="#"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
                             Kamar</a>
                     </div>
                     <div class="pl-6">
@@ -88,6 +90,7 @@
                 <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
             </div>
         </aside>
+
         <main class="bg-primary-gray grow overflow-y-auto">
             <div id="modal-overlay" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90">
             </div>
