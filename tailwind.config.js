@@ -14,7 +14,10 @@ module.exports = {
         'secondary-blue': '#78aed8',
         'primary-gray': '#eff3f6',
         'secondary-gray': '#b4b6b9',
-        'hover-blue': '#1E88E5'
+        'hover-blue': '#2563EB',
+        'hover-green': '#16A34A',
+        'hover-red': '#DC2626',
+        'hover-yellow': '#CA8A04'
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
