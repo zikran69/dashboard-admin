@@ -1252,6 +1252,21 @@ h1,
   }
 }
 
+@media not all and (min-width: 768px){
+  .max-md\:grid{
+    display: grid;
+  }
+
+  .max-md\:w-auto{
+    width: auto;
+  }
+
+  .max-md\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 @media (min-width: 640px){
   .sm\:mx-3{
     margin-left: 0.75rem;
