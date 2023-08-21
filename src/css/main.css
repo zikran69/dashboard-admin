@@ -605,6 +605,11 @@ h1,
   margin-bottom: 1rem;
 }
 
+.mx-8{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -641,12 +646,20 @@ h1,
   margin-top: 0.5rem;
 }
 
-.block{
-  display: block;
+.mb-16{
+  margin-bottom: 4rem;
 }
 
-.inline-block{
-  display: inline-block;
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
+.mb-32{
+  margin-bottom: 8rem;
+}
+
+.mb-0{
+  margin-bottom: 0px;
 }
 
 .flex{
@@ -683,8 +696,6 @@ h1,
 
 .min-h-\[calc\(100vh-67\.33px\)\]{
   min-height: calc(100vh - 67.33px);
-.h-2{
-  height: 0.5rem;
 }
 
 .w-\[150px\]{
@@ -729,12 +740,6 @@ h1,
 
 .flex-shrink-0{
   flex-shrink: 0;
-.w-2{
-  width: 0.5rem;
-}
-
-.w-10{
-  width: 2.5rem;
 }
 
 .grow{
@@ -870,8 +875,35 @@ h1,
   border-color: rgb(180 182 185 / var(--tw-border-opacity));
 }
 
+.border-red-900{
+  --tw-border-opacity: 1;
+  border-color: rgb(127 29 29 / var(--tw-border-opacity));
+}
+
+.border-blue-950{
+  --tw-border-opacity: 1;
+  border-color: rgb(23 37 84 / var(--tw-border-opacity));
+}
+
+.border-red-950{
+  --tw-border-opacity: 1;
+  border-color: rgb(69 10 10 / var(--tw-border-opacity));
+}
+
 .border-opacity-10{
   --tw-border-opacity: 0.1;
+}
+
+.border-opacity-100{
+  --tw-border-opacity: 1;
+}
+
+.border-opacity-0{
+  --tw-border-opacity: 0;
+}
+
+.border-opacity-20{
+  --tw-border-opacity: 0.2;
 }
 
 .bg-black{
@@ -967,14 +999,16 @@ h1,
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
-.py-5{
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .pb-2{
@@ -987,6 +1021,10 @@ h1,
 
 .pl-6{
   padding-left: 1.5rem;
+}
+
+.pl-4{
+  padding-left: 1rem;
 }
 
 .text-left{
@@ -1119,6 +1157,11 @@ h1,
   background-color: rgb(30 136 229 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-blue:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 43 59 / var(--tw-bg-opacity));
+}
+
 .hover\:text-secondary-blue:hover{
   --tw-text-opacity: 1;
   color: rgb(120 174 216 / var(--tw-text-opacity));
@@ -1142,6 +1185,21 @@ h1,
   .max-lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .max-lg\:px-16{
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .max-lg\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .max-lg\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
