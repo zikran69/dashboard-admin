@@ -641,6 +641,14 @@ h1,
   margin-top: 0.5rem;
 }
 
+.block{
+  display: block;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
 .flex{
   display: flex;
 }
@@ -675,6 +683,8 @@ h1,
 
 .min-h-\[calc\(100vh-67\.33px\)\]{
   min-height: calc(100vh - 67.33px);
+.h-2{
+  height: 0.5rem;
 }
 
 .w-\[150px\]{
@@ -719,6 +729,12 @@ h1,
 
 .flex-shrink-0{
   flex-shrink: 0;
+.w-2{
+  width: 0.5rem;
+}
+
+.w-10{
+  width: 2.5rem;
 }
 
 .grow{
@@ -951,6 +967,14 @@ h1,
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-2{
