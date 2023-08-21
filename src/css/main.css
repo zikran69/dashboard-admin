@@ -689,6 +689,10 @@ h1,
   margin-right: 1.25rem;
 }
 
+.mr-6{
+  margin-right: 1.5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -795,6 +799,22 @@ h1,
 
 .basis-14{
   flex-basis: 3.5rem;
+}
+
+.basis-4{
+  flex-basis: 1rem;
+}
+
+.basis-1{
+  flex-basis: 0.25rem;
+}
+
+.basis-6{
+  flex-basis: 1.5rem;
+}
+
+.basis-6\/12{
+  flex-basis: 50%;
 }
 
 .border-collapse{
@@ -1097,6 +1117,10 @@ h1,
 
 .uppercase{
   text-transform: uppercase;
+}
+
+.capitalize{
+  text-transform: capitalize;
 }
 
 .text-primary-blue{
