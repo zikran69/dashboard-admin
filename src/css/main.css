@@ -637,14 +637,6 @@ h1,
   margin-top: 0.5rem;
 }
 
-.block{
-  display: block;
-}
-
-.inline-block{
-  display: inline-block;
-}
-
 .flex{
   display: flex;
 }
@@ -677,10 +669,6 @@ h1,
   height: 100vh;
 }
 
-.h-2{
-  height: 0.5rem;
-}
-
 .w-\[150px\]{
   width: 150px;
 }
@@ -703,18 +691,6 @@ h1,
 
 .w-screen{
   width: 100vw;
-}
-
-.w-1{
-  width: 0.25rem;
-}
-
-.w-2{
-  width: 0.5rem;
-}
-
-.w-10{
-  width: 2.5rem;
 }
 
 .grow{
@@ -781,6 +757,10 @@ h1,
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .overflow-y-auto{
@@ -915,16 +895,6 @@ h1,
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.py-5{
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .pl-4{
@@ -1093,6 +1063,12 @@ h1,
   }
 }
 
+@media (min-width: 768px){
+  .md\:justify-end{
+    justify-content: flex-end;
+  }
+}
+
 @media (min-width: 1024px){
   .lg\:static{
     position: static;
@@ -1112,5 +1088,9 @@ h1,
 
   .lg\:w-full{
     width: 100%;
+  }
+
+  .lg\:justify-end{
+    justify-content: flex-end;
   }
 }
