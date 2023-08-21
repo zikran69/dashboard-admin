@@ -1,18 +1,16 @@
-const sId = (id) => document.getElementById(id)
 const sAll = (elms) => document.querySelectorAll(elms)
 
+const toggleModalAndOverlay = (element) => {
+  element.addEventListener('click', () => {
+    s('modal').classList.toggle('hidden')
+    s('modal-overlay').classList.toggle('hidden')
+  })
+}
 
-sAll('.ri-search-line').forEach((e) => e.parentElement.addEventListener('click', () => {
-    sId('modal').classList.toggle('hidden')
-    sId('modal-overlay').classList.toggle('hidden')
-}))
+sAll('.ri-settings-4-line').forEach((e) =>
+  toggleModalAndOverlay(e.parentElement)
+)
 
-s('close-modal').addEventListener('click', () => {
-    sId('modal').classList.toggle('hidden')
-    sId('modal-overlay').classList.toggle('hidden')
-})
+toggleModalAndOverlay(s('close-modal'))
 
-s('modal-overlay').addEventListener('click', () => {
-    sId('modal').classList.toggle('hidden')
-    sId('modal-overlay').classList.toggle('hidden')
-})
+toggleModalAndOverlay(s('modal-overlay'))
