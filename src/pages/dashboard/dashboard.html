@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dashboard</title>
+    <title>Dashboard</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -14,9 +14,8 @@
       href="../../../img/favicon.ico"
       type="image/x-icon"
     />
-    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </head>
-
   <body>
     <header
       class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]"
@@ -24,7 +23,7 @@
       <div
         class="flex flex-row sm:flex-row justify-between items-center sm:w-11/12 lg:w-full"
       >
-        <img class="w-32 ml-6" src="../../../img/logo.png" alt="logo" />
+        <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
         <p class="sm:text-xl mr-6">Fauzi Azhari</p>
       </div>
       <div class="lg:hidden">
@@ -142,7 +141,7 @@
           </div>
           <div class="flex mx-10 text-secondary-gray gap-10">
             <div
-              class="p-6 w-[500px] bg-white shadow-xl rounded-lg flex justify-between"
+              class="p-6 w-[500px] h-[115px] bg-white shadow-xl rounded-lg flex justify-between"
             >
               <div class="mb-2 text-center ml-12">
                 <p class="text-5xl text-secondary-blue">20</p>
@@ -151,7 +150,7 @@
               <p><i class="ri-equalizer-line"></i></p>
             </div>
             <div
-              class="p-6 w-[500px] bg-white shadow-xl rounded-lg flex justify-between"
+              class="p-6 w-[500px] h-[115px] bg-white shadow-xl rounded-lg flex justify-between"
             >
               <div class="mb-2 text-center ml-12">
                 <p class="text-5xl text-secondary-blue">20</p>
@@ -160,7 +159,7 @@
               <p><i class="ri-equalizer-line"></i></p>
             </div>
             <div
-              class="p-6 w-[500px] bg-white shadow-xl rounded-lg flex justify-between"
+              class="p-6 w-[500px] h-[115px] bg-white shadow-xl rounded-lg flex justify-between"
             >
               <div class="mb-2 text-center ml-10">
                 <p class="text-5xl text-secondary-blue">10</p>
@@ -169,7 +168,7 @@
               <p><i class="ri-equalizer-line"></i></p>
             </div>
             <div
-              class="p-6 w-[500px] bg-white shadow-xl rounded-lg flex justify-between"
+              class="p-6 w-[500px] h-[115px] bg-white shadow-xl rounded-lg flex justify-between"
             >
               <div class="mb-2 text-center ml-12">
                 <p class="text-5xl text-secondary-blue">12</p>
@@ -178,8 +177,13 @@
               <p><i class="ri-equalizer-line"></i></p>
             </div>
           </div>
+
+          <div class="w-full h-[430px] bg-white mt-10 p-4 rounded shadow">
+            <div id="myChart"></div>
+          </div>
         </div>
       </main>
     </div>
+    <script src="../../js/apex-chart-init.js"></script>
   </body>
 </html>
