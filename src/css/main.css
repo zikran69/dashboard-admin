@@ -1041,6 +1041,11 @@ h1,
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
+.bg-secondary-gray{
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 182 185 / var(--tw-bg-opacity));
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -1193,6 +1198,10 @@ h1,
   font-weight: 600;
 }
 
+.capitalize{
+  text-transform: capitalize;
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1292,6 +1301,35 @@ h1,
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.before\:block::before{
+  content: var(--tw-content);
+  display: block;
+}
+
+.before\:font-semibold::before{
+  content: var(--tw-content);
+  font-weight: 600;
+}
+
+.before\:capitalize::before{
+  content: var(--tw-content);
+  text-transform: capitalize;
+}
+
+.before\:content-\[attr\(data-cell\)\'\:\'\]::before{
+  --tw-content: attr(data-cell)':';
+  content: var(--tw-content);
+}
+
+.odd\:bg-zinc-400:nth-child(odd){
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 161 170 / var(--tw-bg-opacity));
+}
+
+.odd\:bg-opacity-10:nth-child(odd){
+  --tw-bg-opacity: 0.1;
 }
 
 .hover\:bg-hover-blue:hover{
@@ -1423,8 +1461,25 @@ h1,
 }
 
 @media (min-width: 768px){
+  .md\:table-cell{
+    display: table-cell;
+  }
+
   .md\:w-\[500px\]{
     width: 500px;
+  }
+
+  .md\:text-center{
+    text-align: center;
+  }
+
+  .md\:before\:content-none::before{
+    --tw-content: none;
+    content: var(--tw-content);
+  }
+
+  .md\:odd\:bg-transparent:nth-child(odd){
+    background-color: transparent;
   }
 }
 
