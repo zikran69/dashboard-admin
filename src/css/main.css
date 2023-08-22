@@ -1041,11 +1041,6 @@ h1,
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
-.bg-secondary-gray{
-  --tw-bg-opacity: 1;
-  background-color: rgb(180 182 185 / var(--tw-bg-opacity));
-}
-
 .p-2{
   padding: 0.5rem;
 }
