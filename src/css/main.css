@@ -416,7 +416,7 @@ embed,
 object {
   display: block;
   /* 1 */
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* 2 */
 }
 
@@ -427,7 +427,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 img,
 video {
   max-width: 100%;
-  height: auto;
+  height: flex;
 }
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
@@ -451,7 +451,7 @@ h1,
 
 *[title] {
   padding: 1rem;
-  font-size: auto;
+  font-size: 10;
 }
 
 *, ::before, ::after{
