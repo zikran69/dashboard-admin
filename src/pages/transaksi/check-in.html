@@ -25,7 +25,7 @@
     <div class="flex h-[calc(100vh-67.33px)]">
         <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
         </div>
-        
+
         <aside id="sidebar"
             class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
             <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
@@ -72,7 +72,8 @@
                     <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
                             class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i
+                                class="ri-notification-3-fill mr-2"></i>Pesan
                             Kamar</a>
                     </div>
                     <div class="pl-6">
@@ -81,7 +82,8 @@
                             In</a>
                     </div>
                     <div class="pl-6">
-                        <a href="./check-out.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                        <a href="./check-out.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
                             Out</a>
                     </div>
                 </details>
@@ -96,12 +98,13 @@
             </div>
             <div class="p-2 h-[calc(100vh-67.33px)]">
                 <div class="mb-4">
-                    <h1 class="text-2xl font-semibold">Check In</h1>
+                    <h1 class="text-2xl font-semibold">Check out</h1>
                 </div>
                 <div class="p-6 m-3 bg-white">
-                    <div id="modal" class="hidden absolute bg-white inset-0 m-auto w-[90%] h-[550px] rounded  overflow-y-auto">
+                    <div id="modal"
+                        class="hidden absolute bg-white inset-0 m-auto w-[90%] h-[550px] rounded  overflow-y-auto">
                         <div class="flex justify-between px-2">
-                            <h3 class="my-4 ml-2 text-2xl font-semibold text-secondary-gray">detail Check-in</h3>
+                            <h3 class="my-4 ml-2 text-2xl font-semibold">detail Check-out</h3>
                             <button id="close-modal" class="text-3xl"><i
                                     class="ri-close-fill text-secondary-gray hover:text-secondary-blue"></i></button>
                         </div>
@@ -169,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div class="mx-2">
-                                    <h3 class="font-semibold text-secondary-gray">Custummer</h3>
+                                    <h3 class="font-semibold">Custummer</h3>
                                 </div>
                                 <div class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                     <div class="flex flex-col">
@@ -216,7 +219,7 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-end p-4">
-                                    <button class="bg-secondary-blue text-white py-2 px-4 rounded">check-in</button>
+                                    <button class="bg-blue-400 hover:bg-blue-700 text-white py-2 px-4 rounded">check-out</button>
                                 </div>
                             </form>
                         </div>
@@ -230,102 +233,185 @@
                     <table class="text-zinc-600 bg-white border-collapse w-full">
                         <thead>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">no
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    no
                                 </th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">id
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    id
                                     registrasi</th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">nik
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    nik
                                 </th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">nama
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    nama
                                 </th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">no
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    no
                                     Kamar</th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
                                     tanggal check in</th>
-                                <th class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">opsi
+                                <th
+                                    class="hidden md:table-cell capitalize border-2 border-opacity-10 border-secondary-gray p-2 text-left">
+                                    opsi
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no">1</td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no">1</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="id-registrasi">REG001</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nik">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nik">
                                     1234567890</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nama">John
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nama">John
                                     Doe</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no-kamar">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no-kamar">
                                     101</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-01</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
-                                            class="ri-settings-4-line text-white"> </i></button></td>
+                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi">
+                                    <div class="w-[190px]">
+                                        <button title="detail" class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
+                                                class="ri-settings-4-line text-white"> </i></button>
+                                        <button type="button" title="hapus"
+                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
+                                                class="ri-delete-bin-line text-white"></i></button>
+                                        <button type="button" title="edit"
+                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
+                                                class="ri-file-edit-line text-white"></i></button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no">2</td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no">2</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="id-registrasi">REG002</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nik">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nik">
                                     9876543210</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nama">Jane
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nama">Jane
                                     Smith</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no-kamar">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no-kamar">
                                     102</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-02</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
-                                            class="ri-settings-4-line text-white"> </i></button></td>
+                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi">
+                                    <div class="w-[190px]">
+                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
+                                                class="ri-settings-4-line text-white"> </i></button>
+                                        <button type="button" title="hapus"
+                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
+                                                class="ri-delete-bin-line text-white"></i></button>
+                                        <button type="button" title="edit"
+                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
+                                                class="ri-file-edit-line text-white"></i></button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no">3</td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no">3</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="id-registrasi">REG003</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nik">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nik">
                                     5555555555</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nama">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nama">
                                     Michael Johnson</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no-kamar">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no-kamar">
                                     103</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-03</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
-                                            class="ri-settings-4-line text-white"> </i></button></td>
+                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi">
+                                    <div class="w-[190px]">
+                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
+                                                class="ri-settings-4-line text-white"> </i></button>
+                                        <button type="button" title="hapus"
+                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
+                                                class="ri-delete-bin-line text-white"></i></button>
+                                        <button type="button" title="edit"
+                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
+                                                class="ri-file-edit-line text-white"></i></button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no">4</td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no">4</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="id-registrasi">REG004</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nik">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nik">
                                     1111111111</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nama">Susan
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nama">Susan
                                     Williams</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no-kamar">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no-kamar">
                                     104</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-04</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
-                                            class="ri-settings-4-line text-white"> </i></button></td>
+                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi">
+                                    <div class="w-[190px]">
+                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
+                                                class="ri-settings-4-line text-white"> </i></button>
+                                        <button type="button" title="hapus"
+                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
+                                                class="ri-delete-bin-line text-white"></i></button>
+                                        <button type="button" title="edit"
+                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
+                                                class="ri-file-edit-line text-white"></i></button>
+                                    </div>
+                                </td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no">5</td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no">5</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="id-registrasi">REG005</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nik">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nik">
                                     9999999999</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="nama">Robert
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="nama">Robert
                                     Brown</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10" data-cell="no-kamar">
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
+                                    data-cell="no-kamar">
                                     105</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-05</td>
-                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
-                                            class="ri-settings-4-line text-white"> </i></button></td>
+                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi">
+                                    <div class="w-[190px]">
+                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
+                                                class="ri-settings-4-line text-white"> </i></button>
+                                        <button type="button" title="hapus"
+                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
+                                                class="ri-delete-bin-line text-white"></i></button>
+                                        <button type="button" title="edit"
+                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
+                                                class="ri-file-edit-line text-white"></i></button>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
