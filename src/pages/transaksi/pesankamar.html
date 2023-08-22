@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="../../js/modalCheckin.js" defer></script>
+  </head>
+
+  <body>
+    <header
+      class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]"
+    >
+      <div
+        class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full"
+      >
+        <h1 class="font-medium text-xl sm:text-2xl">
+          <i class="ri-hotel-fill mr-2"></i>My Hotel
+        </h1>
+        <p class="sm:text-xl">Fauzi Azhari</p>
+      </div>
+      <div class="lg:hidden">
+        <button id="open-sidebar" class="text-3xl">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="flex h-[calc(100vh-67.33px)]">
+        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
+        </div>
+
+        <aside id="sidebar"
+            class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
+            <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
+                    class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
+            <h4 class="mb-3 font-semibold">Menu</h4>
+            <div class="mb-2">
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
+            </div>
+            <div class="space-y-2">
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-settings-5-fill mr-2"></i>Pengaturan<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="#"><i
+                                class="ri-user-settings-line mr-2"></i>Administrator</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-profile-line mr-2"></i>profil
+                            hotel</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i
+                                class="ri-hotel-bed-line mr-2"></i>Kategori
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i
+                                class="ri-hotel-bed-line mr-2"></i>Lantai
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
+                            Kamar</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="./check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
+                            In</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                            Out</a>
+                    </div>
+                </details>
+            </div>
+            <div class="mt-2">
+                <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
+            </div>
+        </aside>
+        
+        <main class="bg-primary-gray grow overflow-y-auto ml-2">
+            <div id="modal-overlay" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90">
+            </div>
+            <div class="p-2 h-[calc(100vh-67.33px)]">
+                <div>
+                    <h1 class="text-2xl font-semibold">Pesan Kamar</h1>
+                </div>
+                <div class="p-2">
+                    <div id="modal" class="bg-white inset-0 m-auto w-[90%] h-[550px] rounded-lg ml-2">
+                        <div class="p-2">
+                            <form action="#">
+                                <div class="p-4 flex gap-4 flex-wrap">
+                                    <div class="flex flex-col">
+                                        <label class="text-zinc-800" for="kategori" class="text-secondary-gray">Kategori</label>
+                                        <select name="kategori" id=""
+                                            class="focus:outline-secondary-gray outline-secondary-gray p-2.5 rounded-full border border-gray-300 text-secondary-gray">
+                                            <option>--pilih kategori--</option>
+                                            <option>gold</option>
+                                            <option>silver</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <label class="text-zinc-800" for="Lantai" class="text-secondary-gray">Lantai</label>
+                                        <select name="Lantai" id=""
+                                            class="focus:outline-secondary-gray p-2.5 rounded-full border border-gray-300 text-secondary-gray">
+                                            <option>--pilih Lantai--</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="No kamar">No kamar</label>
+                                        <select name="No kamar" id=""
+                                            class="focus:outline-secondary-gray p-2.5 rounded-full border border-gray-300 text-secondary-gray">
+                                            <option>--pilih No kamar--</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="Harga kamar">Harga kamar</label>
+                                        <input type="text" name="Harga kamar" id="Harga kamar"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="Tanggal check-in">Tanggal check-in</label>
+                                        <input type="text" name="Tanggal check-in" id="Tanggal checkin"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="jam check-in">jam check-in</label>
+                                        <input type="text" name="jam check-in" id="jam check-in"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="Tanggal Check-out">Tanggal Check-out</label>
+                                        <input type="text" name="Tanggal Check-out" id="Tanggal Check-out"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="Jam Check-out">Jam Check-out</label>
+                                        <input type="text" name="Jam Check-out" id="Jam Check-out"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="jumlah-hari">Jumlah hari</label>
+                                        <input type="text" name="jumlah-hari" id="jumlah-hari"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="mx-2">
+                                    <h3 class="font-semibold text-secondary-gray">Custummer</h3>
+                                </div>
+                                <div class="p-4 flex gap-4 flex-wrap">
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="nik">Nik</label>
+                                        <input type="text" name="nik" id="nik"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="nama-lengkap">Nama lengkap</label>
+                                        <input type="text" name="nama-lengkap" id="nama-lengkap"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="no-telepon">No telepon</label>
+                                        <input type="text" name="no-telepon" id="no-telepon"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="email">Email</label>
+                                        <input type="text" name="email" id="email"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="alamat">Alamat</label>
+                                        <input type="text" name="alamat" id="alamat"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="p-4 flex gap-4 flex-wrap justify-end">
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="untuk-berapa-orang">Untuk berapa orang</label>
+                                        <input type="text" name="untuk-berapa-orang" id="untuk-berapa-orang"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="metode-pembayaran">Metode pembayaran</label>
+                                        <input type="text" name="metode-pembayaran" id="metode-pembayaran"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                    <div class="flex flex-col text-secondary-gray">
+                                        <label class="text-zinc-800" for="jumlah-bayar">Jumlah bayar</label>
+                                        <input type="text" name="jumlah-bayar" id="jumlah-bayar"
+                                            class="focus:outline-secondary-gray p-2 rounded-full border border-gray-300">
+                                    </div>
+                                </div>
+                                <div class="flex justify-end p-4">
+                                    <button class="bg-secondary-blue hover:bg-primary-blue text-white py-2 px-4 rounded-full">Bayar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+  </body>
+</html>

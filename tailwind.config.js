@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/**/*.{html,js}', './index.html'],
+  content: [
+    './src/**/*.{html,js}',
+    './index.html'
+  ],
   theme: {
     extend: {
       transitionProperty: {
@@ -11,6 +14,7 @@ module.exports = {
         'secondary-blue': '#78aed8',
         'primary-gray': '#eff3f6',
         'secondary-gray': '#b4b6b9',
+        'hover-blue': '#1E88E5'
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],

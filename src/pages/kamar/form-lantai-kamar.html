@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Lantai Kamar</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/responsiveSidebar.js" defer></script>
+</head>
+
+<body>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+    </header>
+    <main class="flex justify-center items-center min-h-[calc(100vh-67.33px)]">
+        <div class="bg-white flex justify-center flex-shrink-0 w-[570px] border rounded-xl drop-shadow-md"> 
+            <form action="./lantai-kamar.html" class="w-[520px] font-roboto text-zinc-600">
+                <h1 class="py-4 font-raleway text-2xl font-semibold text-black">Form Tambah Lantai Kamar</h1>
+                <div class=" pb-2 flex justify-between">
+                    <label for="tambah-kategori">Nama Lantai</label>
+                    <input type="text" class="w-[400px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 ">
+                </div>
+                <div class=" pb-2 flex justify-between">
+                    <label for="status" class="">Status</label>
+                    <input type="text" class="w-[400px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 ">
+                </div>
+                <div class="pb-2 flex justify-between">
+                    <label for="keterangan">Keterangan</label>
+                    <textarea type="text" rows="4" class="resize-none w-[400px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 "></textarea>
+                </div>
+                <div class="flex justify-end py-16 text-sm">
+                    <button type="submit" class="py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
+                    <button type="button" class="py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./lantai-kamar.html">Tutup</a></button>   
+                </div>
+            </form>
+        </div> 
+    </main>
+</body>
+
+</html>
