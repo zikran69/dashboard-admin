@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px] opacity-50">
         <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
             <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
             <p class="sm:text-xl">Fauzi Azhari</p>
@@ -20,7 +20,7 @@
             <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
         </div>
     </header>
-    <div class="flex h-[calc(100vh-67.33px)]">
+    <div class="flex h-[calc(100vh-67.33px)] opacity-50">
         <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
         </div>
         <aside id="sidebar"
@@ -147,6 +147,45 @@
             </form>
         </main>
     </div>
+    <!-- modal -->
+    <div class="h-screen w-screen border border-red-800 absolute top-0">
+        <div class="h-fit grid place-content-center">
+            <!-- <main class="grid gap-3 place-items-start max-lg:justify-center lg:px-4 grow lg:bg-primary-gray"> -->
+                <h1 class="font-raleway text-2xl font-semibold text-black text-l' mt-8">Form Tambah</h1>
+                <form action="./kategori-kamar.html" class="w-[600px] font-roboto text-zinc-600 px-8 border rounded-2xl pt-8 shadow-lg max-md:w-auto max-md:text-xs mb-8">
+                    <div class=" pb-2 flex justify-between max-lg:grid shrink-0">
+                        <label for="nama-kategori" class="shrink-0 pr-2">Nama Kategori</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500">
+                    </div>
+                    <div class=" pb-2 flex justify-between max-lg:grid">
+                        <label for="harga" class="shrink-0 pr-8">Harga</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500">
+                    </div>
+                    <div class="pb-2 flex justify-between max-lg:grid">
+                        <label for="fasilitas" class="shrink-0 pr-8">Fasilitas</label>
+                        <textarea type="text" rows="4" class="resize-none text-sm min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500"></textarea>
+                    </div>
+                    <div class=" pb-2 flex justify-between max-lg:grid">
+                        <label for="status" class="shrink-0 pr-8">Status</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500">
+                    </div>
+                    <div class=" pb-2 flex justify-between max-lg:grid">
+                        <label for="foto" class="shrink-0 pr-8">Foto</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500">
+                    </div>
+                    <div class="pb-2 flex justify-between max-lg:grid">
+                        <label for="keterangan" class="shrink-0 pr-8">Keterangan</label>
+                        <textarea type="text" rows="4" class="resize-none text-sm min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500"></textarea>
+                    </div>
+                    <div class="flex justify-end py-8 text-sm max-md:justify-around max-md:text-xs">
+                        <button type="submit" class="py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
+                        <button type="button" class="py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>   
+                    </div>
+                </form>
+            <!-- </main> -->
+        </div>
+    </div>
+    <!-- end modal -->
 </body>
 
 </html>
