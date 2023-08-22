@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/**/*.{html,js}', './index.html'],
+  content: ['./src/**/**/*.{html,js}', './index.html', './src/pages/dashboard/dashboard.html','./src/pages/kamar/kategori-kamar.html','./src/pages/kamar/kategori-kamar.html'],
   theme: {
     extend: {
       transitionProperty: {
