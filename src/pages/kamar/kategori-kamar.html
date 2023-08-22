@@ -86,52 +86,62 @@
                 <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
             </div>
         </aside>
-        <main class="bg-primary-gray grow overflow-y-auto">
-            <form class="font-roboto h-[calc(100vh-67.33px)] p-8 px-12">
-                <h1 class="pl-4 font-raleway font-bold text-lg text-secondary-gray">Kategori Kamar</h1>
+        <main class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]">
+            <h1 class="p-4 font-raleway text-2xl font-semibold">Kategori Kamar</h1>
+            <form class="font-roboto px-6 mx-4 border rounded-lg bg-white min-w-[800px] max-lg:px-4">
                 <div class="flex justify-between m-4">
-                    <button class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white">
+                    <a href="./form-kategori-kamar.html" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
                         <i class="ri-hotel-bed-line mr-2"></i>Tambah
-                    </button>
-                    <input type="search" placeholder="search..." class="border rounded-[20px] px-2 text-center text-secondary-gray focus:outline-none text-sm">
+                    </a>
+                    <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500">
                 </div>
-                <table class="text-secondary-gray bg-white border-collapse w-full">
+                <table class="mb-4 text-zinc-600 w-full">
                     <thead>
                         <tr>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">no</th>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">Nama Kategori</th>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">Harga</th>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">Fasilitas</th>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left">Status</th>
-                            <th class="border border-b-2 border-opacity-10 border-secondary-gray p-4 text-left w-[210px]">Opsi</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">No</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Nama Kategori</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Harga</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Fasilitas</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Status</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">1</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">Elite</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">2.000.000</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">full services</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">tersedia</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 flex flex-nowrap justify-start">
-                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button>
-                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md"><i class="ri-delete-bin-line text-white"></i></button>
-                                    <button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-refresh-line text-white"></i></button>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">1</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">Normal</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">500.000</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tv</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tersedia</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                    <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
                             </td>
                         </tr>
-                    </tbody>
-                    <tbody>
                         <tr>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">2</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">Gold</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">2.000.000</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">full sevices</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10"  data-cell="">full</td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-10 flex flex-nowrap justify-start">
-                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md"><i class="ri-search-line text-white"></i></button>
-                                    <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md"><i class="ri-delete-bin-line text-white"></i></button>
-                                    <button class="py-1 px-5 bg-blue-400 rounded-md"><i class="ri-refresh-line text-white"></i></button>
-                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">2</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">VIP</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">700.000</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tv, ac</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">penuh</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">3</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">VVIP</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">1.000.000</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tv, ac, kulkas</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">tersedia</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-search-line text-white"></i></button>
+                                <button class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-delete-bin-line text-white"></i></button>
+                                <button class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"><i class="ri-file-edit-line text-white"></i></button>
+                        </td>
                         </tr>
                     </tbody>
                 </table>
