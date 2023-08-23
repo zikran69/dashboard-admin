@@ -451,7 +451,7 @@ h1,
 
 *[title] {
   padding: 1rem;
-  font-size:
+  font-size: auto;
 }
 
 *, ::before, ::after{
