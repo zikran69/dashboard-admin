@@ -14,7 +14,6 @@
     />
     <link rel="stylesheet" href="../../css/main.css" />
     <script src="../../js/responsiveSidebar.js" defer></script>
-    <!-- <script src="../../js/modalCheckin.js" defer></script> -->
     <script src="../../js/modalListKamar.js" defer></script>
   </head>
 
@@ -146,19 +145,18 @@
       <main class="bg-primary-gray grow overflow-y-auto">
         <div
           id="modal-overlay"
-          class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90"
+          class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-70"
         ></div>
         <div class="p-2 h-[calc(100vh-67.33px)]">
           <h1 class="p-4 font-raleway text-2xl font-semibold">List Kamar</h1>
-          <div class="p-6 m-3 bg-white">
+          <div class="p-6 m-3 bg-white rounded-xl border-4">
+            <!-- Modal -->
             <div
               id="modal"
-              class="hidden absolute bg-white inset-0 m-auto w-[90%] h-[550px] rounded overflow-y-auto"
+              class="hidden absolute bg-white inset-0 m-auto w-1/2 h-3/4 rounded-2xl overflow-y-auto"
             >
               <div class="flex justify-between px-2">
-                <h3
-                  class="my-4 ml-2 text-2xl font-semibold text-secondary-gray"
-                >
+                <h3 class="my-4 ml-2 text-2xl font-semibold text-black">
                   Form Tambah List Kamar
                 </h3>
                 <button id="close-modal" class="text-3xl">
@@ -203,11 +201,13 @@
                   </div>
                   <div class="flex justify-between mt-4">
                     <label for="name">Keterangan</label
-                    ><input
-                      type="text"
-                      name="name"
-                      class="border-2 w-3/4 rounded-xl h-auto px-2"
-                    />
+                    ><textarea
+                      name=""
+                      id=""
+                      cols="63"
+                      rows="9"
+                      class="border-2 rounded-2xl px-2"
+                    ></textarea>
                   </div>
                   <div class="flex justify-end w-100 border-t p-3">
                     <button
