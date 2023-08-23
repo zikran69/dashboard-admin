@@ -13,9 +13,9 @@
 
 <body>
     <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
-        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
-            <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
-            <p class="sm:text-xl">Fauzi Azhari</p>
+        <div class="flex flex-col sm:flex-row justify-between items-center sm:w-11/12 lg:w-full">
+            <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
+            <p class="sm:text-xl mr-6">Fauzi Azhari</p>
         </div>
         <div class="lg:hidden">
             <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
@@ -98,13 +98,13 @@
             </div>
             <div class="p-2 h-[calc(100vh-67.33px)]">
                 <div class="mb-4">
-                    <h1 class="text-2xl font-semibold">Check out</h1>
+                    <h1 class="text-2xl font-semibold">Check In</h1>
                 </div>
                 <div class="p-6 m-3 bg-white">
                     <div id="modal"
                         class="hidden absolute bg-white inset-0 m-auto w-[90%] h-[550px] rounded  overflow-y-auto">
                         <div class="flex justify-between px-2">
-                            <h3 class="my-4 ml-2 text-2xl font-semibold">detail Check-out</h3>
+                            <h3 class="my-4 ml-2 text-2xl font-semibold">detail Check-in</h3>
                             <button id="close-modal" class="text-3xl"><i
                                     class="ri-close-fill text-secondary-gray hover:text-secondary-blue"></i></button>
                         </div>
@@ -219,7 +219,7 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-end p-4">
-                                    <button class="bg-blue-400 hover:bg-blue-700 text-white py-2 px-4 rounded">check-out</button>
+                                    <button class="bg-secondary-blue text-white py-2 px-4 rounded">check-in</button>
                                 </div>
                             </form>
                         </div>
@@ -279,19 +279,9 @@
                                     101</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-01</td>
-                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi">
-                                    <div class="w-[190px]">
-                                        <button title="detail" class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
-                                                class="ri-settings-4-line text-white"> </i></button>
-                                        <button type="button" title="hapus"
-                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
-                                                class="ri-delete-bin-line text-white"></i></button>
-                                        <button type="button" title="edit"
-                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
-                                                class="ri-file-edit-line text-white"></i></button>
-                                    </div>
-                                </td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
+                                            class="ri-settings-4-line text-white"> </i></button></td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
@@ -309,19 +299,9 @@
                                     102</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-02</td>
-                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi">
-                                    <div class="w-[190px]">
-                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
-                                                class="ri-settings-4-line text-white"> </i></button>
-                                        <button type="button" title="hapus"
-                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
-                                                class="ri-delete-bin-line text-white"></i></button>
-                                        <button type="button" title="edit"
-                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
-                                                class="ri-file-edit-line text-white"></i></button>
-                                    </div>
-                                </td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
+                                            class="ri-settings-4-line text-white"> </i></button></td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
@@ -339,19 +319,9 @@
                                     103</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-03</td>
-                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi">
-                                    <div class="w-[190px]">
-                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
-                                                class="ri-settings-4-line text-white"> </i></button>
-                                        <button type="button" title="hapus"
-                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
-                                                class="ri-delete-bin-line text-white"></i></button>
-                                        <button type="button" title="edit"
-                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
-                                                class="ri-file-edit-line text-white"></i></button>
-                                    </div>
-                                </td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
+                                            class="ri-settings-4-line text-white"> </i></button></td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
@@ -369,19 +339,9 @@
                                     104</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-04</td>
-                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi">
-                                    <div class="w-[190px]">
-                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
-                                                class="ri-settings-4-line text-white"> </i></button>
-                                        <button type="button" title="hapus"
-                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
-                                                class="ri-delete-bin-line text-white"></i></button>
-                                        <button type="button" title="edit"
-                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
-                                                class="ri-file-edit-line text-white"></i></button>
-                                    </div>
-                                </td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
+                                            class="ri-settings-4-line text-white"> </i></button></td>
                             </tr>
                             <tr class="odd:bg-zinc-400 odd:bg-opacity-10 md:odd:bg-transparent">
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
@@ -399,19 +359,9 @@
                                     105</td>
                                 <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10"
                                     data-cell="tanggal-checkin">2023-08-05</td>
-                                <td class="md:before:content-none before:capitalize sm:before:content-[attr(data-cell)':'] before:block before:font-semibold flex sm:justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
-                                    data-cell="opsi">
-                                    <div class="w-[190px]">
-                                        <button class="mr-1 px-5 py-1 bg-blue-400 hover:bg-blue-700 rounded-md"> <i
-                                                class="ri-settings-4-line text-white"> </i></button>
-                                        <button type="button" title="hapus"
-                                            class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i
-                                                class="ri-delete-bin-line text-white"></i></button>
-                                        <button type="button" title="edit"
-                                            class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i
-                                                class="ri-file-edit-line text-white"></i></button>
-                                    </div>
-                                </td>
+                                <td class="md:before:content-none before:capitalize before:content-[attr(data-cell)':'] before:block before:font-semibold flex justify-between md:table-cell p-3 border-secondary-gray border-2 border-opacity-10 md:text-center"
+                                    data-cell="opsi"><button class="px-5 py-1 bg-blue-400 rounded-md"> <i
+                                            class="ri-settings-4-line text-white"> </i></button></td>
                             </tr>
                         </tbody>
                     </table>
