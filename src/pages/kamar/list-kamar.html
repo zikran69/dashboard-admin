@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Kamar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="../../js/modalListKamar.js" defer></script>
+  </head>
+
+  <body>
+    <header
+      class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]"
+    >
+      <div
+        class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full"
+      >
+        <h1 class="font-medium text-xl sm:text-2xl">
+          <i class="ri-hotel-fill mr-2"></i>My Hotel
+        </h1>
+        <p class="sm:text-xl">Fauzi Azhari</p>
+      </div>
+      <div class="lg:hidden">
+        <button id="open-sidebar" class="text-3xl">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="flex h-[calc(100vh-67.33px)]">
+      <div
+        id="sidebar-overlay"
+        class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90"
+      ></div>
+
+      <aside
+        id="sidebar"
+        class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white"
+      >
+        <button
+          id="close-sidebar"
+          class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"
+        >
+          <i class="ri-arrow-left-circle-fill bg-white rounded-full"></i>
+        </button>
+        <h4 class="mb-3 font-semibold">Menu</h4>
+        <div class="mb-2">
+          <a
+            class="hover:text-secondary-blue"
+            href="../dashboard/dashboard.html"
+            ><i class="ri-home-2-line mr-2"></i>Dashboard</a
+          >
+        </div>
+        <div class="space-y-2">
+          <details open class="space-y-2">
+            <summary
+              class="hover:text-secondary-blue cursor-pointer list-none space-y-2"
+            >
+              <i class="ri-settings-5-fill mr-2"></i>Pengaturan<i
+                class="ri-arrow-drop-down-line"
+              ></i>
+            </summary>
+            <div class="pl-6">
+              <a class="hover:text-secondary-blue" href="#"
+                ><i class="ri-user-settings-line mr-2"></i>Administrator</a
+              >
+            </div>
+            <div class="pl-6">
+              <a href="#" class="hover:text-secondary-blue"
+                ><i class="ri-profile-line mr-2"></i>profil hotel</a
+              >
+            </div>
+          </details>
+          <details open class="space-y-2">
+            <summary
+              class="hover:text-secondary-blue cursor-pointer list-none space-y-2"
+            >
+              <i class="ri-building-4-line mr-2"></i>Data Kamar<i
+                class="ri-arrow-drop-down-line"
+              ></i>
+            </summary>
+            <div class="pl-6">
+              <a
+                class="hover:text-secondary-blue"
+                href="../kamar/kategori-kamar.html"
+                ><i class="ri-hotel-bed-line mr-2"></i>Kategori Kamar</a
+              >
+            </div>
+            <div class="pl-6">
+              <a
+                href="../kamar/lantai-kamar.html"
+                class="hover:text-secondary-blue"
+                ><i class="ri-hotel-bed-line mr-2"></i>Lantai Kamar</a
+              >
+            </div>
+            <div class="pl-6">
+              <a href="#" class="hover:text-secondary-blue"
+                ><i class="ri-hotel-bed-line mr-2"></i>List Kamar</a
+              >
+            </div>
+          </details>
+          <details open class="space-y-2">
+            <summary
+              class="hover:text-secondary-blue cursor-pointer list-none space-y-2"
+            >
+              <i class="ri-wallet-2-fill mr-2"></i>Transaksi<i
+                class="ri-arrow-drop-down-line"
+              ></i>
+            </summary>
+            <div class="pl-6">
+              <a
+                class="hover:text-secondary-blue"
+                href="../transaksi/pesankamar.html"
+                ><i class="ri-notification-3-fill mr-2"></i>Pesan Kamar</a
+              >
+            </div>
+            <div class="pl-6">
+              <a href="./check-in.html" class="hover:text-secondary-blue"
+                ><i class="ri-notification-3-fill mr-2"></i>Check In</a
+              >
+            </div>
+            <div class="pl-6">
+              <a href="#" class="hover:text-secondary-blue"
+                ><i class="ri-notification-3-fill mr-2"></i>Check Out</a
+              >
+            </div>
+          </details>
+        </div>
+        <div class="mt-2">
+          <a class="hover:text-secondary-blue" href="#"
+            ><i class="ri-folder-2-line mr-2"></i>Laporan</a
+          >
+        </div>
+      </aside>
+
+      <main class="bg-primary-gray grow overflow-y-auto">
+        <div
+          id="modal-overlay"
+          class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-70"
+        ></div>
+        <div class="p-2 h-[calc(100vh-67.33px)]">
+          <h1 class="p-4 font-raleway text-2xl font-semibold">List Kamar</h1>
+          <div class="p-6 m-3 bg-white rounded-xl border-4">
+            <!-- Modal -->
+            <div
+              id="modal"
+              class="hidden absolute bg-white inset-0 m-auto w-1/2 h-3/4 rounded-2xl overflow-y-auto"
+            >
+              <div class="flex justify-between px-2">
+                <h3 class="my-4 ml-2 text-2xl font-semibold text-black">
+                  Form Tambah List Kamar
+                </h3>
+                <button id="close-modal" class="text-3xl">
+                  <i
+                    class="ri-close-fill text-secondary-gray hover:text-secondary-blue"
+                  ></i>
+                </button>
+              </div>
+              <div class="p-2">
+                <form action="" method="get" class="px-4">
+                  <div class="flex justify-between mt-4">
+                    <label for="name">Kategori</label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="border-2 w-3/4 rounded-full px-2"
+                    />
+                  </div>
+                  <div class="flex justify-between mt-4">
+                    <label for="name">Lantai</label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="border-2 w-3/4 rounded-full px-2"
+                    />
+                  </div>
+                  <div class="flex justify-between mt-4">
+                    <label for="name">Nomor Kamar</label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="border-2 w-3/4 rounded-full px-2"
+                    />
+                  </div>
+                  <div class="flex justify-between mt-4">
+                    <label for="name">Status</label
+                    ><input
+                      type="text"
+                      name="name"
+                      class="border-2 w-3/4 rounded-full px-2"
+                    />
+                  </div>
+                  <div class="flex justify-between mt-4">
+                    <label for="name">Keterangan</label
+                    ><textarea
+                      name=""
+                      id=""
+                      cols="63"
+                      rows="9"
+                      class="border-2 rounded-2xl px-2"
+                    ></textarea>
+                  </div>
+                  <div class="flex justify-end w-100 border-t p-3">
+                    <button
+                      class="bg-blue-600 hover:bg-blue-700 px-7 py-1 rounded-xl text-white"
+                    >
+                      Simpan
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="flex p-2 mb-2 justify-between w-full">
+              <button
+                class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-xl text-white show-modal flex justify-center gap-1"
+              >
+                <i class="ri-add-circle-line" id="ri-add-circle-line"></i>Tambah
+              </button>
+              <div>
+                <input
+                  type="search"
+                  placeholder="search"
+                  class="px-2 py-1 border border-secondary-gray rounded-full focus:outline-secondary-gray"
+                />
+              </div>
+            </div>
+            <table class="text-zinc-600 bg-white border-collapse w-full">
+              <thead>
+                <tr>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left"
+                  >
+                    No
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left"
+                  >
+                    Nama Kamar
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left"
+                  >
+                    Lantai
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left"
+                  >
+                    Kategori
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left"
+                  >
+                    Harga
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]"
+                  >
+                    Opsi
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    1
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    304
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    3
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    VIP
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    500.000
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    tersedia
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start"
+                  >
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-search-line text-white"></i>
+                    </button>
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-delete-bin-line text-white"></i>
+                    </button>
+                    <button
+                      class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-file-edit-line text-white"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    1
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    304
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    3
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    VIP
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    500.000
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    tersedia
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start"
+                  >
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-search-line text-white"></i>
+                    </button>
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-delete-bin-line text-white"></i>
+                    </button>
+                    <button
+                      class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-file-edit-line text-white"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    1
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    304
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    3
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    VIP
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    500.000
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20"
+                    data-cell=""
+                  >
+                    tersedia
+                  </td>
+                  <td
+                    class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start"
+                  >
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-search-line text-white"></i>
+                    </button>
+                    <button
+                      class="mr-1 py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-delete-bin-line text-white"></i>
+                    </button>
+                    <button
+                      class="py-1 px-5 bg-blue-400 rounded-md hover:bg-hover-blue"
+                    >
+                      <i class="ri-file-edit-line text-white"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
