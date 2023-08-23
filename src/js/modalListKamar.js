@@ -7,11 +7,9 @@ const toggleModalAndOverlay = (element) => {
   })
 }
 
-sAll('.ri-hotel-bed-fill').forEach((e) =>
+sAll('.ri-add-circle-line').forEach((e) =>
   toggleModalAndOverlay(e.parentElement)
 )
-
-// toggleModalAndOverlay(s('ri-hotel-bed-fill'))
 
 toggleModalAndOverlay(s('close-modal'))
 
