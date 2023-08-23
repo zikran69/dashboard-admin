@@ -813,16 +813,12 @@ h1,
   height: 100vh;
 }
 
-.min-h-screen{
-  min-height: 100vh;
-}
-
-.min-h-\[900px\]{
-  min-height: 900px;
-}
-
 .min-h-\[700px\]{
   min-height: 700px;
+}
+
+.min-h-screen{
+  min-height: 100vh;
 }
 
 .w-1\/2{
@@ -1562,6 +1558,10 @@ h1,
 }
 
 @media not all and (min-width: 768px){
+  .max-md\:min-h-\[700px\]{
+    min-height: 700px;
+  }
+
   .max-md\:w-auto{
     width: auto;
   }
@@ -1588,6 +1588,10 @@ h1,
 @media not all and (min-width: 640px){
   .max-sm\:grid{
     display: grid;
+  }
+
+  .max-sm\:min-h-\[700px\]{
+    min-height: 700px;
   }
 
   .max-sm\:p-4{
