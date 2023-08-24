@@ -11,6 +11,7 @@ form.addEventListener('click', function(){
     layer.classList.toggle('hidden');
     header.classList.toggle('grayscale');
     container.classList.toggle('grayscale');
+    container.classList.toggle('pt-[50px]');
 });
 
 // detail
