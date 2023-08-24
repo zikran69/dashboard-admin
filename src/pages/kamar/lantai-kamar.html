@@ -144,24 +144,24 @@
             </form>
         </main>
     </div>
-    <div id="layer" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-80 min-h-[calc(100vh+50px)]"></div>
+    <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-50 h-[calc(100vh+50px)] w-screen"></div>
     <!-- modal form -->
     <div id="modal-form" class="hidden">
-        <div class="absolute top-0 min-w-[300px] h-full w-full flex justify-center items-center gap-5 shrink-0 shadow-lg">
-            <div class="h-fit w-fit bg-white p-2 rounded-xl border-2 max-sm:p-4">
-                <h1 class="font-raleway text-2xl font-semibold text-black max-md:text-lg max-md:text-center">Form Tambah Lantai Kamar</h1>
-                <form action="./lantai-kamar.html" class="w-[700px] font-roboto text-zinc-600 m-4 max-md:w-auto max-md:text-xs">
+        <div class="absolute top-0 min-w-[300px] h-full w-full flex justify-center items-center shrink-0 shadow-lg">
+            <div class="h-fit w-fit bg-white p-2 rounded-xl border-2">
+                <h1 class="font-raleway text-2xl font-semibold text-black max-md:text-lg max-md:text-center">Tambah Lantai Kamar</h1>
+                <form action="./lantai-kamar.html" class="w-[700px] font-roboto text-zinc-600 m-2 max-md:w-auto max-md:text-xs">
                     <div class=" pb-2 flex justify-between max-sm:grid">
                         <label for="nama-lantai" class="pr-2">Nama Lantai</label>
-                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]">
+                        <input type="text" class="min-w-[220px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]">
                     </div>
                     <div class=" pb-2 flex justify-between max-sm:grid">
                         <label for="status">Status</label>
-                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]">
+                        <input type="text" class="min-w-[220px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]">
                     </div>
                     <div class="pb-2 flex justify-between max-sm:grid">
                         <label for="keterangan">Keterangan</label>
-                        <textarea type="text" rows="2" class="resize-none text-sm min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]"></textarea>
+                        <textarea type="text" rows="2" class="resize-none text-sm min-w-[220px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[580px]"></textarea>
                     </div>
                     <div class="flex justify-end py-4 text-sm max-md:justify-around max-md:text-xs">
                         <button type="submit" class="py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
