@@ -2,6 +2,7 @@
 const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
+const utama = document.querySelector('main');
 
 //form
 const modal_form = document.getElementById('modal-form');
@@ -11,7 +12,7 @@ form.addEventListener('click', function(){
     layer.classList.toggle('hidden');
     header.classList.toggle('grayscale');
     container.classList.toggle('grayscale');
-    container.classList.toggle('mt-[50px]');
+    utama.classList.toggle('h-screen');
 });
 
 // detail
