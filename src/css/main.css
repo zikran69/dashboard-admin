@@ -809,6 +809,30 @@ h1,
   height: 100vh;
 }
 
+.h-\[calc\(100vh\+60px\)\]{
+  height: calc(100vh + 60px);
+}
+
+.h-\[calc\(100vh\+70px\)\]{
+  height: calc(100vh + 70px);
+}
+
+.h-\[calc\(100vh\+0px\)\]{
+  height: calc(100vh + 0px);
+}
+
+.h-\[calc\(100vh\+55px\)\]{
+  height: calc(100vh + 55px);
+}
+
+.h-\[calc\(100vh\+px\)\]{
+  height: calc(100vh + px);
+}
+
+.h-\[calc\(100vh\+58px\)\]{
+  height: calc(100vh + 58px);
+}
+
 .min-h-screen{
   min-height: 100vh;
 }

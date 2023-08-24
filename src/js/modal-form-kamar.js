@@ -3,6 +3,7 @@ const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
 const utama = document.querySelector('main');
+const layer_tabel = document.querySelector('#modal-form div')
 
 //form
 const modal_form = document.getElementById('modal-form');
@@ -10,6 +11,8 @@ const form = document.getElementById('form-tambah');
 form.addEventListener('click', function(){
     modal_form.classList.toggle('hidden');
     layer.classList.toggle('hidden');
+    layer.classList.toggle('h-[calc(100vh+60px)]');
+    layer_tabel.classList.toggle('h-[calc(100vh+60px)]');
     header.classList.toggle('grayscale');
     container.classList.toggle('grayscale');
     utama.classList.toggle('h-screen');
