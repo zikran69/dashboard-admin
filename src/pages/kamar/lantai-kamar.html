@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px] min-w-[300px]">
         <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
             <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
             <p class="sm:text-xl">Fauzi Azhari</p>
@@ -21,7 +21,7 @@
             <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
         </div>
     </header>
-    <div id="container" class="flex h-[calc(100vh-67.33px)]">
+    <div id="container" class="flex h-[calc(100vh-67.33px)] min-w-[300px]">
         <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
         </div>
         <aside id="sidebar"
@@ -144,7 +144,7 @@
             </form>
         </main>
     </div>
-    <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-50 h-[calc(100vh+50px)] w-screen"></div>
+    <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-50 h-[calc(100vh+50px)] w-screen min-w-[300px]"></div>
     <!-- modal form -->
     <div id="modal-form" class="hidden">
         <div class="absolute top-0 min-w-[300px] h-full w-full flex justify-center items-center shrink-0 shadow-lg">
