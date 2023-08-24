@@ -13,11 +13,11 @@ const form = document.getElementById('form-tambah');
 form.addEventListener('click', function(){
     modal_form.classList.toggle('hidden');
     layer.classList.toggle('hidden');
-    layer.classList.toggle(layer_h);
-    layer_tabel.classList.toggle(layer_h);
-    header.classList.toggle('grayscale');
-    container.classList.toggle('grayscale');
-    utama.classList.toggle('h-screen');
+    layer.classList.add(layer_h);
+    layer_tabel.classList.add(layer_h);
+    header.classList.add('grayscale');
+    container.classList.add('grayscale');
+    utama.classList.add('h-screen');
 });
 
 // detail
@@ -27,8 +27,9 @@ const cek_detail = function(e){
     e.addEventListener('click', ()=>{
         modal_detail.classList.toggle('hidden');
         layer.classList.toggle('hidden');
-        header.classList.toggle('grayscale');
-        container.classList.toggle('grayscale');
+        layer.classList.add(layer_h);
+        header.classList.add('grayscale');
+        container.classList.add('grayscale');
     })
 }
 for (const detail of details){
@@ -42,8 +43,9 @@ const cek_edit = function(e){
     e.addEventListener('click', ()=>{
         modal_edit.classList.toggle('hidden');
         layer.classList.toggle('hidden');
-        header.classList.toggle('grayscale');
-        container.classList.toggle('grayscale');
+        layer.classList.add(layer_h);
+        header.classList.add('grayscale');
+        container.classList.add('grayscale');
     })
 }
 for (const edit of edits){
