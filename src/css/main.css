@@ -640,6 +640,14 @@ h1,
   z-index: 50;
 }
 
+.order-last{
+  order: 9999;
+}
+
+.order-first{
+  order: -9999;
+}
+
 .m-2{
   margin: 0.5rem;
 }
@@ -927,6 +935,10 @@ h1,
   flex-wrap: nowrap;
 }
 
+.place-items-start{
+  place-items: start;
+}
+
 .place-items-center{
   place-items: center;
 }
@@ -969,6 +981,14 @@ h1,
 
 .gap-5{
   gap: 1.25rem;
+}
+
+.gap-3{
+  gap: 0.75rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
 }
 
 .gap-y-2{
@@ -1569,12 +1589,24 @@ h1,
   .max-sm\:grid{
     display: grid;
   }
+
+  .max-sm\:place-content-center{
+    place-content: center;
+  }
 }
 
 @media (min-width: 640px){
+  .sm\:order-last{
+    order: 9999;
+  }
+
   .sm\:mx-3{
     margin-left: 0.75rem;
     margin-right: 0.75rem;
+  }
+
+  .sm\:flex{
+    display: flex;
   }
 
   .sm\:w-11\/12{
@@ -1609,6 +1641,14 @@ h1,
 }
 
 @media (min-width: 768px){
+  .md\:order-first{
+    order: -9999;
+  }
+
+  .md\:order-last{
+    order: 9999;
+  }
+
   .md\:col-span-2{
     grid-column: span 2 / span 2;
   }
@@ -1623,6 +1663,10 @@ h1,
 
   .md\:col-start-2{
     grid-column-start: 2;
+  }
+
+  .md\:flex{
+    display: flex;
   }
 
   .md\:table-cell{
@@ -1674,6 +1718,10 @@ h1,
 
   .lg\:block{
     display: block;
+  }
+
+  .lg\:flex{
+    display: flex;
   }
 
   .lg\:hidden{
