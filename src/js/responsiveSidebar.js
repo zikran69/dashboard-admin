@@ -13,3 +13,6 @@ const triggerToggle = (elm) => {
 
 ;['open-sidebar', 'close-sidebar', 'sidebar-overlay'].forEach(triggerToggle)
 
+const close_sidebar = document.getElementById('close-sidebar');
+close_sidebar.classList.add('lg:hidden');
+

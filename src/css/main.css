@@ -616,10 +616,6 @@ h1,
   right: 0.5rem;
 }
 
-.right-\[-35px\]{
-  right: -35px;
-}
-
 .top-0{
   top: 0px;
 }
@@ -841,10 +837,6 @@ h1,
   width: 210px;
 }
 
-.w-\[250px\]{
-  width: 250px;
-}
-
 .w-\[300px\]{
   width: 300px;
 }
@@ -872,6 +864,14 @@ h1,
 
 .w-screen{
   width: 100vw;
+}
+
+.w-\[270px\]{
+  width: 270px;
+}
+
+.w-\[0px\]{
+  width: 0px;
 }
 
 .min-w-\[220px\]{
