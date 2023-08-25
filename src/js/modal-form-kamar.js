@@ -2,9 +2,9 @@
 const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
-const utama = document.querySelector('main');
 
-const layer_h = 'h-[calc(100vh+70px)]';
+const layer_h = 'h-screen';
+const bg = 'grayscale';
 
 //form
 const modal_form = document.getElementById('modal-form');
@@ -15,9 +15,8 @@ form.addEventListener('click', function(){
     modal_form.classList.add(layer_h);
     layer.classList.toggle('hidden');
     layer.classList.add(layer_h);
-    header.classList.add('grayscale');
-    container.classList.add('grayscale');
-    utama.classList.add('h-screen');
+    header.classList.add(bg);
+    container.classList.add(bg);
 });
 
 // detail
