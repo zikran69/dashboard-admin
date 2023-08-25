@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="../../js/modalCheckin.js" defer></script>
+</head>
+
+<body>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+        <div class="lg:hidden">
+            <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
+        </div>
+    </header>
+    <div class="flex h-[calc(100vh-67.33px)]">
+        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
+        </div>
+        <aside id="sidebar"
+            class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
+            <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
+                    class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
+            <h4 class="mb-3 font-semibold">Menu</h4>
+            <div class="mb-2">
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
+            </div>
+            <div class="space-y-2">
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-settings-5-fill mr-2"></i>Pengaturan<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../administrator/list-admin.html"><i
+                                class="ri-user-settings-line mr-2"></i>Administrator</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-profile-line mr-2"></i>profil
+                            hotel</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i
+                                class="ri-hotel-bed-line mr-2"></i>Kategori
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i
+                                class="ri-hotel-bed-line mr-2"></i>Lantai
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/list-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
+                            Kamar</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="./check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
+                            In</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../transaksi/check-out.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                            Out</a>
+                    </div>
+                </details>
+            </div>
+            <div class="mt-2">
+                <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
+            </div>
+        </aside>
+        <main class="bg-primary-gray grow overflow-y-auto">
+            
+            <div id="modal-overlay" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90">
+            </div>
+            <div class="p-4 h-[calc(100vh-67.33px)]">
+                <div>
+                    <h1 class="text-2xl font-semibold">Administrator</h1>
+                </div>
+                <div class="p-4">
+                    <div class="min-h-screen  bg-gray-100 flex items-start justify-center">
+                        <div class="container max-w-screen-lg mx-auto">
+                          <div>
+                      
+                            <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
+                                <div class="lg:col-span-2">
+                                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
+                                        <div class="md:col-span-2">
+                                            <label for="city">Level</label>
+                                            <select name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-0">
+                                                <option value="">--pilih level--</option>
+                                                <option value="">Admin</option>
+                                                <option value="">Superadmin</option>
+                                            </select>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                        <label for="">NIK</label>
+                                        <input type="text" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="NIK" />
+                                        </div>
+                                        <div class="md:col-span-3">
+                                            <label for="full_name">Nama Lengkap</label>
+                                            <input type="text" name="full_name" id="full_name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Nama Lengkap"/>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label for="">Nomor Telepon</label>
+                                            <input type="text" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Nomor Telepon"/>
+                                        </div>
+                                        <div class="md:col-span-5">
+                                            <label for="">Alamat</label>
+                                            <input type="text" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Alamat"/>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label for="">Email</label>
+                                            <input type="email" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Email"/>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label for="">Password</label>
+                                            <input type="password" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Password"/>
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label for="">Foto</label>
+                                            <input type="file" name="" id="" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Foto"/>
+                                        </div>
+                        
+                              
+                                      <div class="md:col-span-5 text-right">
+                                        <div class="inline-flex items-end">
+                                            <a href="../administrator/list-admin.html">
+                                                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Cancel</button></a>
+                                          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save</button>
+                                        </div>
+                                      </div>
+                        
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

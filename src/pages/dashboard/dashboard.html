@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="../../../img/favicon.ico"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../../js/responsiveSidebar.js" defer></script>
-</head>
-
-<body>
-    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
-        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
-            <h1 class="font-medium text-xl sm:text-2xl"><i class="ri-hotel-fill mr-2"></i>My Hotel</h1>
-            <p class="sm:text-xl">Fauzi Azhari</p>
-        </div>
-        <div class="lg:hidden">
-            <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
-        </div>
+  </head>
+  <body>
+    <header
+      class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]"
+    >
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center sm:w-11/12 lg:w-full"
+      >
+          <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
+        <p class="sm:text-xl mr-6">Fauzi Azhari</p>
+      </div>
+      <div class="lg:hidden">
+        <button id="open-sidebar" class="text-3xl">
+          <i class="ri-menu-line"></i>
+        </button>
+      </div>
     </header>
     <div class="flex h-[calc(100vh-67.33px)]">
-        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90"></div>
-        <aside id="sidebar"
-            class="p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white">
+      <div
+        id="sidebar-overlay"
+        class="z-20 hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90"
+      ></div>
+      <aside id="sidebar"
+            class="z-30 p-4 hidden lg:block text-secondary-gray font-medium w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white shrink-0">
             <button id="close-sidebar" class="absolute top-[50%] right-[-35px] text-7xl lg:hidden"><i
                     class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
             <h4 class="mb-3 font-semibold">Menu</h4>
             <div class="mb-2">
-                <a class="hover:text-secondary-blue" href="./dashboard.html"><i class="ri-home-2-line mr-2"></i>Dashboard</a>
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
             </div>
             <div class="space-y-2">
                 <details open class="space-y-2">
@@ -36,7 +53,7 @@
                             class="ri-settings-5-fill mr-2"></i>Pengaturan<i class="ri-arrow-drop-down-line"></i>
                     </summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="#"><i
+                        <a class="hover:text-secondary-blue" href="../administrator/list-admin.html"><i
                                 class="ri-user-settings-line mr-2"></i>Administrator</a>
                     </div>
                     <div class="pl-6">
@@ -49,15 +66,17 @@
                             class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
                     </summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i class="ri-hotel-bed-line mr-2"></i>Kategori
+                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i
+                                class="ri-hotel-bed-line mr-2"></i>Kategori
                             Kamar</a>
                     </div>
                     <div class="pl-6">
-                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>Lantai
+                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i
+                                class="ri-hotel-bed-line mr-2"></i>Lantai
                             Kamar</a>
                     </div>
                     <div class="pl-6">
-                        <a href="#" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
+                        <a href="../kamar/list-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
                             Kamar</a>
                     </div>
                 </details>
@@ -65,15 +84,18 @@
                     <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
                             class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
                     <div class="pl-6">
-                        <a class="hover:text-secondary-blue" href="#"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i
+                                class="ri-notification-3-fill mr-2"></i>Pesan
                             Kamar</a>
                     </div>
                     <div class="pl-6">
-                        <a href="../transaksi/check-in.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                        <a href="../transaksi/check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
                             In</a>
                     </div>
                     <div class="pl-6">
-                        <a href="#" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                        <a href="../transaksi/check-out.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
                             Out</a>
                     </div>
                 </details>
@@ -82,44 +104,60 @@
                 <a class="hover:text-secondary-blue" href="#"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
             </div>
         </aside>
-        <main class="bg-primary-gray grow overflow-y-auto">
-            <div class="p-4 h-[calc(100vh-67.33px)]">
-                <div>
-                    <h1 class="text-2xl font-semibold">Dashboard</h1>
-                </div>
-                <div class="flex mx-4 text-secondary-gray justify-evenly flex-wrap gap-10">
-                    <div class="p-6 w-[150px] bg-white shadow-xl rounded-lg flex justify-between">
-                        <div class="mb-2 text-center">
-                            <p class="text-5xl text-secondary-blue">20</p>
-                            <p class="font-semibold">Kamar Terisi</p>
-                        </div>
-                        <p><i class="ri-equalizer-line"></i></p>
-                    </div>
-                    <div class="p-6 w-[150px] bg-white shadow-xl rounded-lg flex justify-between">
-                        <div class="mb-2 text-center">
-                            <p class="text-5xl text-secondary-blue">20</p>
-                            <p class="font-semibold">Kamar Kosong</p>
-                        </div>
-                        <p><i class="ri-equalizer-line"></i></p>
-                    </div>
-                    <div class="p-6 w-[150px] bg-white shadow-xl rounded-lg flex justify-between">
-                        <div class="mb-2 text-center">
-                            <p class="text-5xl text-secondary-blue">10</p>
-                            <p class="font-semibold">Check Out Hari Ini</p>
-                        </div>
-                        <p><i class="ri-equalizer-line"></i></p>
-                    </div>
-                    <div class="p-6 w-[150px] bg-white shadow-xl rounded-lg flex justify-between">
-                        <div class="mb-2 text-center">
-                            <p class="text-5xl text-secondary-blue">12</p>
-                            <p class="font-semibold">Pesan Kamar</p>
-                        </div>
-                        <p><i class="ri-equalizer-line"></i></p>
-                    </div>
-                </div>
+      <main class="bg-primary-gray grow overflow-y-auto">
+        <div class="p-4 h-[calc(100vh-67.33px)]">
+          <div>
+            <h1 class="text-2xl font-semibold ml-4 my-6">Dashboard</h1>
+          </div>
+          <div class="px-4 mx-auto grid place-items-center sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 text-secondary-gray gap-10">
+            <div
+              class="relative p-6 h-[115px] w-full sm:w-[240px] bg-white shadow-xl rounded-lg flex"
+            >
+              <div class="mb-2 text-center">
+                <p class="text-5xl text-secondary-blue">20</p>
+                <p class="font-semibold whitespace-nowrap">Kamar Terisi</p>
+              </div>
+              <p class="absolute right-2 top-2"><i class="ri-equalizer-line"></i></p>
             </div>
-        </main>
+            <div
+              class="relative p-6 h-[115px] w-full sm:w-[240px] bg-white shadow-xl rounded-lg flex"
+            >
+              <div class="mb-2 text-center">
+                <p class="text-5xl text-secondary-blue">20</p>
+                <p class="font-semibold whitespace-nowrap">Kamar Kosong</p>
+              </div>
+              <p class="absolute right-2 top-2"><i class="ri-equalizer-line"></i></p>
+            </div>
+            <div
+              class="relative p-6 h-[115px] w-full sm:w-[240px] bg-white shadow-xl rounded-lg flex"
+            >
+              <div class="mb-2 text-center">
+                <p class="text-5xl text-secondary-blue">10</p>
+                <p class="font-semibold whitespace-nowrap">Check Out Hari Ini</p>
+              </div>
+              <p class="absolute right-2 top-2"><i class="ri-equalizer-line"></i></p>
+            </div>
+            <div
+              class="relative p-6 h-[115px] w-full sm:w-[240px] bg-white shadow-xl rounded-lg flex md:col-start-2 xl:col-start-4"
+            >
+              <div class="mb-2 text-center">
+                <p class="text-5xl text-secondary-blue">12</p>
+                <p class="font-semibold whitespace-nowrap">Pesan Kamar</p>
+              </div>
+              <p class="absolute right-2 top-2"><i class="ri-equalizer-line"></i></p>
+            </div>
+          </div>
+          <div
+            class="bg-white m-8 p-4 rounded shadow"
+          >
+            <h4 class="text-xl font-semibold ml-4 my-1">
+              Tranksaksi Tahun ini
+            </h4>
+            <div id="myChart"></div>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
-
+    <script src="../../js/apex-chart-init.js"></script>
+  </body>
 </html>
