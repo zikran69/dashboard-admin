@@ -225,79 +225,69 @@
         </main>
     </div>
     <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
-    <!-- modal form -->
+    <!-- modal tambah form -->
     <div id="modal-form" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
-        <div class="grid-flow-row w-fit h-fit mx-32 bg-white px-8 py-16 rounded-sm">
-            <div class="pb-8 text-center">
+        <div class="grid grid-cols-1 place-content-center bg-white px-8 py-16 rounded-sm max-h-[450px]">
+            <div class="text-center font-semibold">
                 Tambah Kategori Kamar
             </div>
-            <form  action="">
-                <div class="lg:grid lg:grid-cols-2 md:grid-cols-1 overflow-auto">
-                    <div class="m-4">
-                        <label for="" class="mr-4">Kategori Kamar:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Harga:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Fasilitas:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Status:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
+            <form action="" class="text-sm mt-4 grid place-content-start lg:grid-cols-1 max-sm:grid-cols-1 max-md:grid-cols-2 overflow-auto lg:w-[700px]">
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
                 </div>
-                <div class="flex justify-around p-2">
-                    <button type="submit" class="text-sm py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Tambah</button>
-                    <button type="button" class="text-sm py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="harga" class="text-left">Harga</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
+                </div>
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="fasilitas" class="text-left">Fasilitas</label>
+                    <textarea class="h-10 pl-4 border rounded-sm bg-gray-50 resize-none md:w-[400px] lg:w-full"></textarea>
+                </div>
+                <div class="grid gap-1 pb-4 mx-2">
+                    <label for="status" class="text-left">Status</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
+                </div>
+                <div></div>
+                <div class="flex justify-end space-x-4 order-6">
+                    <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
                 </div>
             </form>
         </div>
     </div>
-    <!-- end modal form -->
+    <!-- end modal tambah form -->
     <!-- modal detail -->
     <div id="modal-detail" class="hidden">
     </div>
     <!-- end modal detail -->
     <!-- modal edit -->
     <div id="modal-edit" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
-        <div class="grid-flow-row w-fit h-fit mx-32 bg-white px-8 py-16 rounded-sm">
-            <div class="pb-8 text-center">
+        <div class="grid grid-cols-1 place-content-center bg-white px-8 py-16 rounded-sm max-h-[450px]">
+            <div class="text-center font-semibold">
                 Edit Kategori Kamar
             </div>
-            <form  action="">
-                <div class="lg:grid lg:grid-cols-2 md:grid-cols-1 overflow-auto">
-                    <div class="m-4">
-                        <label for="" class="mr-4">Kategori Kamar:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Harga:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Fasilitas:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Status:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
-                    </div>
+            <form action="" class="text-sm mt-4 grid place-content-start lg:grid-cols-1 max-sm:grid-cols-1 max-md:grid-cols-2 overflow-auto lg:w-[700px]">
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
                 </div>
-                <div class="flex justify-around p-2">
-                    <button type="submit" class="text-sm py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
-                    <button type="button" class="text-sm py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="harga" class="text-left">Harga</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
+                </div>
+                <div class="grid gap-1 pb-2 mx-2">
+                    <label for="fasilitas" class="text-left">Fasilitas</label>
+                    <textarea class="h-10 pl-4 border rounded-sm bg-gray-50 resize-none md:w-[400px] lg:w-full"></textarea>
+                </div>
+                <div class="grid gap-1 pb-4 mx-2">
+                    <label for="status" class="text-left">Status</label>
+                    <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[400px] lg:w-full">
+                </div>
+                <div></div>
+                <div class="flex justify-end space-x-4 order-6">
+                    <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
                 </div>
             </form>
         </div>
