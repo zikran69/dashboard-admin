@@ -3,14 +3,20 @@ const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
 
+const layer_h = 'h-screen';
+const bg = 'grayscale';
+
 //form
 const modal_form = document.getElementById('modal-form');
 const form = document.getElementById('form-tambah');
 form.addEventListener('click', function(){
     modal_form.classList.toggle('hidden');
+    modal_form.classList.add('flex');
+    modal_form.classList.add(layer_h);
     layer.classList.toggle('hidden');
-    header.classList.toggle('grayscale');
-    container.classList.toggle('grayscale');
+    layer.classList.add(layer_h);
+    header.classList.add(bg);
+    container.classList.add(bg);
 });
 
 // detail
@@ -20,8 +26,9 @@ const cek_detail = function(e){
     e.addEventListener('click', ()=>{
         modal_detail.classList.toggle('hidden');
         layer.classList.toggle('hidden');
-        header.classList.toggle('grayscale');
-        container.classList.toggle('grayscale');
+        layer.classList.add(layer_h);
+        header.classList.add('grayscale');
+        container.classList.add('grayscale');
     })
 }
 for (const detail of details){
@@ -35,8 +42,9 @@ const cek_edit = function(e){
     e.addEventListener('click', ()=>{
         modal_edit.classList.toggle('hidden');
         layer.classList.toggle('hidden');
-        header.classList.toggle('grayscale');
-        container.classList.toggle('grayscale');
+        layer.classList.add(layer_h);
+        header.classList.add('grayscale');
+        container.classList.add('grayscale');
     })
 }
 for (const edit of edits){
