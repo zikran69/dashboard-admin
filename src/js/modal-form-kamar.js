@@ -43,10 +43,19 @@ const cek_edit = function(e){
         modal_edit.classList.toggle('hidden');
         layer.classList.toggle('hidden');
         layer.classList.add(layer_h);
-        header.classList.add('grayscale');
-        container.classList.add('grayscale');
+        // header.classList.add('grayscale');
+        // container.classList.add('grayscale');
+
+       
+        modal_edit.classList.add('flex');
+        modal_edit.classList.add(layer_h);
+        // layer.classList.toggle('hidden');
+        // layer.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
     })
 }
 for (const edit of edits){
     cek_edit(edit);
 }
+
