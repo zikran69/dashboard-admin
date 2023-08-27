@@ -93,7 +93,7 @@
                     <button id="form-tambah" type="button" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
                         <i class="ri-hotel-bed-line mr-2"></i>Tambah
                     </button>
-                    <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500 order-first sm:order-last">
+                    <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500 order-first sm:order-last text-lg">
                 </div>
                 <table class="mb-4 text-zinc-600 w-full">
                     <thead>
@@ -225,79 +225,154 @@
         </main>
     </div>
     <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
-    <!-- modal form -->
+    <!-- modal tambah form -->
     <div id="modal-form" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
-        <div class="grid-flow-row w-fit h-fit mx-32 bg-white px-8 py-16 rounded-sm">
-            <div class="pb-8 text-center">
+        <div class="grid grid-cols-1 bg-white px-8 py-4 rounded-sm max-h-[550px] lg:w-[900px]">
+            <div class="text-center font-semibold">
                 Tambah Kategori Kamar
             </div>
-            <form  action="">
-                <div class="lg:grid lg:grid-cols-2 md:grid-cols-1 overflow-auto">
-                    <div class="m-4">
-                        <label for="" class="mr-4">Kategori Kamar:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+            <form action="" class="text-sm mt-4">
+                <div class="grid max-md:grid-cols-2 lg:grid-cols-2 overflow-auto lg:my-8">
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
+                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Harga:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="harga" class="text-left">Harga</label>
+                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Fasilitas:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="fasilitas" class="text-left">Fasilitas</label>
+                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Status:</label>
-                        <input placeholder="tambah" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="keterangan" class="text-left">Keterangan</label>
+                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="status" class="text-left">Status</label>
+                        <select id="status" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <option value="tersedia">tersedia</option>
+                            <option value="penuh">penuh</option>
+                        </select>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="foto" class="mr-2">Foto</label>
+                        <input type="file" class="py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
                 </div>
-                <div class="flex justify-around p-2">
-                    <button type="submit" class="text-sm py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Tambah</button>
-                    <button type="button" class="text-sm py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>
+                <div class="flex justify-end space-x-4 mt-2">
+                    <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
                 </div>
             </form>
         </div>
     </div>
-    <!-- end modal form -->
+    <!-- end modal tambah form -->
     <!-- modal detail -->
-    <div id="modal-detail" class="hidden">
-    </div>
-    <!-- end modal detail -->
-    <!-- modal edit -->
-    <div id="modal-edit" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
-        <div class="grid-flow-row w-fit h-fit mx-32 bg-white px-8 py-16 rounded-sm">
-            <div class="pb-8 text-center">
-                Edit Kategori Kamar
+    <div id="modal-detail" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
+        <div class="grid grid-cols-1 bg-white px-8 py-8 rounded-sm max-h-[550px] lg:w-[900px]">
+            <div class="flex justify-end pb-8">
+                <a href="" class="py-1 px-3 rounded"><i class="ri-close-fill text-3xl text-secondary-gray hover:text-hover-blue"></i></a>
             </div>
-            <form  action="">
-                <div class="lg:grid lg:grid-cols-2 md:grid-cols-1 overflow-auto">
-                    <div class="m-4">
-                        <label for="" class="mr-4">Kategori Kamar:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+            <div class="text-center font-semibold">
+                Detail Kategori Kamar
+            </div>
+            <form action="" class="text-sm mt-4">
+                <div class="grid max-md:grid-cols-2 lg:grid-cols-2 overflow-auto lg:my-8">
+                    <div class=" mb-2 m-2">
+                        <label for="kategori-kamar" class="text-left">Kategori Kamar:</label>
+                        <span class="border-collapse focus:outline-none ml-1">Modern</span>
+                        <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Harga:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class=" mb-2 m-2">
+                        <label for="harga" class="text-left">Harga:</label>
+                        <span class="border-collapse focus:outline-none ml-1">Rp. 1.000.000</span>
+                        <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Fasilitas:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class=" mb-2 m-2">
+                        <label for="fasilitas" class="text-left">Fasilitas:</label>
+                        <span class="border-collapse focus:outline-none ml-1">tv, ac</span>
+                        <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
                     </div>
-                    <div class="m-4">
-                        <label for="" class="mr-4">Status:</label>
-                        <input placeholder="edit" type="text" class="border-collapse focus:outline-none">
-                        <div class="w-90 h-[1px] bg-blue-300 shrink-0"></div>
+                    <div class=" mb-2 m-2">
+                        <label for="keterangan" class="text-left">Keterangan:</label>
+                        <span class="border-collapse focus:outline-none ml-1">Kamar khusus untuk staycation</span>
+                        <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                    </div>
+                    <div class=" mb-2 m-2">
+                        <label for="status" class="text-left">Status:</label>
+                        <span class="border-collapse focus:outline-none ml-1">tersedia</span>
+                        <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                    </div>
+                    <div class=" mb-2 m-2">
+                        <label for="foto" class="mr-2">Foto</label>
+                        <div class=" w-fit border p-8">
+                            <i class="ri-home-smile-line text-4xl"></i>
+                            <i class="ri-home-6-fill text-4xl"></i>
+                            <i class="ri-home-fill text-4xl"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="flex justify-around p-2">
-                    <button type="submit" class="text-sm py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
-                    <button type="button" class="text-sm py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>
+            </form>
+        </div>
+    </div>
+    <!-- end modal detail -->
+    <!-- modal hapus -->
+    <div id="modal-hapus" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
+        <div class="grid gap-5 bg-white px-8 py-8 rounded-sm">
+            <div class="flex justify-center font-semibold">
+                <svg class="w-32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 7V13" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="16" r="1" fill="#1C274C"></circle> <path opacity="0.5" d="M7.84308 3.80211C9.8718 2.6007 10.8862 2 12 2C13.1138 2 14.1282 2.6007 16.1569 3.80211L16.8431 4.20846C18.8718 5.40987 19.8862 6.01057 20.4431 7C21 7.98943 21 9.19084 21 11.5937V12.4063C21 14.8092 21 16.0106 20.4431 17C19.8862 17.9894 18.8718 18.5901 16.8431 19.7915L16.1569 20.1979C14.1282 21.3993 13.1138 22 12 22C10.8862 22 9.8718 21.3993 7.84308 20.1979L7.15692 19.7915C5.1282 18.5901 4.11384 17.9894 3.55692 17C3 16.0106 3 14.8092 3 12.4063V11.5937C3 9.19084 3 7.98943 3.55692 7C4.11384 6.01057 5.1282 5.40987 7.15692 4.20846L7.84308 3.80211Z" stroke="#1C274C" stroke-width="1.5"></path> </g></svg>
+            </div>
+            <div class="text-2xl text-center">
+                Apakah yakin ingin menghapus?
+            </div>
+            <form class="flex justify-center space-x-8 mt-2">
+                <button class="bg-red-400 hover:bg-hover-red text-white font-bold py-2 px-4 rounded w-24">Iya</button>
+                <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded w-24">Kembali</button>
+            </form>
+        </div>
+    </div>
+    <!-- end modal hapus -->
+    <!-- modal edit -->
+    <div id="modal-edit" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg">
+        <div class="grid grid-cols-1 bg-white px-8 py-4 rounded-sm max-h-[550px] lg:w-[900px]">
+            <div class="text-center font-semibold">
+                Edit Kategori Kamar
+            </div>
+            <form action="" class="text-sm mt-4">
+                <div class="grid max-md:grid-cols-2 lg:grid-cols-2 overflow-auto lg:my-8">
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
+                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="harga" class="text-left">Harga</label>
+                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="fasilitas" class="text-left">Fasilitas</label>
+                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="keterangan" class="text-left">Keterangan</label>
+                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="status" class="text-left">Status</label>
+                        <select id="status" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <option value="tersedia">tersedia</option>
+                            <option value="penuh">penuh</option>
+                        </select>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="foto" class="mr-2">Foto</label>
+                        <input type="file" class="py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-2">
+                    <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
+                    <button class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
                 </div>
             </form>
         </div>
