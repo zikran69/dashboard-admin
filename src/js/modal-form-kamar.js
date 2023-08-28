@@ -3,17 +3,17 @@ const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
 
-// semua class table data
+// class table data
 const tds = document.querySelectorAll('td');
 for(const td of tds){
     td.setAttribute('class','p-4 border-secondary-gray border border-b-2 border-opacity-10');
     td.classList.remove('hidden');
 }
-// semua class table header
-const ths = document.querySelectorAll('th');
-for(const th of ths){
-    th.setAttribute('class','border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left')
-}
+// class table header
+// const ths = document.querySelectorAll('th');
+// for(const th of ths){
+//     th.setAttribute('class','border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left')
+// }
 
 // detail label
 const detail_labels = document.querySelectorAll('#detail label');
@@ -50,6 +50,7 @@ form.addEventListener('click', ()=>{
 const id_details = document.querySelectorAll('#detail span')
 const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('.ri-search-line');
+
 const cek_detail = function(e){
     e.addEventListener('click', ()=>{
         modal_detail.classList.toggle('hidden');
@@ -61,10 +62,9 @@ const cek_detail = function(e){
         container.classList.add(bg);
 
         e.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
-        const pilih = document.querySelectorAll('#cek td');
-        const image = document.querySelector('#cek img');
+        const td = document.querySelectorAll('#cek td');
         for(let i = 1; i <= 5; i++){
-            id_details[i-1].innerText = pilih[i].innerText;
+            id_details[i-1].innerText = td[i].innerText;
         }
     })
 }
