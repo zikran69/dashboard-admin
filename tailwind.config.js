@@ -3,7 +3,6 @@ module.exports = {
   content: [
     './src/**/*.{html,js}',
     './index.html',
-    'form.html'
   ],
   theme: {
     extend: {

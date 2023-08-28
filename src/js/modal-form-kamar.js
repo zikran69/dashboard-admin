@@ -3,13 +3,40 @@ const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
 
+// semua class table data
+const tds = document.querySelectorAll('td');
+for(const td of tds){
+    td.setAttribute('class','p-4 border-secondary-gray border border-b-2 border-opacity-10');
+    td.classList.remove('hidden');
+}
+// semua class table header
+const ths = document.querySelectorAll('th');
+for(const th of ths){
+    th.setAttribute('class','border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left')
+}
+
+// detail label
+const detail_labels = document.querySelectorAll('#detail label');
+for(const label of detail_labels){
+    label.classList.add('font-raleway');
+    label.classList.add('font-semibold');
+    label.classList.add('text-blue-500');
+    label.classList.add('text-2xl');
+    label.classList.add('mr-2');
+}
+// detail span
+const detail_spans = document.querySelectorAll('#detail span');
+for(const span of detail_spans){
+    span.classList.add('text-lg');
+}
+
 const layer_h = 'h-screen';
 const bg = 'grayscale';
 
 //form
 const modal_form = document.getElementById('modal-form');
 const form = document.getElementById('form-tambah');
-form.addEventListener('click', function(){
+form.addEventListener('click', ()=>{
     modal_form.classList.toggle('hidden');
     modal_form.classList.add('flex');
     modal_form.classList.add(layer_h);
@@ -33,34 +60,31 @@ const cek_detail = function(e){
         header.classList.add(bg);
         container.classList.add(bg);
 
-        e.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'tunjuk');
-        const tunjuk = document.querySelectorAll('#tunjuk td');
-        for(let i = 1; i <= 4; i++){
-            id_details[i-1].innerText = tunjuk[i].innerText;
+        e.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const pilih = document.querySelectorAll('#cek td');
+        const image = document.querySelector('#cek img');
+        for(let i = 1; i <= 5; i++){
+            id_details[i-1].innerText = pilih[i].innerText;
         }
     })
 }
-for (const detail of details){
-    cek_detail(detail);
-}
+details.forEach(cek_detail);
 
 //hapus
-const hapus = document.getElementById('modal-hapus');
-const hapus_s = document.querySelectorAll('.ri-delete-bin-line');
+const modal_hapus = document.getElementById('modal-hapus');
+const hapus = document.querySelectorAll('.ri-delete-bin-line');
 const cek_hapus = function(e){
     e.addEventListener('click', ()=>{
-        hapus.classList.toggle('hidden');
+        modal_hapus.classList.toggle('hidden');
         layer.classList.toggle('hidden');
         layer.classList.add(layer_h);
-        hapus.classList.add('flex');
-        hapus.classList.add(layer_h);
+        modal_hapus.classList.add('flex');
+        modal_hapus.classList.add(layer_h);
         header.classList.add(bg);
         container.classList.add(bg);
     })
 }
-for (const hapus of hapus_s){
-    cek_hapus(hapus);
-}
+hapus.forEach(cek_hapus);
 
 // edit
 const modal_edit = document.getElementById('modal-edit');
@@ -68,15 +92,13 @@ const edits = document.querySelectorAll('.ri-file-edit-line');
 const cek_edit = function(e){
     e.addEventListener('click', ()=>{
         modal_edit.classList.toggle('hidden');
-        layer.classList.toggle('hidden');
-        layer.classList.add(layer_h);
         modal_edit.classList.add('flex');
         modal_edit.classList.add(layer_h);
+        layer.classList.toggle('hidden');
+        layer.classList.add(layer_h);
         header.classList.add(bg);
         container.classList.add(bg);
     })
 }
-for (const edit of edits){
-    cek_edit(edit);
-}
+edits.forEach(cek_edit);
 
