@@ -20,6 +20,7 @@ form.addEventListener('click', function(){
 });
 
 // detail
+const id_details = document.querySelectorAll('#detail span')
 const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('.ri-search-line');
 const cek_detail = function(e){
@@ -31,6 +32,12 @@ const cek_detail = function(e){
         modal_detail.classList.add(layer_h);
         header.classList.add(bg);
         container.classList.add(bg);
+
+        e.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'tunjuk');
+        const tunjuk = document.querySelectorAll('#tunjuk td');
+        for(let i = 1; i <= 4; i++){
+            id_details[i-1].innerText = tunjuk[i].innerText;
+        }
     })
 }
 for (const detail of details){
