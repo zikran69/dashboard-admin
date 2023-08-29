@@ -101,11 +101,11 @@ tabel.addEventListener('click', function(e){
             // tds[4].innerText = text_areas[1].value;
             // tds[5].innerText = setatus.value;
             
-    //         // for(let i=0; i<2; i++){
-    //         //     inputan[i].value = '';
-    //         //     text_areas[i].value = '';
-    //         //     setatus.value = '';
-    //         // } 
+            // for(let i=0; i<2; i++){
+            //     inputan[i].value = '';
+            //     text_areas[i].value = '';
+            //     setatus.value = '';
+            // } 
     //         display();
     //         modal(modal_edit);
     //     })      
@@ -114,13 +114,12 @@ tabel.addEventListener('click', function(e){
 //-------------------------
 
 const ikons = document.querySelectorAll('.ri-file-edit-line');
-
-const cek_details = (el)=>{
+const cek_edit = (el)=>{
     el.addEventListener('click',()=>{
         display();
         modal(modal_edit);
-        console.log(el.target);
-        el.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const id_check = el.parentElement.parentElement.parentElement.parentElement;
+        id_check.setAttribute('id', 'cek');
         const tds = document.querySelectorAll('#cek td');
         inputan[0].value = tds[1].innerText;
         inputan[1].value = tds[2].innerText;
@@ -128,7 +127,7 @@ const cek_details = (el)=>{
         text_areas[1].value = tds[4].innerText;
         setatus.value = tds[5].innerText;
 
-        simpan.addEventListener('click', ()=>{
+        simpan.addEventListener('click', (e)=>{
             tds[1].innerText = inputan[0].value;
             tds[2].innerText = inputan[1].value;
             tds[3].innerText = text_areas[0].value;
@@ -137,9 +136,11 @@ const cek_details = (el)=>{
 
             display();
             modal(modal_edit);
+            console.log(e);
+            id_check.removeAttribute('id'); 
         })
     })
 }
 for (const ikon of ikons){
-    cek_details(ikon);
+    cek_edit(ikon);
 }

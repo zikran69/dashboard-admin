@@ -825,6 +825,10 @@ h1,
   height: 100vh;
 }
 
+.h-4{
+  height: 1rem;
+}
+
 .min-h-screen{
   min-height: 100vh;
 }
@@ -876,6 +880,10 @@ h1,
 
 .w-screen{
   width: 100vw;
+}
+
+.w-8{
+  width: 2rem;
 }
 
 .min-w-\[250px\]{
@@ -1198,6 +1206,11 @@ h1,
 .bg-yellow-500{
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.bg-green-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 
 .p-1{
