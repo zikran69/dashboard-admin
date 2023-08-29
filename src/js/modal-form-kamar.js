@@ -76,71 +76,33 @@ tabel.addEventListener('click', function(e){
         modal(modal_hapus);
     }
     // edit form
-    // else if(e.target.className == "ri-file-edit-line text-white"){
-    //     e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
-    //     display();
-    //     modal(modal_edit);
-
-    //     const inputan = document.querySelectorAll('#modal-edit input');
-    //     const text_areas = document.querySelectorAll('#modal-edit textarea');
-    //     const setatus = document.querySelector('#modal-edit select');
-    //     const simpan = document.querySelectorAll('#modal-edit button')[1];
-    
-    //     const tds = document.querySelectorAll('#cek td');
-
-        // inputan[0].value = tds[1].innerText;
-        // inputan[1].value = tds[2].innerText;
-        // text_areas[0].value = tds[3].innerText;
-        // text_areas[1].value = tds[4].innerText;
-        // setatus.value = tds[5].innerText;
-
-    //     simpan.addEventListener('click', ()=>{  
-            // tds[1].innerText = inputan[0].value;
-            // tds[2].innerText = inputan[1].value;
-            // tds[3].innerText = text_areas[0].value;
-            // tds[4].innerText = text_areas[1].value;
-            // tds[5].innerText = setatus.value;
-            
-            // for(let i=0; i<2; i++){
-            //     inputan[i].value = '';
-            //     text_areas[i].value = '';
-            //     setatus.value = '';
-            // } 
-    //         display();
-    //         modal(modal_edit);
-    //     })      
-    // }
-})
-//-------------------------
-
-const ikons = document.querySelectorAll('.ri-file-edit-line');
-const cek_edit = (el)=>{
-    el.addEventListener('click',()=>{
+    else if(e.target.className == "ri-file-edit-line text-white"){
         display();
         modal(modal_edit);
-        const id_check = el.parentElement.parentElement.parentElement.parentElement;
-        id_check.setAttribute('id', 'cek');
+
+        const inputan = document.querySelectorAll('#modal-edit input');
+        const text_areas = document.querySelectorAll('#modal-edit textarea');
+        const setatus = document.querySelector('#modal-edit select');
+        const simpan = document.querySelectorAll('#modal-edit button')[1];
+        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
         const tds = document.querySelectorAll('#cek td');
+
         inputan[0].value = tds[1].innerText;
         inputan[1].value = tds[2].innerText;
         text_areas[0].value = tds[3].innerText;
         text_areas[1].value = tds[4].innerText;
         setatus.value = tds[5].innerText;
 
-        simpan.addEventListener('click', (e)=>{
-            tds[1].innerText = inputan[0].value;
-            tds[2].innerText = inputan[1].value;
-            tds[3].innerText = text_areas[0].value;
-            tds[4].innerText = text_areas[1].value;
-            tds[5].innerText = setatus.value;
-
-            display();
-            modal(modal_edit);
-            console.log(e);
-            id_check.removeAttribute('id'); 
-        })
-    })
-}
-for (const ikon of ikons){
-    cek_edit(ikon);
-}
+        // simpan.addEventListener('click', ()=>{  
+        //     tds[1].innerText = inputan[0].value;
+        //     tds[2].innerText = inputan[1].value;
+        //     tds[3].innerText = text_areas[0].value;
+        //     tds[4].innerText = text_areas[1].value;
+        //     tds[5].innerText = setatus.value;
+            
+        //     display();
+        //     modal(modal_edit);
+        // })      
+    }
+})
+//-------------------------
