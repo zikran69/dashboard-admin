@@ -7,14 +7,14 @@ const bg = 'grayscale';
 
 function display(){
     layer.classList.toggle('hidden');
-    layer.classList.add(layer_h);
-    header.classList.add(bg);
-    container.classList.add(bg);
+    layer.classList.toggle(layer_h);
+    header.classList.toggle(bg);
+    container.classList.toggle(bg);
 }
 function modal(form){
     form.classList.toggle('hidden');
-    form.classList.add('flex');
-    form.classList.add(layer_h);
+    form.classList.toggle('flex');
+    form.classList.toggle(layer_h);
 }
 
 // table data
@@ -53,6 +53,11 @@ const modal_detail = document.getElementById('modal-detail');
 const modal_hapus = document.getElementById('modal-hapus');
 const modal_edit = document.getElementById('modal-edit');
 
+const inputan = document.querySelectorAll('#modal-edit input');
+const text_areas = document.querySelectorAll('#modal-edit textarea');
+const setatus = document.querySelector('#modal-edit select');
+const simpan = document.querySelectorAll('#modal-edit button')[1];
+
 const tabel = document.getElementById('tabel');
 tabel.addEventListener('click', function(e){
     // detail form
@@ -71,12 +76,70 @@ tabel.addEventListener('click', function(e){
         modal(modal_hapus);
     }
     // edit form
-    else if(e.target.className == "ri-file-edit-line text-white"){
-        display();
-        modal(modal_edit);
-    }
-    console.log(e.target)
+    // else if(e.target.className == "ri-file-edit-line text-white"){
+    //     e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+    //     display();
+    //     modal(modal_edit);
+
+    //     const inputan = document.querySelectorAll('#modal-edit input');
+    //     const text_areas = document.querySelectorAll('#modal-edit textarea');
+    //     const setatus = document.querySelector('#modal-edit select');
+    //     const simpan = document.querySelectorAll('#modal-edit button')[1];
+    
+    //     const tds = document.querySelectorAll('#cek td');
+
+        // inputan[0].value = tds[1].innerText;
+        // inputan[1].value = tds[2].innerText;
+        // text_areas[0].value = tds[3].innerText;
+        // text_areas[1].value = tds[4].innerText;
+        // setatus.value = tds[5].innerText;
+
+    //     simpan.addEventListener('click', ()=>{  
+            // tds[1].innerText = inputan[0].value;
+            // tds[2].innerText = inputan[1].value;
+            // tds[3].innerText = text_areas[0].value;
+            // tds[4].innerText = text_areas[1].value;
+            // tds[5].innerText = setatus.value;
+            
+    //         // for(let i=0; i<2; i++){
+    //         //     inputan[i].value = '';
+    //         //     text_areas[i].value = '';
+    //         //     setatus.value = '';
+    //         // } 
+    //         display();
+    //         modal(modal_edit);
+    //     })      
+    // }
 })
 //-------------------------
 
+const ikons = document.querySelectorAll('.ri-file-edit-line');
 
+const cek_details = (el)=>{
+    el.addEventListener('click',()=>{
+        display();
+        modal(modal_edit);
+        console.log(el.target);
+        el.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const tds = document.querySelectorAll('#cek td');
+        inputan[0].value = tds[1].innerText;
+        inputan[1].value = tds[2].innerText;
+        text_areas[0].value = tds[3].innerText;
+        text_areas[1].value = tds[4].innerText;
+        setatus.value = tds[5].innerText;
+
+        simpan.addEventListener('click', ()=>{
+            tds[1].innerText = inputan[0].value;
+            tds[2].innerText = inputan[1].value;
+            tds[3].innerText = text_areas[0].value;
+            tds[4].innerText = text_areas[1].value;
+            tds[5].innerText = setatus.value;
+
+            display();
+            modal(modal_edit);
+        })
+    })
+}
+for (const ikon of ikons){
+    cek_details(ikon);
+}
