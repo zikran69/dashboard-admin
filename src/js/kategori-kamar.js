@@ -21,7 +21,6 @@ function modal(form){
 const tds = document.querySelectorAll('td');
 for(const td of tds){
     td.setAttribute('class','p-4 border-secondary-gray border border-b-2 border-opacity-10');
-    td.classList.remove('hidden');
 }
 
 //-------- Add
@@ -32,7 +31,6 @@ tombol.addEventListener('click', ()=>{
     modal(modal_add);
 });
 
-// ------detail section
 // detail label
 const detail_labels = document.querySelectorAll('#detail label');
 for(const label of detail_labels){
@@ -60,7 +58,7 @@ const simpan = document.querySelectorAll('#modal-edit button')[1];
 
 const tabel = document.getElementById('tabel');
 tabel.addEventListener('click', function(e){
-    // detail form
+    // detail
     if(e.target.className == "ri-search-line text-white"){
         display();
         modal(modal_detail);
@@ -70,12 +68,12 @@ tabel.addEventListener('click', function(e){
             details[i].innerText = td[i].innerText;
         }
     } 
-    // hapus form
+    // hapus
     else if(e.target.className == "ri-delete-bin-line text-white"){
         display();
         modal(modal_hapus);
     }
-    // edit form
+    // edit
     else if(e.target.className == "ri-file-edit-line text-white"){
         display();
         modal(modal_edit);
