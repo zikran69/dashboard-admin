@@ -73,3 +73,55 @@ for (const edit of edits){
     cek_edit(edit);
 }
 
+// edit2
+const modal_edit2 = document.getElementById('modal-edit-data');
+const edits2 = document.querySelectorAll('.form-edit-data ');
+const cek_edit2 = function(e){
+    e.addEventListener('click', ()=>{
+        modal_edit2.classList.toggle('hidden');
+        layer.classList.toggle('hidden');
+        layer.classList.add(layer_h);
+        modal_edit2.classList.add('flex');
+        modal_edit2.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
+    })
+}
+for (const edit2 of edits2){
+    cek_edit2(edit2);
+}
+// detail2
+const modal_detail2 = document.getElementById('modal-detail-data');
+const details2 = document.querySelectorAll('.form-detail-data ');
+const cek_detail2 = function(e){
+    e.addEventListener('click', ()=>{
+        modal_detail2.classList.toggle('hidden');
+        layer.classList.toggle('hidden');
+        layer.classList.add(layer_h);
+        modal_detail2.classList.add('flex');
+        modal_detail2.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
+    })
+}
+for (const detail2 of details2){
+    cek_detail2(detail2);
+}
+
+//hapus2
+const hapus2 = document.getElementById('modal-hapus2');
+const hapus2_s = document.querySelectorAll('.modal-hapusnya');
+const cek_hapus2 = function(e){
+    e.addEventListener('click', ()=>{
+        hapus2.classList.toggle('hidden');
+        layer.classList.toggle('hidden');
+        layer.classList.add(layer_h);
+        hapus2.classList.add('flex');
+        hapus2.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
+    })
+}
+for (const hapus2 of hapus2_s){
+    cek_hapus2(hapus2);
+}
