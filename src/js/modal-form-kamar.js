@@ -47,11 +47,15 @@ const detail_spans = document.querySelectorAll('#detail span');
 for(const span of detail_spans){
     span.classList.add('text-lg');
 }
-// form detail
-const details = document.querySelectorAll('#detail span')
+// 
+const details = document.querySelectorAll('#detail span');
 const modal_detail = document.getElementById('modal-detail');
+const modal_hapus = document.getElementById('modal-hapus');
+const modal_edit = document.getElementById('modal-edit');
+
 const tabel = document.getElementById('tabel');
 tabel.addEventListener('click', function(e){
+    // detail form
     if(e.target.className == "ri-search-line text-white"){
         display();
         modal(modal_detail);
@@ -61,28 +65,18 @@ tabel.addEventListener('click', function(e){
             details[i].innerText = td[i].innerText;
         }
     } 
+    // hapus form
+    else if(e.target.className == "ri-delete-bin-line text-white"){
+        display();
+        modal(modal_hapus);
+    }
+    // edit form
+    else if(e.target.className == "ri-file-edit-line text-white"){
+        display();
+        modal(modal_edit);
+    }
+    console.log(e.target)
 })
 //-------------------------
 
-//---------------hapus
-const modal_hapus = document.getElementById('modal-hapus');
-const hapus = document.querySelectorAll('.ri-delete-bin-line');
-const cek_hapus = function(e){
-    e.addEventListener('click', ()=>{
-        display();
-        modal(modal_hapus);
-    })
-}
-hapus.forEach(cek_hapus);
-
-//----------------edit
-const modal_edit = document.getElementById('modal-edit');
-const edits = document.querySelectorAll('.ri-file-edit-line');
-const cek_edit = function(e){
-    e.addEventListener('click', ()=>{
-        display();
-        modal(modal_edit);
-    })
-}
-edits.forEach(cek_edit);
 
