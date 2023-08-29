@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/responsiveSidebar.js" defer></script>
+</head>
+
+<body>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px] min-w-[270px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+        <div class="lg:hidden">
+            <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
+        </div>
+    </header>
+    <div id="container" class="flex h-[calc(100vh-67.33px)] min-w-[270px]">
+        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
+        </div>
+        <aside id="sidebar"
+            class="p-4 hidden lg:block text-secondary-gray font-medium lg:w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white shrink-0 overflow-auto w-[300px]">
+            <h4 class="mb-3 font-semibold">Menu</h4>
+            <div class="mb-2">
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
+            </div>
+            <div class="space-y-2">
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-settings-5-fill mr-2"></i>Pengaturan<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../administrator/list-admin.html"><i
+                                class="ri-user-settings-line mr-2"></i>Administrator</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="./profile.html" class="hover:text-secondary-blue"><i class="ri-profile-line mr-2"></i>profil
+                            hotel</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i class="ri-hotel-bed-line mr-2"></i>Kategori
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>Lantai
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/list-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
+                            Kamar</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../transaksi/check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
+                            In</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../transaksi/check-out.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                            Out</a>
+                    </div>
+                </details>
+            </div>
+            <div class="mt-2">
+                <a class="hover:text-secondary-blue" href="../Laporan/laporan.html"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
+            </div>
+        </aside>
+        <button id="close-sidebar" class="absolute top-[-3px] left-[260px] text-6xl hidden"><i
+            class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
+        <main class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]">
+            <h1 class="p-6 font-raleway text-3xl font-semibold">Profile Hotel</h1>
+            <div class="px-16 max-md:px-6 py-8 grid grid-cols-1 gap-3 overflow-auto">
+                <div class=" mb-2 m-2">
+                    <label for="nama_hotel" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Nama Hotel</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">MyHotel</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="nomor_telepon" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Nomor Telepon</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">021-1239875</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="email" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Email</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">contact@myhotel.group</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="alamat" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Alamat</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">Jl. Soekarno-Hatta 2023 Yogyakarta, Indonesia</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="website" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Website</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">https://www.myhotel-yogya.com</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="facebook" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Facebook</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">myhotelOnFacebook</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="twitter" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Twitter</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">myhotelOnTwitter</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+                <div class=" mb-2 m-2">
+                    <label for="instagram" class="text-left text-2xl text-hover-blue font-roboto mr-2 tracking-[5px]">Instagram</label>
+                    <span class="border-collapse focus:outline-none font-raleway text-lg">myhotelOnInstagram</span>
+                    <div class="h-[1px] bg-blue-200 md:w-[500px] lg:w-full"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
+</body>
+
+</html>
