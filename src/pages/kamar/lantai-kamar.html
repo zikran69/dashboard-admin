@@ -90,12 +90,12 @@
             <h1 class="p-4 font-raleway text-2xl font-semibold">Lantai Kamar</h1>
             <form class="font-roboto px-4 mx-4 border rounded-lg bg-white max-md:text-sm overflow-auto">
                 <div class="grid gap-5 place-items-start sm:flex justify-between m-4">
-                    <button id="form-tambah" type="button" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
+                    <button id="tambah" type="button" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
                         <i class="ri-hotel-bed-line mr-2"></i>Tambah
                     </button>
                     <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500 order-first sm:order-last text-lg">
                 </div>
-                <table class="mb-4 text-zinc-600 w-full">
+                <table id="tabel" class="mb-4 text-zinc-600 w-full">
                     <thead>
                         <tr>
                             <th class="border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left">No</th>
@@ -179,7 +179,7 @@
     <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
     <!-- modal tambah form -->
     <!-- <div id="modal-form" class="hidden"> -->
-        <div id="modal-form" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
+        <div id="modal-add" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
             <div class="grid grid-cols-1 bg-white px-8 py-16 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
                 <div class="text-center text-3xl font-semibold">
                     Tambah Lantai Kamar
@@ -222,6 +222,7 @@
             </div>
             <form id="detail" action="" class="text-sm mt-4 overflow-auto">
                 <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
+                    <span style="display: none"></span>
                     <div class=" mb-2 m-2">
                         <label for="lantai-kamar" class="text-left">Lantai Kamar</label>
                         <span class="border-collapse focus:outline-none"></span>
