@@ -27,12 +27,32 @@ const cek_detail = function(e){
         modal_detail.classList.toggle('hidden');
         layer.classList.toggle('hidden');
         layer.classList.add(layer_h);
-        header.classList.add('grayscale');
-        container.classList.add('grayscale');
+        modal_detail.classList.add('flex');
+        modal_detail.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
     })
 }
 for (const detail of details){
     cek_detail(detail);
+}
+
+//hapus
+const hapus = document.getElementById('modal-hapus');
+const hapus_s = document.querySelectorAll('.ri-delete-bin-line');
+const cek_hapus = function(e){
+    e.addEventListener('click', ()=>{
+        hapus.classList.toggle('hidden');
+        layer.classList.toggle('hidden');
+        layer.classList.add(layer_h);
+        hapus.classList.add('flex');
+        hapus.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
+    })
+}
+for (const hapus of hapus_s){
+    cek_hapus(hapus);
 }
 
 // edit
@@ -43,10 +63,13 @@ const cek_edit = function(e){
         modal_edit.classList.toggle('hidden');
         layer.classList.toggle('hidden');
         layer.classList.add(layer_h);
-        header.classList.add('grayscale');
-        container.classList.add('grayscale');
+        modal_edit.classList.add('flex');
+        modal_edit.classList.add(layer_h);
+        header.classList.add(bg);
+        container.classList.add(bg);
     })
 }
 for (const edit of edits){
     cek_edit(edit);
 }
+
