@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/responsiveSidebar.js" defer></script>
+    <script src="../../js/modal-form-kamar.js" defer></script>
+</head>
+
+<body>
+    <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
+        <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
+            <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
+            <p class="sm:text-xl">Fauzi Azhari</p>
+        </div>
+        <div class="lg:hidden">
+            <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
+        </div>
+    </header>
+    <div id="container" class="flex h-[calc(100vh-67.33px)]">
+        <div id="sidebar-overlay" class="hidden lg:hidden bg-black h-screen w-screen absolute top-0 left-0 opacity-90">
+        </div>
+        <aside id="sidebar"
+        class="p-4 hidden lg:block text-secondary-gray font-medium lg:w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white shrink-0 overflow-auto w-[300px]">
+            <h4 class="mb-3 font-semibold">Menu</h4>
+            <div class="mb-2">
+                <a class="hover:text-secondary-blue" href="../dashboard/dashboard.html"><i
+                        class="ri-home-2-line mr-2"></i>Dashboard</a>
+            </div>
+            <div class="space-y-2">
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-settings-5-fill mr-2"></i>Pengaturan<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../administrator/list-admin.html"><i
+                                class="ri-user-settings-line mr-2"></i>Administrator</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="#" class="hover:text-secondary-blue"><i class="ri-profile-line mr-2"></i>profil
+                            hotel</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-building-4-line mr-2"></i>Data Kamar<i class="ri-arrow-drop-down-line"></i>
+                    </summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../kamar/kategori-kamar.html"><i class="ri-hotel-bed-line mr-2"></i>Kategori
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/lantai-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>Lantai
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../kamar/list-kamar.html" class="hover:text-secondary-blue"><i class="ri-hotel-bed-line mr-2"></i>List
+                            Kamar</a>
+                    </div>
+                </details>
+                <details open class="space-y-2">
+                    <summary class="hover:text-secondary-blue cursor-pointer list-none space-y-2"><i
+                            class="ri-wallet-2-fill mr-2"></i>Transaksi<i class="ri-arrow-drop-down-line"></i></summary>
+                    <div class="pl-6">
+                        <a class="hover:text-secondary-blue" href="../transaksi/pesankamar.html"><i class="ri-notification-3-fill mr-2"></i>Pesan
+                            Kamar</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../transaksi/check-in.html" class="hover:text-secondary-blue"><i
+                                class="ri-notification-3-fill mr-2"></i>Check
+                            In</a>
+                    </div>
+                    <div class="pl-6">
+                        <a href="../transaksi/check-out.html" class="hover:text-secondary-blue"><i class="ri-notification-3-fill mr-2"></i>Check
+                            Out</a>
+                    </div>
+                </details>
+            </div>
+            <div class="mt-2">
+                <a class="hover:text-secondary-blue" href="./laporan.html"><i class="ri-folder-2-line mr-2"></i>Laporan</a>
+            </div>
+        </aside>
+        <button id="close-sidebar" class="absolute top-[-3px] left-[260px] text-6xl hidden"><i
+            class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
+
+        <main class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]">
+            <h1 class="p-4 font-raleway text-2xl font-semibold">Laporan</h1>
+            <form class="font-roboto px-6 mx-4 border rounded-lg bg-white min-w-[800px] max-lg:px-4">
+                <div class="flex justify-start m-4 grid-flow-row">
+                    <button id="#" type="button" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
+                        <i class="ri-filter-2-fill mr-2"></i>Filter 
+                    </button>
+                    <button id="#" type="button" class="py-1 px-5 ml-4 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
+                        <i class="ri-printer-fill mr-2"></i>Print
+                    </button>
+                    <div class="flex justify-end ml-4 pl-6">
+                        <input type="search" placeholder="cari..." class="pl-4 border border-secondary-gray rounded-[20px] focus:outline-none focus:border-gray-500 text-center">
+                    </div>
+                </div>
+
+                <table class="mb-4 text-zinc-600 w-full">
+                    <thead>
+                        <tr>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">No</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Customer</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Transaksi</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Detail</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]">Opsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">1</td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">
+                                <table>
+                                    <tr>
+                                        <td>NIK</td>
+                                        <td>:</td>
+                                        <td>123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nama</td>
+                                        <td>:</td>
+                                        <td>test</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Telp</td>
+                                        <td>:</td>
+                                        <td>08123......</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">
+                                <table>
+                                    <tr>
+                                        <td>Id Transaksi</td>
+                                        <td>:</td>
+                                        <td>123</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kategori</td>
+                                        <td>:</td>
+                                        <td>test</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nomor Kamar</td>
+                                        <td>:</td>
+                                        <td>....</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harga Kamar</td>
+                                        <td>:</td>
+                                        <td>....</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20"  data-cell="">
+                                <table>
+                                    <tr>
+                                        <td>CheckIn</td>
+                                        <td>:</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CheckOUt</td>
+                                        <td>:</td>
+                                        <td>...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lama</td>
+                                        <td>:</td>
+                                        <td>....</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Bayar</td>
+                                        <td>:</td>
+                                        <td>....</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                                    <button type="button" title="detail" class="mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button>
+                                    <button type="button" title="hapus" class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button>
+                                    <button type="button" title="edit" class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>
+                            </td>
+
+            </form>
+        </main>
+    </div>
+
+    <!-- <div id="layer" class="hidden bg-black h-full w-full absolute top-0 left-0 opacity-90"></div> -->
+    <!-- modal form -->
+    <!-- <div id="modal-form" class="hidden">
+        <div class="absolute top-0 min-w-[300px] h-full w-full flex justify-center items-center gap-5 shrink-0 shadow-lg">
+            <div class="h-fit w-fit bg-white p-4 rounded-xl border-2">
+                <h1 class="font-raleway text-2xl font-semibold text-black max-md:text-lg max-md:text-center">Form Tambah Kategori Kamar</h1>
+                <form action="./kategori-kamar.html" class="w-[700px] font-roboto text-zinc-600 m-2 max-md:w-auto max-md:text-xs">
+                    <div class=" pb-2 flex justify-between max-md:grid">
+                        <label for="nama-kategori" class="shrink-0 pr-2">Nama Kategori</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]">
+                    </div>
+                    <div class=" pb-2 flex justify-between max-md:grid">
+                        <label for="harga" class="shrink-0 pr-8">Harga</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]">
+                    </div>
+                    <div class="pb-2 flex justify-between max-md:grid">
+                        <label for="fasilitas" class="shrink-0 pr-8">Fasilitas</label>
+                        <textarea type="text" rows="4" class="resize-none text-sm min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]"></textarea>
+                    </div>
+                    <div class=" pb-2 flex justify-between max-md:grid">
+                        <label for="status" class="shrink-0 pr-8">Status</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]">
+                    </div>
+                    <div class=" pb-2 flex justify-between max-md:grid">
+                        <label for="foto" class="shrink-0 pr-8">Foto</label>
+                        <input type="text" class="min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]">
+                    </div>
+                    <div class="pb-2 flex justify-between max-md:grid">
+                        <label for="keterangan" class="shrink-0 pr-8">Keterangan</label>
+                        <textarea type="text" rows="4" class="resize-none text-sm min-w-[250px] pl-1 border border-gray-300 rounded-[4px] focus:outline-none focus:border-gray-500 md:w-[500px]"></textarea>
+                    </div>
+                    <div class="flex justify-end   text-sm max-md:justify-around max-md:text-xs">
+                        <button type="submit" class="py-1 px-5 text-white bg-blue-400 rounded-md mr-2 hover:bg-hover-blue"><i class="ri-check-line mr-2"></i>Simpan</button>
+                        <button type="button" class="py-1 px-5 text-black border border-black rounded-md"><i class="ri-close-line mr-2 text-black"></i><a href="./kategori-kamar.html">Tutup</a></button>   
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    <!-- end modal form -->
+    <!-- modal detail -->
+    <!-- <div id="modal-detail" class="hidden">
+    </div> -->
+    <!-- end modal detail -->
+    <!-- modal edit -->
+    <!-- <div id="modal-edit" class="hidden">
+    </div> -->
+    <!-- end modal edit -->
+</body>
+
+</html>

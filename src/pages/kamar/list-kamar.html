@@ -36,14 +36,8 @@
       ></div>
       <aside
         id="sidebar"
-        class="p-4 hidden lg:block text-secondary-gray font-medium lg:w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white overflow-auto w-[300px]"
+        class="p-4 hidden lg:block text-secondary-gray font-medium lg:w-[250px] h-screen lg:h-full absolute lg:static top-0 left-0 bg-white shrink-0 overflow-auto w-[300px]"
       >
-        <button
-          id="close-sidebar"
-          class="absolute top-[50%] right-0 text-7xl lg:hidden"
-        >
-          <i class="ri-arrow-left-circle-fill bg-white rounded-full"></i>
-        </button>
         <h4 class="mb-3 font-semibold">Menu</h4>
         <div class="mb-2">
           <a
@@ -70,7 +64,7 @@
               >
             </div>
             <div class="pl-6">
-              <a href="#" class="hover:text-secondary-blue"
+              <a href="../administrator/profile.html" class="hover:text-secondary-blue"
                 ><i class="ri-profile-line mr-2"></i>profil hotel</a
               >
             </div>
@@ -133,11 +127,13 @@
           </details>
         </div>
         <div class="mt-2">
-          <a class="hover:text-secondary-blue" href="#"
+          <a class="hover:text-secondary-blue" href="../Laporan/laporan.html"
             ><i class="ri-folder-2-line mr-2"></i>Laporan</a
           >
         </div>
       </aside>
+      <button id="close-sidebar" class="absolute top-[-3px] left-[260px] text-6xl hidden"><i
+        class="ri-arrow-left-circle-fill bg-white rounded-full"></i></button>
       <main
         class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]"
       >
