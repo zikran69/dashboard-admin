@@ -25,11 +25,23 @@ for(const td of tds){
 
 //-------- Add
 const modal_add = document.getElementById('modal-add');
+const cancel_add = document.querySelectorAll('#modal-add button')[0];
+const save_add = document.querySelectorAll('#modal-add button')[1];
 const tombol = document.getElementById('tambah');
 tombol.addEventListener('click', ()=>{
     display();
     modal(modal_add);
 });
+cancel_add.addEventListener('click', ()=>{
+    display();
+    modal(modal_add);
+})
+save_add.addEventListener('click', (e)=>{
+    display();
+    modal(modal_add);
+    e.preventDefault();
+})
+
 
 // detail label
 const detail_labels = document.querySelectorAll('#detail label');
@@ -40,16 +52,14 @@ for(const label of detail_labels){
     label.classList.add('text-2xl');
     label.classList.add('mr-2');
 }
-// detail span
-const detail_spans = document.querySelectorAll('#detail span');
-for(const span of detail_spans){
-    span.classList.add('text-lg');
-}
 
 // detail
-const details = document.querySelectorAll('#detail span');
 const modal_detail = document.getElementById('modal-detail');
-
+const details = document.querySelectorAll('#detail span');
+for(const span of details){
+    span.classList.add('text-lg');
+}
+const close_detail = document.querySelector('#modal-detail button');
 const inputan = document.querySelectorAll('#modal-edit input');
 const text_areas = document.querySelectorAll('#modal-edit textarea');
 const setatus = document.querySelector('#modal-edit select');
@@ -69,8 +79,16 @@ const cek_detail = (detail) =>{
 }
 details_selector.forEach(cek_detail);
 
+close_detail.addEventListener('click', ()=>{
+    display();
+    modal(modal_detail);
+})
+
+
 // HAPUS
 const modal_hapus = document.getElementById('modal-hapus');
+const iya_hapus = document.querySelectorAll('#modal-hapus button')[0];
+const kembali_hapus = document.querySelectorAll('#modal-hapus button')[1];
 const hapus_selector = document.querySelectorAll('.hapus');
 const cek_hapus = (hapus)=>{
     hapus.addEventListener('click', (e)=>{
@@ -79,6 +97,15 @@ const cek_hapus = (hapus)=>{
     })
 }
 hapus_selector.forEach(cek_hapus);
+iya_hapus.addEventListener('click', ()=>{
+    display();
+    modal(modal_hapus);
+})
+kembali_hapus.addEventListener('click', ()=>{
+    display();
+    modal(modal_hapus);
+})
+
 
 // EDIT
 const modal_edit = document.getElementById('modal-edit');

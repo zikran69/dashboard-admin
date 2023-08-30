@@ -178,7 +178,6 @@
     </div>
     <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
     <!-- modal tambah form -->
-    <!-- <div id="modal-form" class="hidden"> -->
         <div id="modal-add" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
             <div class="grid grid-cols-1 bg-white px-8 py-16 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
                 <div class="text-center text-3xl font-semibold">
@@ -203,19 +202,18 @@
                         </div>
                     </div>
                     <div class="flex justify-end space-x-4 my-4">
-                        <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
-                        <button class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
+                        <button type="button" class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded">Cancel</button>
+                        <button type="submit" class="bg-blue-500 hover:bg-hover-blue text-white font-bold py-2 px-4 rounded">Save</button>
                     </div>
                 </form>
             </div>
         </div>
-    <!-- </div> -->
     <!-- end modal tambah form -->
     <!-- modal detail -->
     <div id="modal-detail" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
         <div class="grid grid-cols-1 bg-white px-8 py-8 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
             <div class="flex justify-end pb-8">
-                <a href="" class="py-1 px-3 rounded"><i class="ri-close-fill text-3xl text-secondary-gray hover:text-hover-blue"></i></a>
+                <button type="button" class="py-1 px-3 rounded"><i class="ri-close-fill text-3xl text-secondary-gray hover:text-hover-blue"></i></button>
             </div>
             <div class="text-center text-3xl font-semibold">
                 Detail Lantai Kamar
@@ -261,8 +259,8 @@
                 Apakah yakin ingin menghapus?
             </div>
             <form class="flex justify-center space-x-8 mt-2">
-                <button class="bg-red-400 hover:bg-hover-red text-white font-bold py-2 px-4 rounded w-24">Iya</button>
-                <button class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded w-24">Kembali</button>
+                <button type="button" class="bg-red-400 hover:bg-hover-red text-white font-bold py-2 px-4 rounded w-24">Iya</button>
+                <button type="button" class="bg-yellow-500 hover:bg-hover-yellow text-white font-bold py-2 px-4 rounded w-24">Kembali</button>
             </form>
         </div>
     </div>
