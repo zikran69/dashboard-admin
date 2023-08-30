@@ -4,15 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./src/css/main.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <script src="./src/js/responsiveSidebar.js" defer></script>
+    <!-- <script src="./src/js/index.js" defer></script> -->
   </head>
-
+  
   <body class="bg-primary-gray flex items-center justify-center h-screen">
     <div class="bg-white p-6 rounded-xl shadow-xl w-[400px] sm:mx-3">
       <h1 class="text-3xl font-semibold mb-4 text-center font-roboto">
@@ -20,50 +17,26 @@
       </h1>
       <form action="./src/pages/dashboard/dashboard.html">
         <div class="mb-4">
-          <label for="username" class="block text-sm font-medium text-gray-700"
-            >Username</label
-          >
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
-          />
+          <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+          <input type="text" id="userName" name="username" class="mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300"/>
         </div>
         <div class="mb-4">
-          <label for="password" class="block text-sm font-medium text-gray-700"
-            >Password</label
-          >
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
-          />
+          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" id="passWord" name="password" class="mt-1 px-4 py-2 w-full border rounded-md focus:ring focus:ring-indigo-300"/>
         </div>
         <div class="flex justify-between items-center my-4 p-2">
           <div class="flex items-center">
             <input type="checkbox" id="remember" />
             <label for="remember" class="ml-2">Remember Me</label>
           </div>
-          <a href="#" class="text-primary-blue font-semibold hover:underline"
-            >Forgot Password?</a
-          >
+          <a href="#" class="text-primary-blue font-semibold hover:underline">Forgot Password?</a>
         </div>
-        <button
-          type="submit"
-          class="w-full bg-secondary-blue text-white py-2 rounded-md hover:bg-hover-blue"
-        >
+        <button type="submit" class="w-full bg-secondary-blue text-white py-2 rounded-md hover:bg-hover-blue">
           Log In
         </button>
         <div class="my-4 text-center">
-          <span
-            >Not an admin?
-            <a
-              href="src/pages/login/register.html"
-              class="text-secondary-blue font-semibold hover:text-hover-blue hover:underline"
-              >Sign Up</a
-            >
+          <span>Not an admin?
+            <a href="src/pages/login/register.html"class="text-secondary-blue font-semibold hover:text-hover-blue hover:underline">Sign Up</a>
           </span>
         </div>
       </form>
