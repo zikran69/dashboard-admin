@@ -84,21 +84,6 @@ function newTd(target, isi){
     if(countTd>7) countTd=1;
     return el;
 }
-
-function newTable(){
-    const trBaru = newTr(tabel);
-    const td_no = newTd(trBaru, 'add');
-    const td_kategori = newTd(trBaru, add_kategori.value);
-    const td_harga = newTd(trBaru, add_harga.value);
-    const td_fasilitas = newTd(trBaru, add_fasilitas.value);
-    const td_keterangan = newTd(trBaru, add_keterangan.value);
-    const td_status = newTd(trBaru, add_status.value);
-    const td_foto = newTd(trBaru, '');
-    newDiv(td_foto);
-    const sementara = document.getElementById('sementara');
-    sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
-    sementara.removeAttribute('id');
-}
 function emptyTable(){
     add_kategori.value = '';
     add_harga.value = '';
@@ -115,11 +100,20 @@ function newDiv(target){
     div.setAttribute('id', 'sementara')
 }
 
-
-
-
-
-
+function newTable(){
+    const trBaru = newTr(tabel);
+    const td_no = newTd(trBaru, 'add');
+    const td_kategori = newTd(trBaru, add_kategori.value);
+    const td_harga = newTd(trBaru, add_harga.value);
+    const td_fasilitas = newTd(trBaru, add_fasilitas.value);
+    const td_keterangan = newTd(trBaru, add_keterangan.value);
+    const td_status = newTd(trBaru, add_status.value);
+    const td_foto = newTd(trBaru, '');
+    newDiv(td_foto);
+    const sementara = document.getElementById('sementara');
+    sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
+    sementara.removeAttribute('id');
+}
 
 
 
@@ -154,10 +148,27 @@ tabel.addEventListener('click', e=>{
         }
     }
     else if(e.target.title=='hapus' || e.target.className=='ri-delete-bin-line text-white'){
-        
+        display();
+        modal(modal_detail_hapus);
+        console.log(e.target);
+        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const td = document.querySelectorAll('#cek td');
+        for(let i = 1; i <= 5; i++){
+            detail_hapus[i].innerText = td[i].innerText;
+        }
     }
     else if(e.target.title=='edit' || e.target.className=='ri-file-edit-line text-white'){
-        console.log('edit')
+        display();
+        modal(modal_edit);
+
+        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const tds = document.querySelectorAll('#cek td');
+
+        kategori_edit.value = tds[1].innerText;
+        harga_edit.value = tds[2].innerText;
+        fasilitas_edit.value = tds[3].innerText;
+        keterangan_edit.value = tds[4].innerText;
+        status_edit.value = tds[5].innerText;
     }
 })
 
@@ -199,20 +210,20 @@ for(const span of detail_hapus){
     span.classList.add('font-raleway');
 }
 
-const hapus_selector = document.querySelectorAll('.hapus');
-const cek_hapus = (hapus)=>{
-    hapus.addEventListener('click', (e)=>{
-        display();
-        modal(modal_detail_hapus);
-        console.log(e.target);
-        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
-        const td = document.querySelectorAll('#cek td');
-        for(let i = 1; i <= 5; i++){
-            detail_hapus[i].innerText = td[i].innerText;
-        }
-    })
-}
-hapus_selector.forEach(cek_hapus);
+// const hapus_selector = document.querySelectorAll('.hapus');
+// const cek_hapus = (hapus)=>{
+//     hapus.addEventListener('click', (e)=>{
+        // display();
+        // modal(modal_detail_hapus);
+        // console.log(e.target);
+        // e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        // const td = document.querySelectorAll('#cek td');
+        // for(let i = 1; i <= 5; i++){
+        //     detail_hapus[i].innerText = td[i].innerText;
+        // }
+//     })
+// }
+// hapus_selector.forEach(cek_hapus);
 
 const iya_hapus = document.querySelectorAll('#detail-hapus button')[0];
 const kembali_hapus = document.querySelectorAll('#detail-hapus button')[1];
@@ -228,25 +239,6 @@ kembali_hapus.addEventListener('click', ()=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // EDIT
 const modal_edit = document.getElementById('modal-edit');
 const kategori_edit = document.getElementById('kategori_edit');
@@ -256,25 +248,25 @@ const keterangan_edit = document.getElementById('keterangan_edit');
 const status_edit = document.querySelector('#modal-edit select');
 const cancel_edit = document.querySelectorAll('#modal-edit button')[0];
 const simpan_edit = document.querySelectorAll('#modal-edit button')[1];
-const edits_selector = document.querySelectorAll('.edit');
 
-const cek_edit = (edit)=>{
-    edit.addEventListener('click', (e)=>{
-        display();
-        modal(modal_edit);
+// const edits_selector = document.querySelectorAll('.edit');
+// const cek_edit = (edit)=>{
+//     edit.addEventListener('click', (e)=>{
+//         display();
+//         modal(modal_edit);
 
-        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
-        const tds = document.querySelectorAll('#cek td');
+//         e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+//         const tds = document.querySelectorAll('#cek td');
 
-        kategori_edit.value = tds[1].innerText;
-        harga_edit.value = tds[2].innerText;
-        fasilitas_edit.value = tds[3].innerText;
-        keterangan_edit.value = tds[4].innerText;
-        status_edit.value = tds[5].innerText;
+//         kategori_edit.value = tds[1].innerText;
+//         harga_edit.value = tds[2].innerText;
+//         fasilitas_edit.value = tds[3].innerText;
+//         keterangan_edit.value = tds[4].innerText;
+//         status_edit.value = tds[5].innerText;
 
-    })
-}
-edits_selector.forEach(cek_edit);
+//     })
+// }
+// edits_selector.forEach(cek_edit);
 
 simpan_edit.addEventListener('click', (e)=>{
     display();
