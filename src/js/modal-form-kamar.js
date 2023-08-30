@@ -63,6 +63,11 @@ for (const hapus of hapus_s){
 }
 
 // edit
+const kategori = document.getElementById('kategori');
+const harga = document.getElementById('harga');
+const fasilitas = document.getElementById('fasilitas');
+const keterangan = document.getElementById('keterangan');
+
 const modal_edit = document.getElementById('modal-edit');
 const edits = document.querySelectorAll('.ri-file-edit-line');
 const cek_edit = function(e){
