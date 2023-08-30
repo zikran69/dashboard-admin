@@ -1,4 +1,5 @@
 
+const tabel = document.getElementById('tabel');
 const header = document.querySelector('header');
 const container = document.getElementById('container');
 const layer = document.getElementById('layer');
@@ -28,7 +29,14 @@ const modal_add = document.getElementById('modal-add');
 const cancel_add = document.querySelectorAll('#modal-add button')[0];
 const save_add = document.querySelectorAll('#modal-add button')[1];
 const tombol = document.getElementById('tambah');
-tombol.addEventListener('click', ()=>{
+
+const add_kategori = document.getElementById('add-kategori');
+const add_harga = document.getElementById('add-harga');
+const add_fasilitas = document.getElementById('add-fasilitas');
+const add_keterangan = document.getElementById('add-keterangan');
+const add_status = document.getElementById('add-status');
+
+tombol.addEventListener('click', (e)=>{
     display();
     modal(modal_add);
 });
@@ -37,10 +45,83 @@ cancel_add.addEventListener('click', ()=>{
     modal(modal_add);
 })
 save_add.addEventListener('click', (e)=>{
+    newTable();
+    emptyTable();
     display();
     modal(modal_add);
     e.preventDefault();
 })
+
+// class Add_tabel{
+//     constructor(kategori, harga, fasilitas, keterangan, status, foto){
+//         this.kategori = kategori,
+//         this.harga = harga,
+//         this.fasilitas = fasilitas,
+//         this.keterangan = keterangan,
+//         this.status = status,
+//         this.foto = foto
+//     }
+// }
+
+
+
+function newTr(target){
+    const el = document.createElement('tr');
+    const textEl = document.createTextNode('');
+    el.appendChild(textEl);
+    target.appendChild(el);
+    return el;
+}
+let countTd = 0;
+function newTd(target, isi){
+    const el = document.createElement('td');
+    const textEl = document.createTextNode(isi);
+    el.appendChild(textEl);
+    target.appendChild(el);
+    el.setAttribute('class', 'p-4 border-secondary-gray border border-b-2 border-opacity-10');
+    if(countTd==4) el.setAttribute('style' , 'display:none');
+    countTd++;
+    if(countTd>7) countTd=1;
+    return el;
+}
+
+function newTable(){
+    const trBaru = newTr(tabel);
+    const td_no = newTd(trBaru, 'add');
+    const td_kategori = newTd(trBaru, add_kategori.value);
+    const td_harga = newTd(trBaru, add_harga.value);
+    const td_fasilitas = newTd(trBaru, add_fasilitas.value);
+    const td_keterangan = newTd(trBaru, add_keterangan.value);
+    const td_status = newTd(trBaru, add_status.value);
+    const td_foto = newTd(trBaru, '');
+    newDiv(td_foto);
+    const sementara = document.getElementById('sementara');
+    sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
+    sementara.removeAttribute('id');
+}
+function emptyTable(){
+    add_kategori.value = '';
+    add_harga.value = '';
+    add_fasilitas.value = '';
+    add_keterangan.value = '';
+    add_status.value = '';
+}
+function newDiv(target){
+    const div = document.createElement('div');
+    const text = document.createTextNode('');
+    div.appendChild(text);
+    target.appendChild(div);
+    div.setAttribute('class', 'flex justify-center items-center flex-nowrap');
+    div.setAttribute('id', 'sementara')
+}
+
+
+
+
+
+
+
+
 
 
 // detail label
@@ -60,9 +141,9 @@ for(const span of details){
     span.classList.add('text-lg');
 }
 const close_detail = document.querySelector('#modal-detail button');
-const details_selector = document.querySelectorAll('.detail');
-const cek_detail = (detail) =>{
-    detail.addEventListener('click', (e)=>{
+
+tabel.addEventListener('click', e=>{
+    if(e.target.title=='detail' || e.target.className=='ri-search-line text-white'){
         display();
         modal(modal_detail);
         e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
@@ -70,9 +151,28 @@ const cek_detail = (detail) =>{
         for(let i = 1; i <= 5; i++){
             details[i].innerText = td[i].innerText;
         }
-    })
-}
-details_selector.forEach(cek_detail);
+    }
+    else if(e.target.title=='hapus' || e.target.className=='ri-delete-bin-line text-white'){
+        
+    }
+    else if(e.target.title=='edit' || e.target.className=='ri-file-edit-line text-white'){
+        console.log('edit')
+    }
+})
+
+// const details_selector = document.querySelectorAll('.detail');
+// const cek_detail = (detail) =>{
+//     detail.addEventListener('click', (e)=>{
+        // display();
+        // modal(modal_detail);
+        // e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        // const td = document.querySelectorAll('#cek td');
+        // for(let i = 1; i <= 5; i++){
+        //     details[i].innerText = td[i].innerText;
+        // }
+//     })
+// }
+// details_selector.forEach(cek_detail);
 
 close_detail.addEventListener('click', ()=>{
     display();
@@ -84,6 +184,7 @@ close_detail.addEventListener('click', ()=>{
 const modal_hapus = document.getElementById('modal-hapus');
 const iya_hapus = document.querySelectorAll('#modal-hapus button')[0];
 const kembali_hapus = document.querySelectorAll('#modal-hapus button')[1];
+
 const hapus_selector = document.querySelectorAll('.hapus');
 const cek_hapus = (hapus)=>{
     hapus.addEventListener('click', (e)=>{
@@ -92,6 +193,7 @@ const cek_hapus = (hapus)=>{
     })
 }
 hapus_selector.forEach(cek_hapus);
+
 iya_hapus.addEventListener('click', ()=>{
     display();
     modal(modal_hapus);
