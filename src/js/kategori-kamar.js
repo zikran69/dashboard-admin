@@ -45,18 +45,9 @@ const detail_spans = document.querySelectorAll('#detail span');
 for(const span of detail_spans){
     span.classList.add('text-lg');
 }
-// 
-
-const modal_detail = document.getElementById('modal-detail');
-const modal_hapus = document.getElementById('modal-hapus');
-const modal_edit = document.getElementById('modal-edit');
-
-const inputan = document.querySelectorAll('#modal-edit input');
-const text_areas = document.querySelectorAll('#modal-edit textarea');
-const setatus = document.querySelector('#modal-edit select');
-const simpan = document.querySelectorAll('#modal-edit button')[1];
 
 // DETAIL   
+const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('#detail span');
 const details_selector = document.querySelectorAll('.detail');
 const cek_detail = (detail) =>{
@@ -73,6 +64,7 @@ const cek_detail = (detail) =>{
 details_selector.forEach(cek_detail);
 
 // HAPUS
+const modal_hapus = document.getElementById('modal-hapus');
 const hapus_selector = document.querySelectorAll('.hapus');
 const cek_hapus = (hapus)=>{
     hapus.addEventListener('click', (e)=>{
@@ -83,28 +75,47 @@ const cek_hapus = (hapus)=>{
 hapus_selector.forEach(cek_hapus);
 
 // EDIT
+const modal_edit = document.getElementById('modal-edit');
+const kategori_edit = document.getElementById('kategori_edit');
+const harga_edit = document.getElementById('harga_edit');
+const fasilitas_edit = document.getElementById('fasilitas_edit');
+const keterangan_edit = document.getElementById('keterangan_edit');
+const status_edit = document.querySelector('#modal-edit select');
+const simpan = document.querySelectorAll('#modal-edit button')[1];
 const edits_selector = document.querySelectorAll('.edit');
+
 const cek_edit = (edit)=>{
     edit.addEventListener('click', (e)=>{
         display();
         modal(modal_edit);
 
-        const inputan = document.querySelectorAll('#modal-edit input');
-        const text_areas = document.querySelectorAll('#modal-edit textarea');
-        const setatus = document.querySelector('#modal-edit select');
-        const simpan = document.querySelectorAll('#modal-edit button')[1];
         e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
         const tds = document.querySelectorAll('#cek td');
 
-        inputan[0].value = tds[1].innerText;
-        inputan[1].value = tds[2].innerText;
-        text_areas[0].value = tds[3].innerText;
-        text_areas[1].value = tds[4].innerText;
-        setatus.value = tds[5].innerText;
+
+        // inputan[0].value = tds[1].innerText;
+        // inputan[1].value = tds[2].innerText;
+        // text_areas[0].value = tds[3].innerText;
+        // text_areas[1].value = tds[4].innerText;
+        // setatus.value = tds[5].innerText;
+
+        kategori_edit.value = tds[1].innerText;
+        harga_edit.value = tds[2].innerText;
+        fasilitas_edit.value = tds[3].innerText;
+        keterangan_edit.value = tds[4].innerText;
+        status_edit.value = tds[5].innerText;
+
+        e.target.parentElement.parentElement.parentElement.parentElement.remove('id');
     })
 }
 edits_selector.forEach(cek_edit);
 
+simpan.addEventListener('click', (e)=>{
+    display();
+    modal(modal_edit);
+
+    e.preventDefault();
+})
 
 // const tabel = document.getElementById('tabel');
 // tabel.addEventListener('click', function(e){
