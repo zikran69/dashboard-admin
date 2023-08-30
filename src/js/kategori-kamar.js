@@ -139,6 +139,7 @@ const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('#detail span');
 for(const span of details){
     span.classList.add('text-lg');
+    span.classList.add('font-raleway');
 }
 const close_detail = document.querySelector('#modal-detail button');
 
@@ -182,26 +183,68 @@ close_detail.addEventListener('click', ()=>{
 
 // HAPUS
 const modal_hapus = document.getElementById('modal-hapus');
-const iya_hapus = document.querySelectorAll('#modal-hapus button')[0];
-const kembali_hapus = document.querySelectorAll('#modal-hapus button')[1];
+const modal_detail_hapus = document.getElementById('modal-detail-hapus');
+const detail_hapus = document.querySelectorAll('#detail-hapus span');
+
+const detail_hapus_labels = document.querySelectorAll('#detail-hapus label');
+for(const label of detail_hapus_labels){
+    label.classList.add('font-raleway');
+    label.classList.add('font-semibold');
+    label.classList.add('text-blue-500');
+    label.classList.add('text-2xl');
+    label.classList.add('mr-2');
+}
+for(const span of detail_hapus){
+    span.classList.add('text-lg');
+    span.classList.add('font-raleway');
+}
 
 const hapus_selector = document.querySelectorAll('.hapus');
 const cek_hapus = (hapus)=>{
     hapus.addEventListener('click', (e)=>{
         display();
-        modal(modal_hapus);
+        modal(modal_detail_hapus);
+        console.log(e.target);
+        e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
+        const td = document.querySelectorAll('#cek td');
+        for(let i = 1; i <= 5; i++){
+            detail_hapus[i].innerText = td[i].innerText;
+        }
     })
 }
 hapus_selector.forEach(cek_hapus);
 
+const iya_hapus = document.querySelectorAll('#detail-hapus button')[0];
+const kembali_hapus = document.querySelectorAll('#detail-hapus button')[1];
 iya_hapus.addEventListener('click', ()=>{
     display();
-    modal(modal_hapus);
+    modal(modal_detail_hapus);
+    const select_hapus = document.getElementById('cek');
+    select_hapus.remove();
 })
 kembali_hapus.addEventListener('click', ()=>{
     display();
-    modal(modal_hapus);
+    modal(modal_detail_hapus);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // EDIT
