@@ -1278,6 +1278,14 @@ h1,
   padding-bottom: 7px;
 }
 
+<<<<<<< HEAD
+=======
+.px-16{
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+>>>>>>> 6e5f4fa968ca789d98c6d5ceab6bf49a07caef86
 .pb-2{
   padding-bottom: 0.5rem;
 }
@@ -1400,6 +1408,54 @@ h1,
   text-transform: capitalize;
 }
 
+.leading-10{
+  line-height: 2.5rem;
+}
+
+.tracking-widest{
+  letter-spacing: 0.1em;
+}
+
+.tracking-wider{
+  letter-spacing: 0.05em;
+}
+
+.tracking-\[\]{
+  letter-spacing: ;
+}
+
+.tracking-\[20px\]{
+  letter-spacing: 20px;
+}
+
+.tracking-\[15\]{
+  letter-spacing: 15;
+}
+
+.tracking-\[15p\]{
+  letter-spacing: 15p;
+}
+
+.tracking-\[15px\]{
+  letter-spacing: 15px;
+}
+
+.tracking-\[10px\]{
+  letter-spacing: 10px;
+}
+
+.tracking-\[50px\]{
+  letter-spacing: 50px;
+}
+
+.tracking-\[5px\]{
+  letter-spacing: 5px;
+}
+
+.tracking-\[7px\]{
+  letter-spacing: 7px;
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1443,6 +1499,11 @@ h1,
 .text-zinc-800{
   --tw-text-opacity: 1;
   color: rgb(39 39 42 / var(--tw-text-opacity));
+}
+
+.text-hover-blue{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .opacity-80{
@@ -1645,6 +1706,21 @@ h1,
 
   .max-md\:justify-around{
     justify-content: space-around;
+  }
+
+  .max-md\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .max-md\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .max-md\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .max-md\:text-center{
