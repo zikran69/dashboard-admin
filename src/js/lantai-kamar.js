@@ -108,6 +108,11 @@ for(const label of detail_labels){
 // detail
 const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('#detail span');
+
+const detail_lantai = document.getElementById('detail_lantai');
+const detail_keterangan = document.getElementById('detail_keterangan');
+const detail_status = document.getElementById('detail_status');
+
 for(const span of details){
     span.classList.add('text-lg');
     span.classList.add('font-raleway');
@@ -121,6 +126,8 @@ const simpan = document.querySelectorAll('#modal-edit button')[1];
 close_detail.addEventListener('click', ()=>{
     display();
     modal(modal_detail);
+    const checking = document.getElementById('cek');
+    checking.removeAttribute('id');
 })
 
 
@@ -199,9 +206,9 @@ tabel.addEventListener('click', e=>{
             e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
         }
         const td = document.querySelectorAll('#cek td');
-        for(let i = 1; i <= 3; i++){
-            details[i].innerText = td[i].innerText;
-        }
+        detail_lantai.innerText = td[1].innerText
+        detail_keterangan.innerText = td[2].innerText
+        detail_status.innerText = td[3].innerText
     }
     else if(e.target.title=='hapus' || e.target.className=='ri-delete-bin-line text-white'){
         display();

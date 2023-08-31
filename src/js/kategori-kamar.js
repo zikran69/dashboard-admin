@@ -25,17 +25,17 @@ for(const td of tds){
 }
 
 //-------- Add
-const modal_add = document.getElementById('modal-add');
-const cancel_add = document.querySelectorAll('#modal-add button')[0];
-const save_add = document.querySelectorAll('#modal-add button')[1];
+const modal_add = document.getElementById('modal_add');
+const cancel_add = document.querySelectorAll('#modal_add button')[0];
+const save_add = document.querySelectorAll('#modal_add button')[1];
 const tombol = document.getElementById('tambah');
 
-const add_nomor = document.getElementById('add-nomor');
-const add_kategori = document.getElementById('add-kategori');
-const add_harga = document.getElementById('add-harga');
-const add_fasilitas = document.getElementById('add-fasilitas');
-const add_keterangan = document.getElementById('add-keterangan');
-const add_status = document.getElementById('add-status');
+const add_nomor = document.getElementById('add_nomor');
+const add_kategori = document.getElementById('add_kategori');
+const add_harga = document.getElementById('add_harga');
+const add_fasilitas = document.getElementById('add_fasilitas');
+const add_keterangan = document.getElementById('add_keterangan');
+const add_status = document.getElementById('add_status');
 
 tombol.addEventListener('click', (e)=>{
     display();
@@ -129,6 +129,13 @@ for(const label of detail_labels){
 // DETAIL   
 const modal_detail = document.getElementById('modal-detail');
 const details = document.querySelectorAll('#detail span');
+
+const detail_kategori = document.getElementById('detail_kategori');
+const detail_harga = document.getElementById('detail_harga');
+const detail_fasilitas = document.getElementById('detail_fasilitas');
+const detail_status = document.getElementById('detail_status');
+const detail_keterangan = document.getElementById('detail_keterangan');
+
 for(const span of details){
     span.classList.add('text-lg');
     span.classList.add('font-raleway');
@@ -137,8 +144,9 @@ const close_detail = document.querySelector('#modal-detail button');
 close_detail.addEventListener('click', ()=>{
     display();
     modal(modal_detail);
+    const checking = document.getElementById('cek'); 
+    checking.removeAttribute('id');
 })
-
 
 // HAPUS
 const modal_hapus = document.getElementById('modal-hapus');
@@ -170,7 +178,6 @@ kembali_hapus.addEventListener('click', ()=>{
     display();
     modal(modal_detail_hapus);
 })
-
 
 // EDIT
 const modal_edit = document.getElementById('modal-edit');
@@ -217,9 +224,11 @@ tabel.addEventListener('click', e=>{
             e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
         }
         const td = document.querySelectorAll('#cek td');
-        for(let i = 1; i <= 5; i++){
-            details[i].innerText = td[i].innerText;
-        }
+        detail_kategori.innerText = td[1].innerText;
+        detail_harga.innerText = td[2].innerText;
+        detail_fasilitas.innerText = td[3].innerText;
+        detail_status.innerText = td[4].innerText;
+        detail_keterangan.innerText = td[5].innerText;
     }
     else if(e.target.title=='hapus' || e.target.className=='ri-delete-bin-line text-white'){
         display();
