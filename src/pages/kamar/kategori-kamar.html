@@ -106,12 +106,12 @@
                             <th class="border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left">Opsi</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="table_body">
                         <tr>
                             <td>1</td>
                             <td>Junior Suite</td>
                             <td>$100/Night</td>
-                            <td>tv</td>
+                            <td>ac, tv</td>
                             <td style="display:none">Kamar khusus untuk staycation</td>
                             <td>tersedia</td>
                             <td>
@@ -126,7 +126,7 @@
                             <td>2</td>
                             <td>Executive Suite</td>
                             <td>$200/Night</td>
-                            <td>tv, ac, lemar, toilet di dalam, kasur, makan pagi, cofee braks</td>
+                            <td>ac, tv, breakfast</td>
                             <td style="display:none">Kamar khusus untuk staycation</td>
                             <td>penuh</td>
                             <td>
@@ -140,38 +140,8 @@
                         <tr>
                             <td>3</td>
                             <td>Super Deluxe</td>
-                            <td>$200/Night</td>
-                            <td>tv, ac, kulkas</td>
-                            <td style="display:none">Kamar khusus untuk staycation</td>
-                            <td>tersedia</td>
-                            <td>
-                                <div class="flex justify-center items-center flex-nowrap">
-                                    <button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button>
-                                    <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button>
-                                    <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Economi</td>
-                            <td>1.000.000</td>
-                            <td>tv, ac, kulkas</td>
-                            <td style="display:none">Kamar khusus untuk staycation</td>
-                            <td>tersedia</td>
-                            <td>
-                                <div class="flex justify-center items-center flex-nowrap">
-                                    <button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button>
-                                    <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button>
-                                    <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Business</td>
-                            <td>1.000.000</td>
-                            <td>tv, ac, kulkas</td>
+                            <td>$300/Night</td>
+                            <td>ac, tv, breakfast, lunch</td>
                             <td style="display:none">Kamar khusus untuk staycation</td>
                             <td>tersedia</td>
                             <td>
@@ -189,7 +159,7 @@
     </div>
     <div id="layer" class="hidden bg-black absolute top-0 left-0 opacity-80 w-screen min-w-[270px]"></div>
     <!-- modal tambah form -->
-    <div id="modal-add" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
+    <div id="modal_add" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
         <div class="grid grid-cols-1 bg-white px-8 py-16 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
             <div class="text-center text-3xl font-semibold">
                 Tambah Kategori Kamar
@@ -197,31 +167,39 @@
             <form action="" class="text-sm mt-4 overflow-auto">
                 <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
                     <div class="grid gap-1 mb-2 ml-2">
-                        <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
-                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <label for="nomor" class="text-left">No</label>
+                        <input id="add_nomor" type="text" disabled class="font-raleway h-10 px-2 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="kategori_kamar" class="text-left">Kategori Kamar</label>
+                        <select id="add_kategori" class="font-raleway h-10 pl-1 border rounded-sm bg-blue-50 active:bg-blue-100 md:w-[500px] lg:w-full">
+                            <option value="Junior Suite">Junior Suite</option>
+                            <option value="Executive Suite">Executive Suite</option>
+                            <option value="Super Deluxe">Super Deluxe</option>
+                        </select>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="harga" class="text-left">Harga</label>
-                        <input type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
-                    </div>
-                    <div class="grid gap-1 mb-2 ml-2">
-                        <label for="fasilitas" class="text-left">Fasilitas</label>
-                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
-                    </div>
-                    <div class="grid gap-1 mb-2 ml-2">
-                        <label for="keterangan" class="text-left">Keterangan</label>
-                        <textarea class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                        <input id="add_harga" value="$100/Night" type="text" disabled class="font-raleway py-[7px] h-10 px-2 border rounded-sm bg-gray-100 md:w-[500px] lg:w-full">
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="status" class="text-left">Status</label>
-                        <select id="status" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <select id="add_status" class="font-raleway h-10 pl-1 border rounded-sm bg-blue-50 md:w-[500px] lg:w-full">
                             <option value="tersedia">tersedia</option>
                             <option value="penuh">penuh</option>
                         </select>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
+                        <label for="fasilitas" class="text-left">Fasilitas</label>
+                        <textarea id="add_fasilitas" disabled class="font-raleway h-16 px-2 pt-2 border rounded-sm bg-gray-100 resize-none md:w-[500px] lg:w-full">ac, tv</textarea>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
+                        <label for="keterangan" class="text-left">Keterangan</label>
+                        <textarea id="add_keterangan" class="font-raleway h-16 px-2 pt-2 border rounded-sm bg-blue-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                    </div>
+                    <div class="grid gap-1 mb-2 ml-2">
                         <label for="foto" class="mr-2">Foto</label>
-                        <input type="file" class="py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <input id="add_foto" type="file" class="py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
                 </div>
                 <div class="flex justify-end space-x-4 my-4">
@@ -233,7 +211,7 @@
     </div>
     <!-- end modal tambah form -->
     <!-- modal detail -->
-    <div id="modal-detail" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
+    <div id="modal_detail" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
         <div class="grid grid-cols-1 bg-white px-8 py-8 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
             <div class="flex justify-end pb-8">
                 <button type="button" class="py-1 px-3 rounded"><i class="ri-close-fill text-3xl text-secondary-gray hover:text-hover-blue"></i></button>
@@ -246,27 +224,27 @@
                     <span style="display: none"></span> 
                     <div class=" mb-2 m-2">
                         <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
-                        <span class="border-collapse focus:outline-none"></span>
+                        <span id="detail_kategori" class="border-collapse focus:outline-none"></span>
                         <div class="h-[1px] bg-blue-200 lg:w-full"></div>
                     </div>
                     <div class=" mb-2 m-2">
                         <label for="harga" class="text-left">Harga</label>
-                        <span class="border-collapse focus:outline-none"></span>
+                        <span id="detail_harga" class="border-collapse focus:outline-none"></span>
                         <div class="h-[1px] bg-blue-200 lg:w-full"></div>
                     </div>
                     <div class=" mb-2 m-2">
                         <label for="fasilitas" class="text-left">Fasilitas</label>
-                        <span class="border-collapse focus:outline-none"></span>
+                        <span id="detail_fasilitas" class="border-collapse focus:outline-none"></span>
                         <div class="h-[1px] bg-blue-200 lg:w-full"></div>
                     </div>
                     <div class=" mb-2 m-2">
                         <label for="status" class="text-left">Status</label>
-                        <span class="border-collapse focus:outline-none"></span>
+                        <span id="detail_status" class="border-collapse focus:outline-none"></span>
                         <div class="h-[1px] bg-blue-200 lg:w-full"></div>
                     </div>
                     <div class=" mb-2 m-2">
                         <label for="keterangan" class="text-left">Keterangan</label>
-                        <span class="border-collapse focus:outline-none"></span>
+                        <span id="detail_keterangan" class="border-collapse focus:outline-none"></span>
                         <div class="h-[1px] bg-blue-200 lg:w-full"></div>
                     </div>
                     <div class=" mb-2 m-2">
@@ -288,7 +266,7 @@
             <div class="text-center text-3xl font-semibold">
                 Detail
             </div>
-            <form id="detail-hapus" action="" class="text-sm mt-4 overflow-auto">
+            <form id="hapus_detail" action="" class="text-sm mt-4 overflow-auto">
                 <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
                     <span style="display: none"></span> 
                     <div class=" mb-2 m-2">
@@ -326,7 +304,7 @@
     </div>
     <!-- end detail hapus -->
     <!-- modal edit -->
-    <div id="modal-edit" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
+    <div id="modal_edit" class="hidden absolute top-0 min-w-[270px] w-full justify-center items-center shadow-lg overflow-auto">
         <div class="grid grid-cols-1 bg-white px-8 py-16 rounded-sm lg:w-[900px] max-lg:max-h-[450px] overflow-auto">
             <div class="text-center text-3xl font-semibold">
                 Edit Kategori Kamar
@@ -334,31 +312,31 @@
             <form action="" class="text-sm mt-4 overflow-auto">
                 <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
                     <div class="grid gap-1 mb-2 ml-2">
-                        <label for="kategori-kamar" class="text-left">Kategori Kamar</label>
-                        <input id="kategori_edit" type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <label for="kategori_kamar" class="text-left">Kategori Kamar</label>
+                        <input id="edit_kategori" type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="harga" class="text-left">Harga</label>
-                        <input id="harga_edit" type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <input id="edit_harga" type="text" class="font-raleway h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="fasilitas" class="text-left">Fasilitas</label>
-                        <textarea id="fasilitas_edit" class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                        <textarea id="edit_fasilitas" class="font-raleway h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="keterangan" class="text-left">Keterangan</label>
-                        <textarea id="keterangan_edit" class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                        <textarea id="edit_keterangan" class="font-raleway h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="status" class="text-left">Status</label>
-                        <select id="status_edit" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <select id="edit_status" class="font-raleway h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                             <option value="tersedia">tersedia</option>
                             <option value="penuh">penuh</option>
                         </select>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="foto" class="mr-2">Foto</label>
-                        <input type="file" class="py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <input type="file" class="font-raleway py-[7px] h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                     </div>
                 </div>
                 <div class="flex justify-end space-x-4 my-4">
