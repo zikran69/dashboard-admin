@@ -29,6 +29,11 @@ const modal_add = document.getElementById('modal-add');
 const cancel_add = document.querySelectorAll('#modal-add button')[0];
 const save_add = document.querySelectorAll('#modal-add button')[1];
 const tombol = document.getElementById('tambah');
+
+const add_lantai = document.getElementById('add-lantai');
+const add_keterangan = document.getElementById('add-keterangan');
+const add_status = document.getElementById('add-status');
+
 tombol.addEventListener('click', ()=>{
     display();
     modal(modal_add);
@@ -59,15 +64,12 @@ function newTd(target, isi){
     el.appendChild(textEl);
     target.appendChild(el);
     el.setAttribute('class', 'p-4 border-secondary-gray border border-b-2 border-opacity-10');
-    if(countTd==4) el.setAttribute('style' , 'display:none');
     countTd++;
-    if(countTd>7) countTd=1;
+    if(countTd>4) countTd=1;
     return el;
 }
 function emptyTable(){
-    add_kategori.value = '';
-    add_harga.value = '';
-    add_fasilitas.value = '';
+    add_lantai.value = '';
     add_keterangan.value = '';
     add_status.value = '';
 }
@@ -82,9 +84,7 @@ function newDiv(target){
 function newTable(){
     const trBaru = newTr(tabel);
     const td_no = newTd(trBaru, 'add');
-    const td_kategori = newTd(trBaru, add_kategori.value);
-    const td_harga = newTd(trBaru, add_harga.value);
-    const td_fasilitas = newTd(trBaru, add_fasilitas.value);
+    const td_lantai = newTd(trBaru, add_lantai.value);
     const td_keterangan = newTd(trBaru, add_keterangan.value);
     const td_status = newTd(trBaru, add_status.value);
     const td_foto = newTd(trBaru, '');
