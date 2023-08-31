@@ -29,9 +29,10 @@ function newTd(target, isi){
     if(countTd>7) countTd=1;
     return el;
 }
-function emptyTable(){
-    add_keterangan.value = '';
+function defaultTable(){
+    add_kategori.value = 'Junior Suite';
     add_status.value = 'tersedia';
+    add_keterangan.value = '';
 }
 function newDiv(target){
     const div = document.createElement('div');
@@ -42,12 +43,8 @@ function newDiv(target){
     div.setAttribute('id', 'sementara')
 }
 function newTable(){
-    const trBaru = newTr(tabel);
-
-    if(newNo==0) newNo = tr_table.length+1;
-    else newNo++; 
-    const td_no = newTd(trBaru, newNo);
-    
+    const trBaru = newTr(tabel); 
+    const td_no = newTd(trBaru, add_nomor.value);
     const td_kategori = newTd(trBaru, add_kategori.value);
     const td_harga = newTd(trBaru, add_harga.value);
     const td_fasilitas = newTd(trBaru, add_fasilitas.value);
@@ -58,6 +55,19 @@ function newTable(){
     const sementara = document.getElementById('sementara');
     sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
     sementara.removeAttribute('id');
+}
+let i = 1;
+function nextTable(par){
+    if(i==1){
+        i += tr_table.length;
+        console.log(i);
+    }
+    else{
+        i++;
+        console.log(i)
+    }
+    i -=par;
+    return i;
 }
 
 const tabel = document.getElementById('tabel');
@@ -79,7 +89,6 @@ const add_save = document.querySelectorAll('#modal_add button')[1];
 const tambah = document.getElementById('tambah');
 
 const tr_table = document.querySelectorAll('#table_body tr');
-let newNo = 0;
 
 const add_nomor = document.getElementById('add_nomor');
 const add_kategori = document.getElementById('add_kategori');
@@ -89,22 +98,24 @@ const add_keterangan = document.getElementById('add_keterangan');
 const add_status = document.getElementById('add_status');
 
 tambah.addEventListener('click', (e)=>{
+    add_nomor.value = nextTable(0);
     display();
     modal(modal_add);
 });
 add_cancel.addEventListener('click', ()=>{
+    add_nomor.value = nextTable(2);
+    defaultTable();
     display();
     modal(modal_add);
 })
 add_save.addEventListener('click', (e)=>{
     newTable();
-    emptyTable();
+    defaultTable();
     display();
     modal(modal_add);
     e.preventDefault();
 })
 add_kategori.addEventListener('click', (e)=>{
-    console.log(e.target.value);
     if(e.target.value == 'Junior Suite'){
         add_harga.value = '$100/Night';
         add_fasilitas.value = 'ac, tv';

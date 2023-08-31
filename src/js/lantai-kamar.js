@@ -27,8 +27,8 @@ function newTd(target, isi){
     if(countTd>4) countTd=1;
     return el;
 }
-function emptyTable(){
-    add_lantai.value = '';
+function defaultTable(){
+    add_lantai.value = '1';
     add_keterangan.value = '';
     add_status.value = 'tersedia';
 }
@@ -52,6 +52,19 @@ function newTable(){
     sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
     sementara.removeAttribute('id');
 }
+let i = 1;
+function nextTable(par){
+    if(i==1){
+        i += tr_table.length;
+        console.log(i);
+    }
+    else{
+        i++;
+        console.log(i)
+    }
+    i -=par;
+    return i;
+}
 
 
 const tabel = document.getElementById('tabel');
@@ -73,22 +86,27 @@ const add_cancel = document.querySelectorAll('#modal-add button')[0];
 const add_save = document.querySelectorAll('#modal-add button')[1];
 const tambah = document.getElementById('tambah');
 
+const tr_table = document.querySelectorAll('#table_body tr');
+
 const add_nomor = document.getElementById('add-nomor');
 const add_lantai = document.getElementById('add-lantai');
 const add_keterangan = document.getElementById('add-keterangan');
 const add_status = document.getElementById('add-status');
 
 tambah.addEventListener('click', ()=>{
+    add_nomor.value = nextTable(0);
     display();
     modal(modal_add);
 });
 add_cancel.addEventListener('click', ()=>{
+    add_nomor.value = nextTable(2);
+    defaultTable();
     display();
     modal(modal_add);
 })
 add_save.addEventListener('click', (e)=>{
     newTable();
-    emptyTable();
+    defaultTable();
     display();
     modal(modal_add);
     e.preventDefault();
@@ -167,7 +185,7 @@ kembali_hapus.addEventListener('click', ()=>{
 const modal_edit = document.getElementById('modal-edit');
 const lantai_edit = document.getElementById('lantai_edit');
 const keterangan_edit = document.getElementById('keterangan_edit');
-const status_edit = document.querySelector('#modal-edit select');
+const status_edit = document.getElementById('status_edit');
 const cancel_edit = document.querySelectorAll('#modal-edit button')[0];
 const simpan_edit = document.querySelectorAll('#modal-edit button')[1];
 const edits_selector = document.querySelectorAll('.edit');
@@ -209,6 +227,7 @@ tabel.addEventListener('click', e=>{
         detail_lantai.innerText = td[1].innerText
         detail_keterangan.innerText = td[2].innerText
         detail_status.innerText = td[3].innerText
+        
     }
     else if(e.target.title=='hapus' || e.target.className=='ri-delete-bin-line text-white'){
         display();

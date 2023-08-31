@@ -105,11 +105,11 @@
                             <th class="border border-b-2 border-opacity-10 border-secondary-blue p-4 text-left">Opsi</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="table_body">
                         <tr>
                             <td>1</td>
-                            <td>1</td>
-                            <td>Menggunakan bahan dari kayu oak, menjadikan terasa nyaman dan mewah</td>
+                            <td>5</td>
+                            <td>Bahan dasar kayu oak</td>
                             <td>tersedia</td>
                             <td>
                                 <div class="flex justify-center items-center flex-nowrap">
@@ -121,8 +121,8 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>2</td>
-                            <td>Menggunakan bahan dari kayu oak, menjadikan terasa nyaman dan mewah</td>
+                            <td>4</td>
+                            <td>Dilapisi granit persia</td>
                             <td>penuh</td>
                             <td>
                                 <div class="flex justify-center items-center flex-nowrap">
@@ -135,7 +135,7 @@
                         <tr>
                             <td>3</td>
                             <td>3</td>
-                            <td>Menggunakan bahan dari kayu oak, menjadikan terasa nyaman dan mewah</td>
+                            <td>Bahan dasar kayu jati</td>
                             <td>tersedia</td>
                             <td>
                                 <div class="flex justify-center items-center flex-nowrap">
@@ -147,8 +147,8 @@
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td>4</td>
-                            <td>Menggunakan bahan dari kayu oak, menjadikan terasa nyaman dan mewah</td>
+                            <td>2</td>
+                            <td>Bahan dasar kayu gaharu</td>
                             <td>tersedia</td>
                             <td>
                                 <div class="flex justify-center items-center flex-nowrap">
@@ -160,8 +160,8 @@
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>5</td>
-                            <td>Menggunakan bahan dari kayu oak, menjadikan terasa nyaman dan mewah</td>
+                            <td>1</td>
+                            <td>Dengan marmer utuh</td>
                             <td>tersedia</td>
                             <td>
                                 <div class="flex justify-center items-center flex-nowrap">
@@ -187,11 +187,11 @@
                     <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
                         <div class="grid gap-1 mb-2 ml-2">
                             <label for="nomor" class="text-left">No</label>
-                            <input id="add-nomor" type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <input id="add-nomor" type="text" disabled class="font-raleway h-10 px-2 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                         </div>
                         <div class="grid gap-1 mb-2 ml-2">
                             <label for="lantai-kamar" class="text-left">Lantai Kamar</label>
-                            <select id="add-lantai" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <select id="add-lantai" class="font-raleway h-10 pl-1 border rounded-sm bg-blue-50 md:w-[500px] lg:w-full">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -201,14 +201,14 @@
                         </div>
                         <div class="grid gap-1 mb-2 ml-2">
                             <label for="status" class="text-left">Status</label>
-                            <select id="add-status" id="status" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <select id="add-status" id="status" class="font-raleway h-10 pl-1 border rounded-sm bg-blue-50 md:w-[500px] lg:w-full">
                                 <option value="tersedia">tersedia</option>
                                 <option value="penuh">penuh</option>
                             </select>
                         </div>
                         <div class="grid gap-1 mb-2 ml-2">
                             <label for="keterangan" class="text-left">Keterangan</label>
-                            <textarea id="add-keterangan" class="h-10 pl-4 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                            <textarea id="add-keterangan" class="font-raleway h-10 pl-4 pt-2 border rounded-sm bg-blue-50 resize-none md:w-[500px] lg:w-full"></textarea>
                         </div>
                     </div>
                     <div class="flex justify-end space-x-4 my-4">
@@ -301,18 +301,24 @@
                 <div class="grid mx-sm:grid-cols-1 lg:grid-cols-2 lg:my-8 min-w-[350px]">
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="lantai-kamar" class="text-left">Lantai Kamar</label>
-                        <input id="lantai_edit" type="text" class="h-10 pl-4 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <select id="lantai_edit" class="font-raleway h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="status" class="text-left">Status</label>
-                        <select id="status_edit" class="h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
+                        <select id="status_edit" class="font-raleway h-10 pl-1 border rounded-sm bg-gray-50 md:w-[500px] lg:w-full">
                             <option value="tersedia">tersedia</option>
                             <option value="penuh">penuh</option>
                         </select>
                     </div>
                     <div class="grid gap-1 mb-2 ml-2">
                         <label for="keterangan" class="text-left">Keterangan</label>
-                        <textarea id="keterangan_edit" class="h-20 px-2 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
+                        <textarea id="keterangan_edit" class="font-raleway h-20 px-2 pt-2 border rounded-sm bg-gray-50 resize-none md:w-[500px] lg:w-full"></textarea>
                     </div>
                 </div>
                 <div class="flex justify-end space-x-4 my-4">
