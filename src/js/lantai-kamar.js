@@ -30,6 +30,7 @@ const cancel_add = document.querySelectorAll('#modal-add button')[0];
 const save_add = document.querySelectorAll('#modal-add button')[1];
 const tombol = document.getElementById('tambah');
 
+const add_nomor = document.getElementById('add-nomor');
 const add_lantai = document.getElementById('add-lantai');
 const add_keterangan = document.getElementById('add-keterangan');
 const add_status = document.getElementById('add-status');
@@ -83,7 +84,7 @@ function newDiv(target){
 }
 function newTable(){
     const trBaru = newTr(tabel);
-    const td_no = newTd(trBaru, 'add');
+    const td_no = newTd(trBaru, add_nomor.value);
     const td_lantai = newTd(trBaru, add_lantai.value);
     const td_keterangan = newTd(trBaru, add_keterangan.value);
     const td_status = newTd(trBaru, add_status.value);
