@@ -53,6 +53,23 @@ save_add.addEventListener('click', (e)=>{
     e.preventDefault();
 })
 
+add_kategori.addEventListener('click', (e)=>{
+    console.log(e.target.value);
+    if(e.target.value == 'Junior Suite'){
+        add_harga.value = '$100/Night';
+        add_fasilitas.value = 'ac, tv';
+    }
+    else if(e.target.value == 'Executive Suite'){
+        add_harga.value = '$200/Night';
+        add_fasilitas.value = 'ac, tv, breakfast';
+    }
+    else if(e.target.value == 'Super Deluxe'){
+        add_harga.value = '$300/Night';
+        add_fasilitas.value = 'ac, tv, breakfast, lunch';
+    }
+})
+
+
 function newTr(target){
     const el = document.createElement('tr');
     const textEl = document.createTextNode('');
@@ -73,11 +90,7 @@ function newTd(target, isi){
     return el;
 }
 function emptyTable(){
-    add_kategori.value = '';
-    add_harga.value = '';
-    add_fasilitas.value = '';
     add_keterangan.value = '';
-    add_status.value = '';
 }
 function newDiv(target){
     const div = document.createElement('div');
