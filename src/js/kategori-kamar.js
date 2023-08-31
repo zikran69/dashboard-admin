@@ -31,6 +31,7 @@ function newTd(target, isi){
 }
 function emptyTable(){
     add_keterangan.value = '';
+    add_status.value = 'tersedia';
 }
 function newDiv(target){
     const div = document.createElement('div');
