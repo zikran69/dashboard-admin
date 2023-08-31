@@ -69,24 +69,24 @@ for(const td of tds){
 
 //-------- Tambah Lantai -----------
 const modal_add = document.getElementById('modal-add');
-const cancel_add = document.querySelectorAll('#modal-add button')[0];
-const save_add = document.querySelectorAll('#modal-add button')[1];
-const tombol = document.getElementById('tambah');
+const add_cancel = document.querySelectorAll('#modal-add button')[0];
+const add_save = document.querySelectorAll('#modal-add button')[1];
+const tambah = document.getElementById('tambah');
 
 const add_nomor = document.getElementById('add-nomor');
 const add_lantai = document.getElementById('add-lantai');
 const add_keterangan = document.getElementById('add-keterangan');
 const add_status = document.getElementById('add-status');
 
-tombol.addEventListener('click', ()=>{
+tambah.addEventListener('click', ()=>{
     display();
     modal(modal_add);
 });
-cancel_add.addEventListener('click', ()=>{
+add_cancel.addEventListener('click', ()=>{
     display();
     modal(modal_add);
 })
-save_add.addEventListener('click', (e)=>{
+add_save.addEventListener('click', (e)=>{
     newTable();
     emptyTable();
     display();

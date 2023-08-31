@@ -43,7 +43,11 @@ function newDiv(target){
 }
 function newTable(){
     const trBaru = newTr(tabel);
-    const td_no = newTd(trBaru, add_nomor.value);
+
+    if(newNo==0) newNo = tr_table.length+1;
+    else newNo++; 
+    const td_no = newTd(trBaru, newNo);
+    
     const td_kategori = newTd(trBaru, add_kategori.value);
     const td_harga = newTd(trBaru, add_harga.value);
     const td_fasilitas = newTd(trBaru, add_fasilitas.value);
@@ -70,9 +74,12 @@ for(const td of tds){
 
 //-------- Tambah Kategori -------
 const modal_add = document.getElementById('modal_add');
-const cancel_add = document.querySelectorAll('#modal_add button')[0];
-const save_add = document.querySelectorAll('#modal_add button')[1];
-const tombol = document.getElementById('tambah');
+const add_cancel = document.querySelectorAll('#modal_add button')[0];
+const add_save = document.querySelectorAll('#modal_add button')[1];
+const tambah = document.getElementById('tambah');
+
+const tr_table = document.querySelectorAll('#table_body tr');
+let newNo = 0;
 
 const add_nomor = document.getElementById('add_nomor');
 const add_kategori = document.getElementById('add_kategori');
@@ -81,15 +88,15 @@ const add_fasilitas = document.getElementById('add_fasilitas');
 const add_keterangan = document.getElementById('add_keterangan');
 const add_status = document.getElementById('add_status');
 
-tombol.addEventListener('click', (e)=>{
+tambah.addEventListener('click', (e)=>{
     display();
     modal(modal_add);
 });
-cancel_add.addEventListener('click', ()=>{
+add_cancel.addEventListener('click', ()=>{
     display();
     modal(modal_add);
 })
-save_add.addEventListener('click', (e)=>{
+add_save.addEventListener('click', (e)=>{
     newTable();
     emptyTable();
     display();
@@ -180,11 +187,11 @@ kembali_hapus.addEventListener('click', ()=>{
 
 //-------- Edit Kategori -------
 const modal_edit = document.getElementById('modal_edit');
-const kategori_edit = document.getElementById('edit_kategori');
-const harga_edit = document.getElementById('edit_harga');
-const fasilitas_edit = document.getElementById('edit_fasilitas');
-const keterangan_edit = document.getElementById('edit_keterangan');
-const status_edit = document.querySelector('#modal_edit select');
+const edit_kategori = document.getElementById('edit_kategori');
+const edit_harga = document.getElementById('edit_harga');
+const edit_fasilitas = document.getElementById('edit_fasilitas');
+const edit_keterangan = document.getElementById('edit_keterangan');
+const edit_status = document.querySelector('#modal_edit select');
 const cancel_edit = document.querySelectorAll('#modal_edit button')[0];
 const simpan_edit = document.querySelectorAll('#modal_edit button')[1];
 
@@ -193,11 +200,11 @@ simpan_edit.addEventListener('click', (e)=>{
     modal(modal_edit);
     const checking = document.getElementById('cek');
     const tds = document.querySelectorAll('#cek td');
-    tds[1].innerText = kategori_edit.value;
-    tds[2].innerText = harga_edit.value;
-    tds[3].innerText = fasilitas_edit.value;
-    tds[4].innerText = keterangan_edit.value;
-    tds[5].innerText = status_edit.value;
+    tds[1].innerText = edit_kategori.value;
+    tds[2].innerText = edit_harga.value;
+    tds[3].innerText = edit_fasilitas.value;
+    tds[4].innerText = edit_keterangan.value;
+    tds[5].innerText = edit_status.value;
 
     checking.removeAttribute('id');
     e.preventDefault();
@@ -252,11 +259,12 @@ tabel.addEventListener('click', e=>{
             e.target.parentElement.parentElement.parentElement.parentElement.setAttribute('id', 'cek');
         }
         const tds = document.querySelectorAll('#cek td');
-        kategori_edit.value = tds[1].innerText;
-        harga_edit.value = tds[2].innerText;
-        fasilitas_edit.value = tds[3].innerText;
-        keterangan_edit.value = tds[4].innerText;
-        status_edit.value = tds[5].innerText;
+        edit_kategori.value = tds[1].innerText;
+        edit_harga.value = tds[2].innerText;
+        edit_fasilitas.value = tds[3].innerText;
+        edit_keterangan.value = tds[4].innerText;
+        edit_status.value = tds[5].innerText;
     }
 })
 //------------ Akhir Selektor dengan Element Tabel
+
