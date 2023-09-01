@@ -24,15 +24,10 @@ function newTd(target, isi){
     el.appendChild(textEl);
     target.appendChild(el);
     el.setAttribute('class', 'p-4 border-secondary-gray border border-b-2 border-opacity-10');
-    if(countTd==4) el.setAttribute('style' , 'display:none');
+    if(countTd==5) el.setAttribute('style' , 'display:none');
     countTd++;
     if(countTd>7) countTd=1;
     return el;
-}
-function defaultTable(){
-    add_kategori.value = 'Junior Suite';
-    add_status.value = 'tersedia';
-    add_keterangan.value = '';
 }
 function newDiv(target){
     const div = document.createElement('div');
@@ -43,23 +38,28 @@ function newDiv(target){
     div.setAttribute('id', 'sementara')
 }
 function newTable(){
-    const trBaru = newTr(tabel); 
+    const trBaru = newTr(tr_table); 
     const td_no = newTd(trBaru, add_nomor.value);
     const td_kategori = newTd(trBaru, add_kategori.value);
     const td_harga = newTd(trBaru, add_harga.value);
     const td_fasilitas = newTd(trBaru, add_fasilitas.value);
-    const td_keterangan = newTd(trBaru, add_keterangan.value);
     const td_status = newTd(trBaru, add_status.value);
+    const td_keterangan = newTd(trBaru, add_keterangan.value);
     const td_foto = newTd(trBaru, '');
     newDiv(td_foto);
     const sementara = document.getElementById('sementara');
     sementara.innerHTML = '<button type="button" title="detail" class="detail mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button> <button type="button" title="hapus" class="hapus mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button> <button type="button" title="edit" class="edit py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>';
     sementara.removeAttribute('id');
 }
+function defaultTable(){
+    add_kategori.value = 'Junior Suite';
+    add_status.value = 'tersedia';
+    add_keterangan.value = '';
+}
 let i = 1;
 function nextTable(par){
     if(i==1){
-        i += tr_table.length;
+        i += tr_tables.length;
         console.log(i);
     }
     else{
@@ -88,7 +88,8 @@ const add_cancel = document.querySelectorAll('#modal_add button')[0];
 const add_save = document.querySelectorAll('#modal_add button')[1];
 const tambah = document.getElementById('tambah');
 
-const tr_table = document.querySelectorAll('#table_body tr');
+const tr_table = document.getElementById('table_body')
+const tr_tables = document.querySelectorAll('#table_body tr');
 
 const add_nomor = document.getElementById('add_nomor');
 const add_kategori = document.getElementById('add_kategori');
@@ -193,6 +194,8 @@ iya_hapus.addEventListener('click', ()=>{
 kembali_hapus.addEventListener('click', ()=>{
     display();
     modal(modal_detail_hapus);
+    const checking = document.getElementById('cek');
+    checking.removeAttribute('id');
 })
 //-------- Akhir Hapus Kategori -------
 
@@ -214,8 +217,8 @@ simpan_edit.addEventListener('click', (e)=>{
     tds[1].innerText = edit_kategori.value;
     tds[2].innerText = edit_harga.value;
     tds[3].innerText = edit_fasilitas.value;
-    tds[4].innerText = edit_keterangan.value;
-    tds[5].innerText = edit_status.value;
+    tds[4].innerText = edit_status.value;
+    tds[5].innerText = edit_keterangan.value;
 
     checking.removeAttribute('id');
     e.preventDefault();
@@ -273,8 +276,8 @@ tabel.addEventListener('click', e=>{
         edit_kategori.value = tds[1].innerText;
         edit_harga.value = tds[2].innerText;
         edit_fasilitas.value = tds[3].innerText;
-        edit_keterangan.value = tds[4].innerText;
-        edit_status.value = tds[5].innerText;
+        edit_status.value = tds[4].innerText;
+        edit_keterangan.value = tds[5].innerText;
     }
 })
 //------------ Akhir Selektor dengan Element Tabel

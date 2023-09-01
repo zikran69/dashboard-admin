@@ -41,7 +41,7 @@ function newDiv(target){
     div.setAttribute('id', 'sementara')
 }
 function newTable(){
-    const trBaru = newTr(tabel);
+    const trBaru = newTr(tr_table);
     const td_no = newTd(trBaru, add_nomor.value);
     const td_lantai = newTd(trBaru, add_lantai.value);
     const td_keterangan = newTd(trBaru, add_keterangan.value);
@@ -55,7 +55,7 @@ function newTable(){
 let i = 1;
 function nextTable(par){
     if(i==1){
-        i += tr_table.length;
+        i += tr_tables.length;
         console.log(i);
     }
     else{
@@ -86,7 +86,8 @@ const add_cancel = document.querySelectorAll('#modal-add button')[0];
 const add_save = document.querySelectorAll('#modal-add button')[1];
 const tambah = document.getElementById('tambah');
 
-const tr_table = document.querySelectorAll('#table_body tr');
+const tr_table = document.getElementById('table_body')
+const tr_tables = document.querySelectorAll('#table_body tr');
 
 const add_nomor = document.getElementById('add-nomor');
 const add_lantai = document.getElementById('add-lantai');
@@ -178,6 +179,8 @@ iya_hapus.addEventListener('click', ()=>{
 kembali_hapus.addEventListener('click', ()=>{
     display();
     modal(modal_detail_hapus);
+    const checking = document.getElementById('cek');
+    checking.removeAttribute('id');
 })
 //-------- Akhir Hapus Lantai ----------------
 
