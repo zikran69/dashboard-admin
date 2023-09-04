@@ -7,7 +7,7 @@ const toggleModalAndOverlay = (element) => {
   })
 }
 
-sAll('.ri-settings-4-line').forEach((e) =>
+sAll('.ri-search-line').forEach((e) =>
   toggleModalAndOverlay(e.parentElement)
 )
 

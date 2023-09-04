@@ -861,10 +861,6 @@ h1,
   width: 300px;
 }
 
-.w-\[400px\]{
-  width: 400px;
-}
-
 .w-\[700px\]{
   width: 700px;
 }
@@ -886,6 +882,10 @@ h1,
   width: 100vw;
 }
 
+.min-w-\[200px\]{
+  min-width: 200px;
+}
+
 .min-w-\[250px\]{
   min-width: 250px;
 }
@@ -900,10 +900,6 @@ h1,
 
 .min-w-\[350px\]{
   min-width: 350px;
-}
-
-.min-w-\[800px\]{
-  min-width: 800px;
 }
 
 .max-w-screen-lg{
@@ -1111,11 +1107,6 @@ h1,
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.border-red-800{
-  --tw-border-opacity: 1;
-  border-color: rgb(153 27 27 / var(--tw-border-opacity));
-}
-
 .border-secondary-blue{
   --tw-border-opacity: 1;
   border-color: rgb(120 174 216 / var(--tw-border-opacity));
@@ -1174,11 +1165,6 @@ h1,
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.bg-green-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
-}
-
 .bg-green-400{
   --tw-bg-opacity: 1;
   background-color: rgb(74 222 128 / var(--tw-bg-opacity));
@@ -1211,11 +1197,6 @@ h1,
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-yellow-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }
 
 .bg-yellow-400{
@@ -1642,10 +1623,6 @@ h1,
   color: rgb(120 174 216 / var(--tw-text-opacity));
 }
 
-.hover\:underline:hover{
-  text-decoration-line: underline;
-}
-
 .hover\:outline:hover{
   outline-style: solid;
 }
@@ -1662,17 +1639,6 @@ h1,
 
 .focus\:outline-secondary-gray:focus{
   outline-color: #b4b6b9;
-}
-
-.focus\:ring:focus{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.focus\:ring-indigo-300:focus{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(165 180 252 / var(--tw-ring-opacity));
 }
 
 .active\:bg-blue-100:active{
