@@ -906,6 +906,18 @@ h1,
   min-width: 800px;
 }
 
+.min-w-\[300\]{
+  min-width: 300;
+}
+
+.min-w-\[200px\]{
+  min-width: 200px;
+}
+
+.min-w-\[150px\]{
+  min-width: 150px;
+}
+
 .max-w-screen-lg{
   max-width: 1024px;
 }
@@ -1124,6 +1136,11 @@ h1,
 .border-slate-300{
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+
+.border-green-800{
+  --tw-border-opacity: 1;
+  border-color: rgb(22 101 52 / var(--tw-border-opacity));
 }
 
 .border-opacity-10{

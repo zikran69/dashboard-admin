@@ -15,7 +15,7 @@
     <header class="flex justify-between items-center bg-primary-blue p-4 text-secondary-gray h-[67.33px]">
         <div class="flex flex-col sm:flex-row justify-between sm:w-11/12 lg:w-full">
             <img class="w-32 ml-4" src="../../../img/logo.png" alt="logo" />
-            <p class="sm:text-xl">Fauzi Azhari</p>
+            <p class="sm:text-xl mr-6">ADMIN</p>
         </div>
         <div class="lg:hidden">
             <button id="open-sidebar" class="text-3xl"><i class="ri-menu-line"></i></button>
@@ -89,7 +89,7 @@
 
         <main class="bg-primary-gray grow overflow-y-auto h-[calc(100vh-67.33px)]">
             <h1 class="p-4 font-raleway text-2xl font-semibold">Laporan</h1>
-            <form class="font-roboto px-6 mx-4 border rounded-lg bg-white min-w-[800px] max-lg:px-4">
+            <form class="font-roboto px-6 mx-4 border rounded-lg bg-white max-lg:px-4 overflow-auto">
                 <div class="flex justify-start m-4 grid-flow-row">
                     <button id="#" type="button" class="py-1 px-5 bg-blue-400 rounded-md text-sm text-white hover:bg-hover-blue">
                         <i class="ri-filter-2-fill mr-2"></i>Filter 
@@ -107,8 +107,8 @@
                         <tr>
                             <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">No</th>
                             <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Customer</th>
-                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Transaksi</th>
-                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left">Detail</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left min-w-[200px]">Transaksi</th>
+                            <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left min-w-[200px]">Detail</th>
                             <th class="border border-b-2 border-opacity-20 border-secondary-gray p-4 text-left w-[210px]">Opsi</th>
                         </tr>
                     </thead>
@@ -182,10 +182,12 @@
                                     </tr>
                                 </table>
                             </td>
-                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20 flex flex-nowrap justify-start">
+                            <td class="p-4 border-secondary-gray border border-b-2 border-opacity-20">
+                                <div class="flex justify-center items-center flex-nowrap">
                                     <button type="button" title="detail" class="mr-1 py-1 px-5 bg-green-400 rounded-md hover:bg-hover-green"><i class="ri-search-line text-white"></i></button>
                                     <button type="button" title="hapus" class="mr-1 py-1 px-5 bg-red-400 rounded-md hover:bg-hover-red"><i class="ri-delete-bin-line text-white"></i></button>
                                     <button type="button" title="edit" class="py-1 px-5 bg-yellow-400 rounded-md hover:bg-hover-yellow"><i class="ri-file-edit-line text-white"></i></button>
+                                </div>
                             </td>
 
             </form>
